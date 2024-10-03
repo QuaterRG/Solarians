@@ -156,7 +156,7 @@ local function MUFAJAU_fake_script() -- OpenMenu.Script
 
   local Button = script.Parent
   Menu = script.Parent.Parent.Menu
-  local function onClick()
+  function onClick()
     if Menu.Visible == false then
       Menu.Visible = true
       Button.Text = "Close"
