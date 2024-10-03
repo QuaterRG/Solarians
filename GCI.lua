@@ -279,7 +279,7 @@ local function RSJR_fake_script() -- AutoSing.Script
 	local RedColor = Color3.new(255, 0, 0)
 	
 	local function startLoop()
-		for _, scId in ipairs({"s1", "s13", "s28", "s22", "rem", "s12", "s29", "s10", "s19", "s21", "sc2", "soulc", "sword", "s25", "s7", "s17", "s31", "s16", "s27", "s23", "s18", "s26"}) do
+		for _, scId in ipairs({"s1", "s13", "s28", "s22", "rem", "s12", "s29", "s10", "s19", "s21", "sc2", "s17", "s31", "soulc", "sword", "s25", "s7", "s16", "s27", "s23", "s18", "s26"}) do
 			local args = {
 				[1] = {
 					["id"] = "buySC",
