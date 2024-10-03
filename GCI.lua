@@ -202,7 +202,7 @@ local function RRJNU_fake_script() -- AutoSoul3.Script
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 				wait(0.2)
 			end
-			wait(15)
+			wait(10)
 		end
 	end
 	
@@ -256,7 +256,7 @@ local function ZULM_fake_script() -- AutoShard.Script
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 				wait(0.3)
 			end
-			wait(90)
+			wait(70)
 		end
 	end
 	
@@ -279,7 +279,7 @@ local function RSJR_fake_script() -- AutoSing.Script
 	local RedColor = Color3.new(255, 0, 0)
 	
 	local function startLoop()
-		for _, scId in ipairs({"s1", "s28", "s22", "s2", "s19", "s21", "s29", "s4", "s5", "s6", "s25", "s7", "s17", "s31", "s16", "s27", "s23", "s18", "s26"}) do
+		for _, scId in ipairs({"s1", "s13", "s28", "s22", "rem", "s12", "s29", "s10", "s19", "s21", "sc2", "soulc", "sword", "s25", "s7", "s17", "s31", "s16", "s27", "s23", "s18", "s26"}) do
 			local args = {
 				[1] = {
 					["id"] = "buySC",
@@ -287,7 +287,7 @@ local function RSJR_fake_script() -- AutoSing.Script
 				}
 			}
 			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-			wait(1)
+			wait(0.5)
 			end
 		Button.BackgroundColor3 = RedColor
 	end
