@@ -1,4 +1,3 @@
-Quater, [03.10.2024 7:32]
 -- Gui to Lua
 -- Version: 3.2
 
@@ -37,14 +36,14 @@ OpenMenu.Parent = ScreenGui
 OpenMenu.BackgroundColor3 = Color3.fromRGB(207, 255, 231)
 OpenMenu.BorderColor3 = Color3.fromRGB(0, 0, 0)
 OpenMenu.BorderSizePixel = 2
-OpenMenu.Position = UDim2.new(0.898293018, 0, 0.35189572, 0)
-OpenMenu.Size = UDim2.new(0.0974512771, 0, 0.084123224, 0)
+OpenMenu.Position = UDim2.new(0.859734237, 0, 0.313789487, 0)
+OpenMenu.Size = UDim2.new(0.136010051, 0, 0.120524302, 0)
 OpenMenu.Font = Enum.Font.Unknown
 OpenMenu.LineHeight = 1.010
 OpenMenu.Text = "Solarians"
 OpenMenu.TextColor3 = Color3.fromRGB(135, 99, 87)
 OpenMenu.TextScaled = true
-OpenMenu.TextSize = 25.000
+OpenMenu.TextSize = 40.000
 OpenMenu.TextWrapped = true
 
 UICorner.CornerRadius = UDim.new(1, -40)
@@ -58,15 +57,15 @@ UIAspectRatioConstraint.Parent = OpenMenu
 UIAspectRatioConstraint.AspectRatio = 2.160
 
 UITextSizeConstraint.Parent = OpenMenu
-UITextSizeConstraint.MaxTextSize = 25
+UITextSizeConstraint.MaxTextSize = 40
 
 Menu.Name = "Menu"
 Menu.Parent = ScreenGui
 Menu.BackgroundColor3 = Color3.fromRGB(255, 200, 0)
 Menu.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Menu.BorderSizePixel = 0
-Menu.Position = UDim2.new(0.662668645, 0, 0.242890999, 0)
-Menu.Size = UDim2.new(0.189633369, 0, 0.134983122, 0)
+Menu.Position = UDim2.new(0.587447464, 0, 0.199011087, 0)
+Menu.Size = UDim2.new(0.283673018, 0, 0.19849351, 0)
 Menu.Visible = false
 
 AutoSoul3.Name = "AutoSoul3"
@@ -98,7 +97,6 @@ UICorner_3.Parent = Menu
 AutoShard.Name = "AutoShard"
 AutoShard.Parent = Menu
 AutoShard.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-
 AutoShard.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AutoShard.BorderSizePixel = 0
 AutoShard.Position = UDim2.new(0.366666675, 0, 0.175999999, 0)
@@ -151,153 +149,152 @@ UIGradient_2.Parent = Menu
 
 -- Scripts:
 
-local function MUFAJAU_fake_script() -- OpenMenu.Script 
-  local script = Instance.new('Script', OpenMenu)
+local function FMKTCW_fake_script() -- OpenMenu.Script 
+	local script = Instance.new('Script', OpenMenu)
 
-  local Button = script.Parent
-  Menu = script.Parent.Parent.Menu
-  function onClick()
-    if Menu.Visible == false then
-      Menu.Visible = true
-      Button.Text = "Close"
-    elseif Menu.Visible == true then
-      Menu.Visible = false
-      Button.Text = "Solarians"
-    end
-  end
-  Button.MouseButton1Click:Connect(onClick)
+	local Button = script.Parent
+	Menu = script.Parent.Parent.Menu
+	function onClick()
+		if Menu.Visible == false then
+			Menu.Visible = true
+			Button.Text = "Close"
+		elseif Menu.Visible == true then
+			Menu.Visible = false
+			Button.Text = "Solarians"
+		end
+	end
+	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(MUFAJAU_fake_script)()
-local function ZMEK_fake_script() -- AutoSoul3.Script 
-  local script = Instance.new('Script', AutoSoul3)
+coroutine.wrap(FMKTCW_fake_script)()
+local function RRJNU_fake_script() -- AutoSoul3.Script 
+	local script = Instance.new('Script', AutoSoul3)
 
-  local isRunning = false
-  local Button = script.Parent
-  local GreenColor = Color3.new(0, 255, 0)
-  local RedColor = Color3.new(255, 0, 0)
-  
-  local function startLoop()
-    while isRunning do
-      local args = {
-        [1] = {
-          ["id"] = "changeSoul",
-          ["x"] = 3
-        }
-      }
-      game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-      wait(0.2)
-      local args = {
-        [1] = {
-          ["id"] = "setSoul",
-          ["x"] = 0.25
-        }
-      }
-      game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-      wait(0.5)
-      for _, buy in ipairs({"soul2", "offdef2", "syncs", "syngs"}) do
-        local args = {
-          [1] = {
-            ["id"] = "buySoul",
-            ["soulId"] = buy
-          }
-        }
-        game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-        wait(0.2)
-      end
-      wait(15)
-    end
-  end
-  
-  Button.MouseButton1Click:Connect(function()
-    isRunning = not isRunning
-    if isRunning then
-      Button.BackgroundColor3 = GreenColor
-      startLoop()
-    else
-      Button.BackgroundColor3 = RedColor
-    end
-  end)
+	local isRunning = false
+	local Button = script.Parent
+	local GreenColor = Color3.new(0, 255, 0)
+	local RedColor = Color3.new(255, 0, 0)
+	
+	local function startLoop()
+		while isRunning do
+			local args = {
+				[1] = {
+					["id"] = "changeSoul",
+					["x"] = 3
+				}
+			}
+			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+			wait(0.2)
+			local args = {
+				[1] = {
+					["id"] = "setSoul",
+					["x"] = 0.25
+				}
+			}
+			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+			wait(0.5)
+			for _, buy in ipairs({"soul2", "offdef2", "syncs", "syngs"}) do
+				local args = {
+					[1] = {
+						["id"] = "buySoul",
+						["soulId"] = buy
+					}
+				}
+				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+				wait(0.2)
+			end
+			wait(15)
+		end
+	end
+	
+	Button.MouseButton1Click:Connect(function()
+		isRunning = not isRunning
+		if isRunning then
+			Button.BackgroundColor3 = GreenColor
+			startLoop()
+		else
+			Button.BackgroundColor3 = RedColor
+		end
+	end)
 end
-coroutine.wrap(ZMEK_fake_script)()
-local function SHNSI_fake_script() -- AutoShard.Script 
-  local script = Instance.new('Script', AutoShard)
+coroutine.wrap(RRJNU_fake_script)()
+local function ZULM_fake_script() -- AutoShard.Script 
+	local script = Instance.new('Script', AutoShard)
 
-local isRunning = false
-  local Button = script.Parent
-  local GreenColor = Color3.new(0, 255, 0)
-  local RedColor = Color3.new(255, 0, 0)
-  
-  local function startLoop()
-    while isRunning do
-      for i = 1,2 do
-        local args = {
-          [1] = {
-            ["id"] = "synthesis",
-            ["selected"] = "cs",
-            ["syn"] = 1
-          }
-        }
-        game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-        wait(0.2)
-        local args = {
-          [1] = {
-            ["id"] = "synthesis",
-            ["selected"] = "fs",
-            ["syn"] = 2
-          }
-        }
-        game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-        wait(0.2)
-        local args = {
-          [1] = {
-            ["id"] = "synthesis",
-            ["selected"] = "gb",
-            ["syn"] = 3
-          }
-        }
-        game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-        wait(0.3)
-      end
-      wait(90)
-    end
-  end
-  
-  Button.MouseButton1Click:Connect(function()
-    isRunning = not isRunning
-    if isRunning then
-      Button.BackgroundColor3 = GreenColor
-      startLoop()
-    else
-      Button.BackgroundColor3 = RedColor
-    end
-  end)
+	local isRunning = false
+	local Button = script.Parent
+	local GreenColor = Color3.new(0, 255, 0)
+	local RedColor = Color3.new(255, 0, 0)
+	
+	local function startLoop()
+		while isRunning do
+			for i = 1,2 do
+				local args = {
+					[1] = {
+						["id"] = "synthesis",
+						["selected"] = "cs",
+						["syn"] = 1
+					}
+				}
+				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+				wait(0.2)
+				local args = {
+					[1] = {
+						["id"] = "synthesis",
+						["selected"] = "fs",
+						["syn"] = 2
+					}
+				}
+				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+				wait(0.2)
+				local args = {
+					[1] = {
+						["id"] = "synthesis",
+						["selected"] = "gb",
+						["syn"] = 3
+					}
+				}
+				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+				wait(0.3)
+			end
+			wait(90)
+		end
+	end
+	
+	Button.MouseButton1Click:Connect(function()
+		isRunning = not isRunning
+		if isRunning then
+			Button.BackgroundColor3 = GreenColor
+			startLoop()
+		else
+			Button.BackgroundColor3 = RedColor
+		end
+	end)
 end
-coroutine.wrap(SHNSI_fake_script)()
-local function DTHHTWP_fake_script() -- AutoSing.Script 
-  local script = Instance.new('Script', AutoSing)
+coroutine.wrap(ZULM_fake_script)()
+local function RSJR_fake_script() -- AutoSing.Script 
+	local script = Instance.new('Script', AutoSing)
 
-  local Button = script.Parent
-  local GreenColor = Color3.new(0, 255, 0)
-  local RedColor = Color3.new(255, 0, 0)
-  
-  local function startLoop()
-    for _, scId in ipairs({"s1", "s28", "s22", "s2", "s19", "s21", "s29", "s4", "s5", "s6", "s25", "s7", "s17", "s31", "s16", "s27", "s23", "s18", "s26"}) do
-      local args = {
-        [1] = {
-          ["id"] = "buySC",
-          ["scId"] = scId
-        }
-      }
-      game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-      wait(1)
-      end
-  end
-  
-  Button.MouseButton1Click:Connect(function()
-    Button.BackgroundColor3 = GreenColor
-    startLoop()
-    wait(20)
-    Button.BackgroundColor3 = RedColor
-  end)
+	local Button = script.Parent
+	local GreenColor = Color3.new(0, 255, 0)
+	local RedColor = Color3.new(255, 0, 0)
+	
+	local function startLoop()
+		for _, scId in ipairs({"s1", "s28", "s22", "s2", "s19", "s21", "s29", "s4", "s5", "s6", "s25", "s7", "s17", "s31", "s16", "s27", "s23", "s18", "s26"}) do
+			local args = {
+				[1] = {
+					["id"] = "buySC",
+					["scId"] = scId
+				}
+			}
+			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+			wait(1)
+			end
+		Button.BackgroundColor3 = RedColor
+	end
+	
+	Button.MouseButton1Click:Connect(function()
+		Button.BackgroundColor3 = GreenColor
+		startLoop()
+	end)
 end
-coroutine.wrap(DTHHTWP_fake_script)()
+coroutine.wrap(RSJR_fake_script)()
