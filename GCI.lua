@@ -1,4 +1,4 @@
-Quater, [03.10.2024 7:13]
+Quater, [03.10.2024 7:32]
 -- Gui to Lua
 -- Version: 3.2
 
@@ -99,7 +99,6 @@ AutoShard.Name = "AutoShard"
 AutoShard.Parent = Menu
 AutoShard.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 
-Quater, [03.10.2024 7:13]
 AutoShard.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AutoShard.BorderSizePixel = 0
 AutoShard.Position = UDim2.new(0.366666675, 0, 0.175999999, 0)
@@ -223,7 +222,6 @@ coroutine.wrap(ZMEK_fake_script)()
 local function SHNSI_fake_script() -- AutoShard.Script 
   local script = Instance.new('Script', AutoShard)
 
-Quater, [03.10.2024 7:13]
 local isRunning = false
   local Button = script.Parent
   local GreenColor = Color3.new(0, 255, 0)
@@ -291,14 +289,15 @@ local function DTHHTWP_fake_script() -- AutoSing.Script
         }
       }
       game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-      wait(0.5)
-      Button.BackgroundColor3 = RedColor
+      wait(1)
       end
   end
   
   Button.MouseButton1Click:Connect(function()
     Button.BackgroundColor3 = GreenColor
     startLoop()
+    wait(20)
+    Button.BackgroundColor3 = RedColor
   end)
 end
 coroutine.wrap(DTHHTWP_fake_script)()
