@@ -308,7 +308,7 @@ local function CARO_fake_script() -- Autoupgrade.Script
 						}
 					}
 					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-					wait(0.1)
+					wait(0.2)
 				end
 			end
 			for _, prefix in ipairs({"skr", "ss", "sco", "ls", "kr"}) do
@@ -320,7 +320,7 @@ local function CARO_fake_script() -- Autoupgrade.Script
 						}
 					}
 					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-					wait(0.1)
+					wait(0.2)
 				end
 			end
 			for _, scId in ipairs({"skr6", "sco6", "sco7", "auto3", "kr6", "kkr4", "kkr5", "kkr6"}) do
@@ -331,7 +331,7 @@ local function CARO_fake_script() -- Autoupgrade.Script
 					}
 				}
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-				wait(0.4)
+				wait(0.2)
 			end
 		end
 	end
