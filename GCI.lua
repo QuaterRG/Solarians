@@ -218,32 +218,33 @@ local function RUJTCVN_fake_script() -- AutoShard.Script
 	
 	local function startLoop()
 		while isRunning do
-			local args = {
-				[1] = {
-					["id"] = "synthesis",
-					["selected"] = "cs",
-					["syn"] = 1
+			for i = 1,2 do
+				local args = {
+					[1] = {
+						["id"] = "synthesis",
+						["selected"] = "cs",
+						["syn"] = 1
+					}
 				}
-			}
-			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-			wait(0.2)
-			local args = {
-				[1] = {
-					["id"] = "synthesis",
-					["selected"] = "fs",
-					["syn"] = 2
+				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+				wait(0.2)
+				local args = {
+					[1] = {
+						["id"] = "synthesis",
+						["selected"] = "fs",
+						["syn"] = 2
+					}
 				}
-			}
-			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-			wait(0.2)
-			local args = {
-				[1] = {
-					["id"] = "synthesis",
-					["selected"] = "gb",
-					["syn"] = 3
+				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+				wait(0.2)
+				local args = {
+					[1] = {
+						["id"] = "synthesis",
+						["selected"] = "gb",
+						["syn"] = 3
+					}
 				}
-			}
-			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 			wait(70)
 		end
 	end
