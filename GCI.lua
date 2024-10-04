@@ -8,23 +8,18 @@ local OpenMenu = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
 local UIGradient = Instance.new("UIGradient")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
 local Menu = Instance.new("Frame")
 local AutoSoul3 = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
-local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
-local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
-local UICorner_3 = Instance.new("UICorner")
 local AutoShard = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
-local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
-local UITextSizeConstraint_3 = Instance.new("UITextSizeConstraint")
+local UICorner_3 = Instance.new("UICorner")
 local AutoSing = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
-local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
-local UITextSizeConstraint_4 = Instance.new("UITextSizeConstraint")
-local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
+local UICorner_4 = Instance.new("UICorner")
 local UIGradient_2 = Instance.new("UIGradient")
+local Autoupgrade = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local UICorner_6 = Instance.new("UICorner")
+local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 
 --Properties:
 
@@ -46,7 +41,7 @@ OpenMenu.TextScaled = true
 OpenMenu.TextSize = 40.000
 OpenMenu.TextWrapped = true
 
-UICorner.CornerRadius = UDim.new(1, -40)
+UICorner.CornerRadius = UDim.new(0, 60)
 UICorner.Parent = OpenMenu
 
 UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 216, 74)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 216, 74))}
@@ -56,16 +51,13 @@ UIGradient.Parent = OpenMenu
 UIAspectRatioConstraint.Parent = OpenMenu
 UIAspectRatioConstraint.AspectRatio = 2.160
 
-UITextSizeConstraint.Parent = OpenMenu
-UITextSizeConstraint.MaxTextSize = 40
-
 Menu.Name = "Menu"
 Menu.Parent = ScreenGui
 Menu.BackgroundColor3 = Color3.fromRGB(255, 200, 0)
 Menu.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Menu.BorderSizePixel = 0
-Menu.Position = UDim2.new(0.587447464, 0, 0.199011087, 0)
-Menu.Size = UDim2.new(0.283673018, 0, 0.19849351, 0)
+Menu.Position = UDim2.new(0.629166782, 0, 0.185154304, 0)
+Menu.Size = UDim2.new(0.215867281, 0, 0.370094717, 0)
 Menu.Visible = false
 
 AutoSoul3.Name = "AutoSoul3"
@@ -73,83 +65,82 @@ AutoSoul3.Parent = Menu
 AutoSoul3.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 AutoSoul3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AutoSoul3.BorderSizePixel = 0
-AutoSoul3.Position = UDim2.new(0.0500000007, 0, 0.175999999, 0)
-AutoSoul3.Size = UDim2.new(0.266666681, 0, 0.666666687, 0)
+AutoSoul3.Position = UDim2.new(0.0499999486, 0, 0.0938633755, 0)
+AutoSoul3.Size = UDim2.new(0.266666681, 0, 0.382104486, 0)
 AutoSoul3.Font = Enum.Font.SourceSans
 AutoSoul3.Text = "Soul3"
 AutoSoul3.TextColor3 = Color3.fromRGB(0, 0, 0)
 AutoSoul3.TextScaled = true
-AutoSoul3.TextSize = 14.000
+AutoSoul3.TextSize = 40.000
 AutoSoul3.TextWrapped = true
 
-UICorner_2.CornerRadius = UDim.new(1, -45)
+UICorner_2.CornerRadius = UDim.new(0, 70)
 UICorner_2.Parent = AutoSoul3
-
-UIAspectRatioConstraint_2.Parent = AutoSoul3
-UIAspectRatioConstraint_2.AspectRatio = 1.000
-
-UITextSizeConstraint_2.Parent = AutoSoul3
-UITextSizeConstraint_2.MaxTextSize = 14
-
-UICorner_3.CornerRadius = UDim.new(1, -90)
-UICorner_3.Parent = Menu
 
 AutoShard.Name = "AutoShard"
 AutoShard.Parent = Menu
 AutoShard.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 AutoShard.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AutoShard.BorderSizePixel = 0
-AutoShard.Position = UDim2.new(0.366666675, 0, 0.175999999, 0)
-AutoShard.Size = UDim2.new(0.266666681, 0, 0.666666687, 0)
+AutoShard.Position = UDim2.new(0.366666853, 0, 0.0938633755, 0)
+AutoShard.Size = UDim2.new(0.266666681, 0, 0.382104486, 0)
 AutoShard.Font = Enum.Font.SourceSans
 AutoShard.Text = "Shard"
 AutoShard.TextColor3 = Color3.fromRGB(0, 0, 0)
 AutoShard.TextScaled = true
-AutoShard.TextSize = 14.000
+AutoShard.TextSize = 40.000
 AutoShard.TextWrapped = true
 
-UICorner_4.CornerRadius = UDim.new(1, -45)
-UICorner_4.Parent = AutoShard
-
-UIAspectRatioConstraint_3.Parent = AutoShard
-UIAspectRatioConstraint_3.AspectRatio = 1.000
-
-UITextSizeConstraint_3.Parent = AutoShard
-UITextSizeConstraint_3.MaxTextSize = 14
+UICorner_3.CornerRadius = UDim.new(0, 70)
+UICorner_3.Parent = AutoShard
 
 AutoSing.Name = "AutoSing"
 AutoSing.Parent = Menu
 AutoSing.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 AutoSing.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AutoSing.BorderSizePixel = 0
-AutoSing.Position = UDim2.new(0.683333337, 0, 0.175999999, 0)
-AutoSing.Size = UDim2.new(0.266666681, 0, 0.666666687, 0)
+AutoSing.Position = UDim2.new(0.683333337, 0, 0.0938633755, 0)
+AutoSing.Size = UDim2.new(0.266666681, 0, 0.382104486, 0)
 AutoSing.Font = Enum.Font.SourceSans
 AutoSing.Text = "Sing"
 AutoSing.TextColor3 = Color3.fromRGB(0, 0, 0)
 AutoSing.TextScaled = true
-AutoSing.TextSize = 14.000
+AutoSing.TextSize = 40.000
 AutoSing.TextWrapped = true
 
-UICorner_5.CornerRadius = UDim.new(1, -45)
-UICorner_5.Parent = AutoSing
-
-UIAspectRatioConstraint_4.Parent = AutoSing
-UIAspectRatioConstraint_4.AspectRatio = 1.000
-
-UITextSizeConstraint_4.Parent = AutoSing
-UITextSizeConstraint_4.MaxTextSize = 14
-
-UIAspectRatioConstraint_5.Parent = Menu
-UIAspectRatioConstraint_5.AspectRatio = 2.500
+UICorner_4.CornerRadius = UDim.new(0, 70)
+UICorner_4.Parent = AutoSing
 
 UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 238, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 238, 0))}
 UIGradient_2.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.21), NumberSequenceKeypoint.new(0.10, 0.49), NumberSequenceKeypoint.new(0.49, 0.26), NumberSequenceKeypoint.new(0.83, 0.52), NumberSequenceKeypoint.new(1.00, 0.16)}
 UIGradient_2.Parent = Menu
 
+Autoupgrade.Name = "Auto upgrade"
+Autoupgrade.Parent = Menu
+Autoupgrade.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Autoupgrade.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Autoupgrade.BorderSizePixel = 0
+Autoupgrade.Position = UDim2.new(0.0499999486, 0, 0.548565805, 0)
+Autoupgrade.Size = UDim2.new(0.266666681, 0, 0.382104486, 0)
+Autoupgrade.Font = Enum.Font.SourceSans
+Autoupgrade.Text = "Upgrade"
+Autoupgrade.TextColor3 = Color3.fromRGB(0, 0, 0)
+Autoupgrade.TextScaled = true
+Autoupgrade.TextSize = 40.000
+Autoupgrade.TextWrapped = true
+
+UICorner_5.CornerRadius = UDim.new(0, 70)
+UICorner_5.Parent = Autoupgrade
+
+UICorner_6.CornerRadius = UDim.new(0, 40)
+UICorner_6.Parent = Menu
+
+UIAspectRatioConstraint_2.Parent = Menu
+UIAspectRatioConstraint_2.AspectRatio = 1.360
+
 -- Scripts:
 
-local function FMKTCW_fake_script() -- OpenMenu.Script 
+local function ZGPZOF_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -165,8 +156,8 @@ local function FMKTCW_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(FMKTCW_fake_script)()
-local function RRJNU_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(ZGPZOF_fake_script)()
+local function VHWDUSX_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -202,7 +193,7 @@ local function RRJNU_fake_script() -- AutoSoul3.Script
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 				wait(0.2)
 			end
-			wait(10)
+			wait(15)
 		end
 	end
 	
@@ -216,8 +207,8 @@ local function RRJNU_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(RRJNU_fake_script)()
-local function ZULM_fake_script() -- AutoShard.Script 
+coroutine.wrap(VHWDUSX_fake_script)()
+local function RUJTCVN_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -256,7 +247,7 @@ local function ZULM_fake_script() -- AutoShard.Script
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 				wait(0.3)
 			end
-			wait(70)
+			wait(90)
 		end
 	end
 	
@@ -270,8 +261,8 @@ local function ZULM_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(ZULM_fake_script)()
-local function RSJR_fake_script() -- AutoSing.Script 
+coroutine.wrap(RUJTCVN_fake_script)()
+local function KKKZ_fake_script() -- AutoSing.Script 
 	local script = Instance.new('Script', AutoSing)
 
 	local Button = script.Parent
@@ -287,8 +278,8 @@ local function RSJR_fake_script() -- AutoSing.Script
 				}
 			}
 			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-			wait(0.5)
-			end
+			wait(0.4)
+		end
 		Button.BackgroundColor3 = RedColor
 	end
 	
@@ -297,4 +288,62 @@ local function RSJR_fake_script() -- AutoSing.Script
 		startLoop()
 	end)
 end
-coroutine.wrap(RSJR_fake_script)()
+coroutine.wrap(KKKZ_fake_script)()
+local function CARO_fake_script() -- Autoupgrade.Script 
+	local script = Instance.new('Script', Autoupgrade)
+
+	local isRunning = false
+	local Button = script.Parent
+	local GreenColor = Color3.new(0, 255, 0)
+	local RedColor = Color3.new(255, 0, 0)
+	
+	local function startLoop()
+		while isRunning do
+			for _, prefix in ipairs({"od", "cs", "ds", "sol", "ll", "ps", "fg", "sg", "cm", "ge"}) do
+				for i = 1, 9 do
+					local args = {
+						[1] = {
+							["id"] = "buySC",
+							["scId"] = prefix .. i
+						}
+					}
+					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+					wait(0.1)
+				end
+			end
+			for _, prefix in ipairs({"skr", "ss", "sco", "ls", "kr"}) do
+				for i = 1, 5 do
+					local args = {
+						[1] = {
+							["id"] = "buySC",
+							["scId"] = prefix .. i
+						}
+					}
+					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+					wait(0.1)
+				end
+			end
+			for _, scId in ipairs({"skr6", "sco6", "sco7", "auto3", "kr6", "kkr4", "kkr5", "kkr6"}) do
+				local args = {
+					[1] = {
+						["id"] = "buySC",
+						["scId"] = scId
+					}
+				}
+				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+				wait(0.4)
+			end
+		end
+	end
+	
+	Button.MouseButton1Click:Connect(function()
+		isRunning = not isRunning
+		if isRunning then
+			Button.BackgroundColor3 = GreenColor
+			startLoop()
+		else
+			Button.BackgroundColor3 = RedColor
+		end
+	end)
+end
+coroutine.wrap(CARO_fake_script)()
