@@ -333,6 +333,7 @@ local function HLNEQ_fake_script() -- Autoupgrade.Script
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 				wait(0.2)
 			end
+		wait(10)
 		end
 	end
 	
