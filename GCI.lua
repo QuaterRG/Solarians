@@ -140,7 +140,7 @@ UIAspectRatioConstraint_2.AspectRatio = 1.360
 
 -- Scripts:
 
-local function ZGPZOF_fake_script() -- OpenMenu.Script 
+local function QOIES_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -156,8 +156,8 @@ local function ZGPZOF_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(ZGPZOF_fake_script)()
-local function VHWDUSX_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(QOIES_fake_script)()
+local function YAJNKS_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -207,8 +207,8 @@ local function VHWDUSX_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(VHWDUSX_fake_script)()
-local function RUJTCVN_fake_script() -- AutoShard.Script 
+coroutine.wrap(YAJNKS_fake_script)()
+local function KBAX_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -245,6 +245,8 @@ local function RUJTCVN_fake_script() -- AutoShard.Script
 					}
 				}
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+				wait(0.2)
+			end
 			wait(70)
 		end
 	end
@@ -259,8 +261,8 @@ local function RUJTCVN_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(RUJTCVN_fake_script)()
-local function KKKZ_fake_script() -- AutoSing.Script 
+coroutine.wrap(KBAX_fake_script)()
+local function FWKVX_fake_script() -- AutoSing.Script 
 	local script = Instance.new('Script', AutoSing)
 
 	local Button = script.Parent
@@ -268,7 +270,7 @@ local function KKKZ_fake_script() -- AutoSing.Script
 	local RedColor = Color3.new(255, 0, 0)
 	
 	local function startLoop()
-		for _, scId in ipairs({"s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "sc2", "soulc", "sword", "s7", "s16", "s23", "s30", "s27", "s18", "s26"}) do
+		for _, scId in ipairs({"s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"}) do
 			local args = {
 				[1] = {
 					["id"] = "buySC",
@@ -286,8 +288,8 @@ local function KKKZ_fake_script() -- AutoSing.Script
 		startLoop()
 	end)
 end
-coroutine.wrap(KKKZ_fake_script)()
-local function CARO_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(FWKVX_fake_script)()
+local function HLNEQ_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local isRunning = false
@@ -344,4 +346,4 @@ local function CARO_fake_script() -- Autoupgrade.Script
 		end
 	end)
 end
-coroutine.wrap(CARO_fake_script)()
+coroutine.wrap(HLNEQ_fake_script)()
