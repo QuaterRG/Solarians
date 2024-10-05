@@ -8,5 +8,5 @@ for i = 1,10 do
         }
     } 
     game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
-wait(1)
+wait(1.5)
 end
