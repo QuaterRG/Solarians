@@ -1,4 +1,4 @@
-for i = 1,10 do
+while wait(0.5) do
     local args = {
         [1] = {
             ["id"] = "cut",
@@ -8,5 +8,4 @@ for i = 1,10 do
         }
     } 
     game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
-wait(1.5)
 end
