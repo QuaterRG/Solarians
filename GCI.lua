@@ -299,7 +299,7 @@ local function HLNEQ_fake_script() -- Autoupgrade.Script
 	
 	local function startLoop()
 		while isRunning do
-			for _, prefix in ipairs({"od", "cs", "ds", "sol", "ll", "ps", "fg", "sg", "cm", "ge"}) do
+			for _, prefix in ipairs({"od", "cs", "fs", "sol", "ll", "ps", "fg", "sg", "cm", "ge"}) do
 				for i = 1, 9 do
 					local args = {
 						[1] = {
