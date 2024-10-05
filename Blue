@@ -1,0 +1,10 @@
+local args = {
+    [1] = {
+        ["id"] = "cut",
+        ["identifier"] = "basic",
+        ["quantity"] = 5,
+        ["field"] = "blue"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
