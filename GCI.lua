@@ -193,7 +193,7 @@ local function YAJNKS_fake_script() -- AutoSoul3.Script
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 				wait(0.2)
 			end
-			wait(15)
+			wait(10)
 		end
 	end
 	
@@ -278,7 +278,7 @@ local function FWKVX_fake_script() -- AutoSing.Script
 				}
 			}
 			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-			wait(0.4)
+			wait(0.2)
 		end
 		Button.BackgroundColor3 = RedColor
 	end
