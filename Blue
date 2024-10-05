@@ -1,9 +1,9 @@
-while wait(0.5) do
+while wait(0.05) do
     local args = {
         [1] = {
             ["id"] = "cut",
             ["identifier"] = "basic",
-            ["quantity"] = 1,
+            ["quantity"] = 0.00001,
             ["field"] = "blue"
         }
     } 
