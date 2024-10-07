@@ -172,7 +172,7 @@ local function STLC_fake_script() -- AutoBuy.Script
 				local args = {
 					[1] = {
 						["id"] = "buyUpgrade",
-						["mode"] = "one",
+						["mode"] = "max",
 						["upgradeId"] = upg
 					}
 				}
