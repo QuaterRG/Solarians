@@ -1,6 +1,5 @@
-local function runBasicCut()
-	while isRunning do -- Перемещено сюда
-		wait(0.18) 
+function runBasicCut()
+	while wait(0.18) do -- Перемещено сюда 
 		local args = {
 			[1] = {
 				["id"] = "cut",
@@ -12,9 +11,8 @@ local function runBasicCut()
 		game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
 	end
 end
-local function runIridiumCut()
-	while isRunning do -- Перемещено сюда
-		wait(0.35) 
+function runIridiumCut()
+	while wait(0.35) do -- Перемещено сюда
 		local args = {
 			[1] = {
 				["id"] = "cut",
