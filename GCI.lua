@@ -1,5 +1,5 @@
 function runBasicCut()
-	while wait(0.18) do -- Перемещено сюда 
+	while wait(0.05) do -- Перемещено сюда 
 		local args = {
 			[1] = {
 				["id"] = "cut",
@@ -12,7 +12,7 @@ function runBasicCut()
 	end
 end
 function runIridiumCut()
-	while wait(0.35) do -- Перемещено сюда
+	while wait(0.05) do -- Перемещено сюда
 		local args = {
 			[1] = {
 				["id"] = "cut",
