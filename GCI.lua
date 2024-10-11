@@ -1,10 +1,10 @@
 function runBasicCut()
-	while wait(0.05) do -- Перемещено сюда 
+	while wait(0.5) do -- Перемещено сюда 
 		local args = {
 			[1] = {
 				["id"] = "cut",
 				["identifier"] = "basic",
-				["quantity"] = 0.0000000000000001,
+				["quantity"] = 100,
 				["field"] = "jungle"
 			}
 		} 
@@ -24,5 +24,19 @@ function runIridiumCut()
 		game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
 	end
 end
+function runMushCut()
+	while wait(0.5) do -- Перемещено сюда
+		local args = {
+			[1] = {
+				["id"] = "cut",
+				["identifier"] = "fractal",
+				["quantity"] = 100,
+				["field"] = "cavern"
+			}
+		} 
+		game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+	end
+end
 coroutine.wrap(runBasicCut)()
 coroutine.wrap(runIridiumCut)()
+coroutine.wrap(runMushCut)()
