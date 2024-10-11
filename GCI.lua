@@ -1,18 +1,18 @@
 function runBasicCut()
-	while wait(0.5) do
+	while wait(0.1) do
 		local args = {
 			[1] = {
 				["id"] = "cut",
-				["identifier"] = "basic",
-				["quantity"] = 100,
-				["field"] = "jungle"
+				["identifier"] = "fractal",
+				["quantity"] = 50,
+				["field"] = "intersection"
 			}
 		} 
 		game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
 	end
 end
 function runMushCut()
-	while wait(0.5) do
+	while wait(0.2) do
 		local args = {
 			[1] = {
 				["id"] = "cut",
@@ -26,7 +26,7 @@ function runMushCut()
 end
 function runUpg()
 	while wait() do
-		for _, upg in ipairs({"m1", "max1", "min1", "mxp1", "rangeC", "inst4", "xp4", "m2"}) do
+		for _, upg in ipairs({"i1", "xp3i", "g6", "xp1i", "m5", "xp2i", "i2", "rf3", "xp1i2", "xp3i2"}) do
 			local args = {
 				[1] = {
 					["id"] = "buyUpgrade",
