@@ -11,19 +11,6 @@ function runBasicCut()
 		game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
 	end
 end
-function runIridiumCut()
-	while wait(0.05) do
-		local args = {
-			[1] = {
-				["id"] = "cut",
-				["identifier"] = "ruby",
-				["quantity"] = 0.0000000000000001,
-				["field"] = "jungle"
-			}
-		} 
-		game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
-	end
-end
 function runMushCut()
 	while wait(0.5) do
 		local args = {
@@ -66,7 +53,6 @@ function runRuneCut()
 	end
 end
 coroutine.wrap(runBasicCut)()
-coroutine.wrap(runIridiumCut)()
 coroutine.wrap(runMushCut)()
 coroutine.wrap(runUpg)()
 coroutine.wrap(runRuneCut())
