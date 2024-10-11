@@ -52,7 +52,7 @@ function runUpg()
 		end
 	end
 end
-function runIridiumCut()
+function runRuneCut()
 	while wait(0.05) do
 		local args = {
 			[1] = {
@@ -69,3 +69,4 @@ coroutine.wrap(runBasicCut)()
 coroutine.wrap(runIridiumCut)()
 coroutine.wrap(runMushCut)()
 coroutine.wrap(runUpg)()
+coroutine.wrap(runRuneCut())
