@@ -38,7 +38,7 @@ function runMushCut()
 	end
 end
 function runUpg()
-	while isRunning do
+	while wait() do
 		for _, upg in ipairs({"m1", "max1", "min1", "mxp1", "rangeC", "inst4", "xp4", "m2"}) do
 			local args = {
 				[1] = {
