@@ -37,6 +37,22 @@ function runMushCut()
 		game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
 	end
 end
+function runUpg()
+	while isRunning do
+		for _, upg in ipairs({"m1", "max1", "min1", "mxp1", "rangeC", "inst4", "xp4", "m2"}) do
+			local args = {
+				[1] = {
+					["id"] = "buyUpgrade",
+					["mode"] = "max",
+					["upgradeId"] = upg
+				}
+			}
+			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+			wait(0.5)
+		end
+	end
+end
 coroutine.wrap(runBasicCut)()
 coroutine.wrap(runIridiumCut)()
 coroutine.wrap(runMushCut)()
+coroutine.wrap(runUpg)()
