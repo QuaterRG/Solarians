@@ -52,7 +52,35 @@ function runRuneCut()
 		game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
 	end
 end
+function runBasicCut()
+	while wait(0.1) do
+		local args = {
+			[1] = {
+				["id"] = "cut",
+				["identifier"] = "basic",
+				["quantity"] = 100,
+				["field"] = "jungle"
+			}
+		} 
+		game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+	end
+end
+function runRubyCut()
+	while wait(0.1) do
+		local args = {
+			[1] = {
+				["id"] = "cut",
+				["identifier"] = "ruby",
+				["quantity"] = 0.0000000000001,
+				["field"] = "jungle"
+			}
+		} 
+		game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+	end
+end
 coroutine.wrap(runBasicCut)()
 coroutine.wrap(runMushCut)()
 coroutine.wrap(runUpg)()
 coroutine.wrap(runRuneCut())
+coroutine.wrap(runBasicCut())
+coroutine.wrap(runRubyCut())
