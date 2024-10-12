@@ -1,4 +1,4 @@
-function runBasicCut()
+function runIdkCut()
 	while wait(0.1) do
 		local args = {
 			[1] = {
@@ -78,7 +78,7 @@ function runRubyCut()
 		game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
 	end
 end
-coroutine.wrap(runBasicCut)()
+coroutine.wrap(runidkCut)()
 coroutine.wrap(runMushCut)()
 coroutine.wrap(runUpg)()
 coroutine.wrap(runRuneCut())
