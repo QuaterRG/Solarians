@@ -78,7 +78,7 @@ function runRubyCut()
 		game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
 	end
 end
-coroutine.wrap(runidkCut)()
+coroutine.wrap(runIdkCut)()
 coroutine.wrap(runMushCut)()
 coroutine.wrap(runUpg)()
 coroutine.wrap(runRuneCut())
