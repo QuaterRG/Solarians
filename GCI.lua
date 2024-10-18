@@ -1,4 +1,4 @@
-function runIdkCut()
+function Idk()
   while wait(0.1) do
     local args = {
       [1] = {
@@ -11,7 +11,7 @@ function runIdkCut()
     game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
   end
 end
-function runMushCut()
+function Mush()
   while wait(0.2) do
     local args = {
       [1] = {
@@ -24,9 +24,9 @@ function runMushCut()
     game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
   end
 end
-function runUpg()
+function Upg()
   while wait() do
-    for _, upg in ipairs({"i1", "xp3i", "g6", "xp1i", "m5", "xp2i", "i2", "rf3", "xp1i2", "xp3i2"}) do
+    for _, upg in ipairs({"2_ctCT", "2_ctDXP", "2_ctWA", "2_ctV", "2_wCT", "2_wDXP", "2_wCT2", "2_wDXP2", "2_wCT3", "2_wDXP3"}) do
       local args = {
         [1] = {
           ["id"] = "buyUpgrade",
@@ -39,7 +39,7 @@ function runUpg()
     end
   end
 end
-function runRuneCut()
+function Rune()
   while wait(0.05) do
     local args = {
       [1] = {
@@ -52,7 +52,7 @@ function runRuneCut()
     game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
   end
 end
-function runBasicCut()
+function Basic()
   while wait(0.1) do
     local args = {
       [1] = {
@@ -65,7 +65,7 @@ function runBasicCut()
     game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
   end
 end
-function runRubyCut()
+function Ruby()
   while wait(0.1) do
     local args = {
       [1] = {
@@ -78,9 +78,37 @@ function runRubyCut()
     game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
   end
 end
-coroutine.wrap(runIdkCut)()
-coroutine.wrap(runMushCut)()
-coroutine.wrap(runUpg)()
-coroutine.wrap(runRuneCut)()
-coroutine.wrap(runBasicCut)()
-coroutine.wrap(runRubyCut)()
+function Doom()
+  while wait(0.1) do
+    local args = {
+      [1] = {
+        ["id"] = "cut",
+        ["identifier"] = "platinum",
+        ["quantity"] = 0.0000000000001,
+        ["field"] = "desert"
+      }
+    } 
+    game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+  end
+end
+function Des()
+  while wait(0.1) do
+    local args = {
+      [1] = {
+        ["id"] = "cut",
+        ["identifier"] = "fractal",
+        ["quantity"] = 50,
+        ["field"] = "desert"
+      }
+    } 
+    game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+  end
+end
+coroutine.wrap(Idk)()
+coroutine.wrap(Mush)()
+coroutine.wrap(Upg)()
+coroutine.wrap(Rune)()
+coroutine.wrap(Basic)()
+coroutine.wrap(Ruby)()
+coroutine.wrap(Doom)()
+coroutine.wrap(Des)()
