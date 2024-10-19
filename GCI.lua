@@ -26,7 +26,7 @@ function Mush()
 end
 function Upg()
   while wait() do
-    for _, upg in ipairs({"2_ctCT", "2_ctDXP", "2_ctWA", "2_ctV", "2_wCT", "2_wDXP", "2_wCT2", "2_wDXP2", "2_wCT3", "2_wDXP3"}) do
+    for _, upg in ipairs({"2_wCT", "2_wDXP", "2_wCT2", "2_wDXP2", "2_wCT3", "2_wDXP3"}) do
       local args = {
         [1] = {
           ["id"] = "buyUpgrade",
