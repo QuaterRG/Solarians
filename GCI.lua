@@ -20,21 +20,19 @@ function Mush()
         ["quantity"] = 100,
         ["field"] = "cavern"
       }
-    } 
-    game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+    }  game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
   end
 end
 function Upg()
   while wait() do
-    for _, upg in ipairs({"2_wCT", "2_wDXP", "2_wCT2", "2_wDXP2", "2_wCT3", "2_wDXP3"}) do
+    for _, upg in ipairs({"2_sftap", "2_sfssp", "2_sfDXP", "2_sfVA", "2_sfUTXP", "2_sfDE", "2_sfDP", "2_sfTE"}) do
       local args = {
         [1] = {
           ["id"] = "buyUpgrade",
           ["mode"] = "max",
           ["upgradeId"] = upg
         }
-      }
-      game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+      } game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
       wait(0.5)
     end
   end
@@ -48,8 +46,7 @@ function Rune()
         ["quantity"] = 0.0000000000000001,
         ["field"] = "cavern"
       }
-    } 
-    game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+    }  game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
   end
 end
 function Basic()
@@ -104,6 +101,31 @@ function Des()
     game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
   end
 end
+function Temple()
+  while wait(0.2) do
+    local args = {
+      [1] = {
+        ["id"] = "cut",
+        ["identifier"] = "fractal",
+        ["quantity"] = 100,
+        ["field"] = "temple"
+      }
+    }  game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+  end
+end
+function Temple2()
+  while wait(0.1) do
+    local args = {
+      [1] = {
+        ["id"] = "cut",
+        ["identifier"] = "platinum",
+        ["quantity"] = 0.0000000000001,
+        ["field"] = "temple"
+      }
+    } 
+    game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+  end
+end
 coroutine.wrap(Idk)()
 coroutine.wrap(Mush)()
 coroutine.wrap(Upg)()
@@ -112,3 +134,5 @@ coroutine.wrap(Basic)()
 coroutine.wrap(Ruby)()
 coroutine.wrap(Doom)()
 coroutine.wrap(Des)()
+coroutine.wrap(Temple)()
+coroutine.wrap(Temple2)()
