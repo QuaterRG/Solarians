@@ -25,7 +25,7 @@ function Mush()
 end
 function Upg()
   while wait() do
-    for _, upg in ipairs({"2_sftap", "2_sfssp", "2_sfDXP", "2_sfVA", "2_sfUTXP", "2_sfDE", "2_sfDP", "2_sfTE"}) do
+    for _, upg in ipairs({"2_sftap", "2_sfssp", "2_sfDXP", "2_sfVA", "2_sfUTXP", "2_sfDE", "2_sfDP", "2_sfTE", "2_ssfSC", "2_ssfUTXP", "2_ssfLR", "2_ssftap", "2_ssfCO", "2_ssfsf", "2_scSSF", "2_scDXP", "2_scssp", "2_scbo", "2_scCT"}) do
       local args = {
         [1] = {
           ["id"] = "buyUpgrade",
@@ -49,14 +49,14 @@ function Rune()
     }  game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
   end
 end
-function Basic()
+function Temple3()
   while wait(0.1) do
     local args = {
       [1] = {
         ["id"] = "cut",
-        ["identifier"] = "basic",
-        ["quantity"] = 100,
-        ["field"] = "jungle"
+        ["identifier"] = "moonstone",
+        ["quantity"] = 0.0000001,
+        ["field"] = "temple"
       }
     } 
     game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
@@ -93,8 +93,8 @@ function Des()
     local args = {
       [1] = {
         ["id"] = "cut",
-        ["identifier"] = "fractal",
-        ["quantity"] = 50,
+        ["identifier"] = "moonstone",
+        ["quantity"] = 0.000000001,
         ["field"] = "desert"
       }
     } 
@@ -130,7 +130,7 @@ coroutine.wrap(Idk)()
 coroutine.wrap(Mush)()
 coroutine.wrap(Upg)()
 coroutine.wrap(Rune)()
-coroutine.wrap(Basic)()
+coroutine.wrap(Temple3)()
 coroutine.wrap(Ruby)()
 coroutine.wrap(Doom)()
 coroutine.wrap(Des)()
