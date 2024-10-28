@@ -11,13 +11,52 @@ function Idk()
     game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
   end
 end
-function Mush()
-  while wait(0.2) do
+function Idk()
+  while wait(0.1) do
     local args = {
       [1] = {
         ["id"] = "cut",
         ["identifier"] = "fractal",
-        ["quantity"] = 100,
+        ["quantity"] = 50,
+        ["field"] = "jungle"
+      }
+    } 
+    game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+  end
+end
+function Idk()
+  while wait(0.1) do
+    local args = {
+      [1] = {
+        ["id"] = "cut",
+        ["identifier"] = "ruby",
+        ["quantity"] = 0.00000001,
+        ["field"] = "jungle"
+      }
+    } 
+    game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+  end
+end
+function Idk()
+  while wait(0.1) do
+    local args = {
+      [1] = {
+        ["id"] = "cut",
+        ["identifier"] = "fractal",
+        ["quantity"] = 50,
+        ["field"] = "rift"
+      }
+    } 
+    game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+  end
+end
+function Mush()
+  while wait(0.1) do
+    local args = {
+      [1] = {
+        ["id"] = "cut",
+        ["identifier"] = "fractal",
+        ["quantity"] = 50,
         ["field"] = "cavern"
       }
     }  game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
@@ -25,7 +64,7 @@ function Mush()
 end
 function Upg()
   while wait() do
-    for _, upg in ipairs({"2_ssfSC", "2_ssfUTXP", "2_ssfLR", "2_ssftap", "2_ssfCO", "2_ssfsf", "2_scSSF", "2_scDXP", "2_scssp", "2_scbo", "2_scCT"}) do
+    for _, upg in ipairs({"2_ssfSC", "2_ssfUTXP", "2_ssfLR", "2_ssftap", "2_ssfCO", "2_ssfsf", "2_scSSF", "2_scDXP", "2_scssp", "2_scbo", "2_scCT", "2_rierie"}) do
       local args = {
         [1] = {
           ["id"] = "buyUpgrade",
@@ -38,7 +77,7 @@ function Upg()
   end
 end
 function Rune()
-  while wait(0.05) do
+  while wait(0.1) do
     local args = {
       [1] = {
         ["id"] = "cut",
