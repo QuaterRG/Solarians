@@ -11,7 +11,7 @@ function Idk()
     game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
   end
 end
-function Idk()
+function Basic()
   while wait(0.1) do
     local args = {
       [1] = {
@@ -24,7 +24,7 @@ function Idk()
     game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
   end
 end
-function Idk()
+function Ruby()
   while wait(0.1) do
     local args = {
       [1] = {
@@ -37,7 +37,7 @@ function Idk()
     game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
   end
 end
-function Idk()
+function Rift()
   while wait(0.1) do
     local args = {
       [1] = {
@@ -175,3 +175,6 @@ coroutine.wrap(Doom)()
 coroutine.wrap(Des)()
 coroutine.wrap(Temple)()
 coroutine.wrap(Temple2)()
+coroutine.wrap(Basic)()
+coroutine.wrap(Ruby)()
+coroutine.wrap(Rift)()
