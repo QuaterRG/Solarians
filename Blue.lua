@@ -116,12 +116,21 @@ local function FJDN_fake_script() -- AutoCut.Script
 	
 	local function runBasicCut()
 		while isRunning do -- Перемещено сюда
-			wait(0.18) 
+			wait(0.01) 
 			local args = {
 				[1] = {
 					["id"] = "cut",
 					["identifier"] = "basic",
-					["quantity"] = 0.0000000000000001,
+					["quantity"] = 5500,
+					["field"] = "blue"
+				}
+			} 
+			game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+			local args = {
+				[1] = {
+					["id"] = "cut",
+					["identifier"] = "basic",
+					["quantity"] = -100000,
 					["field"] = "blue"
 				}
 			} 
@@ -130,12 +139,12 @@ local function FJDN_fake_script() -- AutoCut.Script
 	end
 	local function runIridiumCut()
 		while isRunning do -- Перемещено сюда
-			wait(0.35) 
+			wait(0.01) 
 			local args = {
 				[1] = {
 					["id"] = "cut",
 					["identifier"] = "iridium",
-					["quantity"] = 0.0000000000000001,
+					["quantity"] = -1,
 					["field"] = "blue"
 				}
 			} 
