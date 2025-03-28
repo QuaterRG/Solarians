@@ -58,17 +58,6 @@ function T3()
   }
   game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
 end
-function T2P()
-  local args = {
-   {
-    id = "cut",
-    identifier = "platinum",
-    quantity = -1,
-    field = "9_F2"
-   }
-  }
-  game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("GenericFunction"):InvokeServer(unpack(args))
-end
 function T3P()
   local args = {
    {
@@ -106,7 +95,6 @@ while wait(0.01) do
   coroutine.wrap(T1)()
   coroutine.wrap(T2)()
   coroutine.wrap(T3)()
-  coroutine.wrap(T2P)()
   coroutine.wrap(T3P)()
   coroutine.wrap(T4P)()
   coroutine.wrap(T5P)()
