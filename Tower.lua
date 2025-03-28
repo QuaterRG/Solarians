@@ -58,6 +58,26 @@ function T3()
   }
   game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
 end
+function T4()
+  local args = {
+      [1] = {
+          ["id"] = "cut",
+          ["quantity"] = 1000,
+          ["identifier"] = "pw8",
+          ["field"] = "9_F4"
+      }
+  }
+  game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+  local args = {
+      [1] = {
+          ["id"] = "cut",
+          ["quantity"] = -100000,
+          ["identifier"] = "pw8",
+          ["field"] = "9_F4"
+      }
+  }
+  game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+end
 function T3P()
   local args = {
    {
