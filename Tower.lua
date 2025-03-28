@@ -1,8 +1,48 @@
+function T1()
+  local args = {
+      [1] = {
+          ["id"] = "cut",
+          ["quantity"] = 1000,
+          ["identifier"] = "pw8",
+          ["field"] = "9_F1"
+      }
+  }
+  game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+  local args = {
+      [1] = {
+          ["id"] = "cut",
+          ["quantity"] = -100000,
+          ["identifier"] = "pw8",
+          ["field"] = "9_F1"
+      }
+  }
+  game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+end
+function T2()
+  local args = {
+      [1] = {
+          ["id"] = "cut",
+          ["quantity"] = 1000,
+          ["identifier"] = "pw8",
+          ["field"] = "9_F2"
+      }
+  }
+  game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+  local args = {
+      [1] = {
+          ["id"] = "cut",
+          ["quantity"] = -100000,
+          ["identifier"] = "pw8",
+          ["field"] = "9_F2"
+      }
+  }
+  game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+end
 function T3()
   local args = {
       [1] = {
           ["id"] = "cut",
-          ["quantity"] = 100,
+          ["quantity"] = 1000,
           ["identifier"] = "pw8",
           ["field"] = "9_F3"
       }
@@ -11,7 +51,7 @@ function T3()
   local args = {
       [1] = {
           ["id"] = "cut",
-          ["quantity"] = -1,
+          ["quantity"] = -100000,
           ["identifier"] = "pw8",
           ["field"] = "9_F3"
       }
@@ -62,7 +102,9 @@ function T5P()
   }
   game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("GenericFunction"):InvokeServer(unpack(args))
 end
-while wait(0.05) do
+while wait(0.01) do
+  coroutine.wrap(T1)()
+  coroutine.wrap(T2)()
   coroutine.wrap(T3)()
   coroutine.wrap(T2P)()
   coroutine.wrap(T3P)()
