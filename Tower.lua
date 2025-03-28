@@ -1,14 +1,13 @@
 function T3()
   local args = {
-    {
-    id = "cut",
-    identifier = "pw8",
-    quantity = 100,
-    field = "9_F3"
-   }
+      [1] = {
+          ["id"] = "cut",
+          ["quantity"] = 100,
+          ["identifier"] = "pw8",
+          ["field"] = "9_F3"
+      }
   }
-  game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("GenericFunction"):InvokeServer(unpack(args))
-  end
+  game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
 end
 function T2P()
   local args = {
@@ -20,7 +19,6 @@ function T2P()
    }
   }
   game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("GenericFunction"):InvokeServer(unpack(args))
-  end
 end
 function T3P()
   local args = {
@@ -32,9 +30,9 @@ function T3P()
    }
   }
   game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("GenericFunction"):InvokeServer(unpack(args))
-  end
 end
 while wait(0.1) do
   coroutine.wrap(T3)()
   coroutine.wrap(T2P)()
   coroutine.wrap(T3P)()
+end
