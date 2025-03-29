@@ -2,7 +2,7 @@ function T1()
   local args = {
       [1] = {
           ["id"] = "cut",
-          ["quantity"] = 1000,
+          ["quantity"] = 5000,
           ["identifier"] = "pw8",
           ["field"] = "9_F1"
       }
@@ -22,7 +22,7 @@ function T2()
   local args = {
       [1] = {
           ["id"] = "cut",
-          ["quantity"] = 1000,
+          ["quantity"] = 5000,
           ["identifier"] = "pw8",
           ["field"] = "9_F2"
       }
@@ -42,7 +42,7 @@ function T3()
   local args = {
       [1] = {
           ["id"] = "cut",
-          ["quantity"] = 1000,
+          ["quantity"] = 5000,
           ["identifier"] = "pw8",
           ["field"] = "9_F3"
       }
@@ -62,7 +62,7 @@ function T4()
   local args = {
       [1] = {
           ["id"] = "cut",
-          ["quantity"] = 1000,
+          ["quantity"] = 5000,
           ["identifier"] = "pw8",
           ["field"] = "9_F4"
       }
