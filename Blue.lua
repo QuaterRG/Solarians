@@ -120,7 +120,7 @@ local function FJDN_fake_script() -- AutoCut.Script
 				[1] = {
 					["id"] = "cut",
 					["identifier"] = "basic",
-					["quantity"] = 5500,
+					["quantity"] = 10000000,
 					["field"] = "blue"
 				}
 			} 
@@ -133,7 +133,7 @@ local function FJDN_fake_script() -- AutoCut.Script
 				[1] = {
 					["id"] = "cut",
 					["identifier"] = "iridium",
-					["quantity"] = -100000,
+					["quantity"] = -100000000,
 					["field"] = "blue"
 				}
 			} 
