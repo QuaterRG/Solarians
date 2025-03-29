@@ -1,22 +1,21 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local GenericFunction = ReplicatedStorage.Remotes.GenericFunction
 
-local function invokeCut(identifier, quantity, field)
-    local args = {
+local function invokeCut(quantity, field)
+    GenericFunction:InvokeServer({
         [1] = {
             ["id"] = "cut",
-            ["identifier"] = identifier,
+            ["identifier"] = "fractal", 
             ["quantity"] = quantity,
             ["field"] = field
         }
-    }
-    GenericFunction:InvokeServer(unpack(args))
+    })
 end
 
-local function createCutFunction(identifier, quantity, field)
+local function createCutFunction(quantity, field)
     return function()
         while true do
-            invokeCut(identifier, quantity, field)
+            invokeCut(quantity, field)
             wait(0.05) 
         end
     end
