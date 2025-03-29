@@ -6,58 +6,27 @@ local function invokeCut(identifier, quantity, field)
     local args = {
         [1] = {
             ["id"] = "cut",
-            ["identifier"] = identifier,
+            ["identifier"] = "pw8",
             ["quantity"] = quantity,
             ["field"] = field
         }
     }
     GenericFunction:InvokeServer(unpack(args))
 end
-
-local function Upg()
-    while wait(0.5) do
-        for _, upg in ipairs({
-            "2_ssfSC", "2_ssfUTXP", "2_ssfLR", "2_ssftap", "2_ssfCO",
-            "2_ssfsf", "2_scSSF", "2_scDXP", "2_scssp", "2_scbo",
-            "2_scCT", "2_rierie"
-        }) do
-            local args = {
-                [1] = {
-                    ["id"] = "buyUpgrade",
-                    ["mode"] = "max",
-                    ["upgradeId"] = upg
-                }
-            }
-            GenericEvent:FireServer(unpack(args))
-        end
-    end
-end
-
-local function createCutFunction(identifier, quantity, field)
+local function createCutFunction(quantity, field)
     return function()
         while true do
-            invokeCut(identifier, quantity, field)
+            invokeCut(quantity, field)
             wait(0.05) 
         end
     end
 end
 
-coroutine.wrap(createCutFunction("fractal", 1000000000000, "intersection"))()
-coroutine.wrap(createCutFunction("fractal", -10000000000000, "intersection"))()
-coroutine.wrap(createCutFunction("fractal", 1000000000000, "jungle"))()
-coroutine.wrap(createCutFunction("ruby", -10000000000000, "jungle"))()
-coroutine.wrap(createCutFunction("fractal", 1000000000000, "rift"))()
-coroutine.wrap(createCutFunction("fractal", -10000000000000, "rift"))()
-coroutine.wrap(createCutFunction("fractal", 1000000000000, "cavern"))()
-coroutine.wrap(Upg)() 
-coroutine.wrap(createCutFunction("rune", -10000000000000, "cavern"))()
-coroutine.wrap(createCutFunction("fractal", 10000000000000, "desert"))()
-coroutine.wrap(createCutFunction("platinum", -10000000000000, "desert"))()
-coroutine.wrap(createCutFunction("moonstone", -10000000000000, "desert"))()
-coroutine.wrap(createCutFunction("fractal", 1000000000000, "temple"))()
-coroutine.wrap(createCutFunction("platinum", -10000000000000, "temple"))()
-coroutine.wrap(createCutFunction("moonstone", -10000000000000, "temple"))()
-coroutine.wrap(createCutFunction("pw8", 1000000000000, "cactus"))()
-coroutine.wrap(createCutFunction("platinum", -10000000000000, "cactus"))()
-coroutine.wrap(createCutFunction("fractal", 1000000000000, "understand"))()
-coroutine.wrap(createCutFunction("fractal", -10000000000000, "understand"))()
+coroutine.wrap(createCutFunction(1000000000000, "main"))()
+coroutine.wrap(createCutFunction(-10000000000000, "main"))()
+coroutine.wrap(createCutFunction(1000000000000, "anti"))()
+coroutine.wrap(createCutFunction(-10000000000000, "anti"))()
+coroutine.wrap(createCutFunction(1000000000000, "un"))()
+coroutine.wrap(createCutFunction(-10000000000000, "un"))()
+coroutine.wrap(createCutFunction(1000000000000, "planet"))()
+coroutine.wrap(createCutFunction(-10000000000000, "planet"))()
