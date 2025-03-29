@@ -5,7 +5,7 @@ local function invokeCut(quantity, field)
     GenericFunction:InvokeServer({
         [1] = {
             ["id"] = "cut",
-            ["identifier"] = "fractal", 
+            ["identifier"] = "pw8", 
             ["quantity"] = quantity,
             ["field"] = field
         }
