@@ -2,7 +2,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local GenericFunction = ReplicatedStorage.Remotes.GenericFunction
 local GenericEvent = ReplicatedStorage.Remotes.GenericEvent
 
-local function invokeCut(identifier, quantity, field)
+local function invokeCut(quantity, field)
     local args = {
         [1] = {
             ["id"] = "cut",
