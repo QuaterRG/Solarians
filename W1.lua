@@ -4,6 +4,7 @@ local GenericFunction = ReplicatedStorage.Remotes.GenericFunction
 local function invokeCut(quantity, field)
     local args = {
         [1] = {
+            ["id"] = "cut",
             ["identifier"] = "pw8", 
             ["quantity"] = quantity,
             ["field"] = field
