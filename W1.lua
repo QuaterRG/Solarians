@@ -8,7 +8,8 @@ local function invokeCut(quantity, field)
             ["quantity"] = quantity,
             ["field"] = field
         }
-    })
+    }
+    GenericFunction:InvokeServer(unpack(args))
 end
 
 local function createCutFunction(quantity, field)
