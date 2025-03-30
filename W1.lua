@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function UPBX_fake_script() -- OpenMenu.Script 
+local function PPWM_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function UPBX_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(UPBX_fake_script)()
-local function ZGVKQTY_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(PPWM_fake_script)()
+local function JASIOT_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function ZGVKQTY_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(ZGVKQTY_fake_script)()
-local function ZXQFXL_fake_script() -- AutoShard.Script 
+coroutine.wrap(JASIOT_fake_script)()
+local function PCGV_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -289,7 +289,7 @@ local function ZXQFXL_fake_script() -- AutoShard.Script
 					}
 				}
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-			wait(20)
+				wait(20)
 			end
 		end
 	end
@@ -304,8 +304,8 @@ local function ZXQFXL_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(ZXQFXL_fake_script)()
-local function CZGWVEL_fake_script() -- AutoSing.Script 
+coroutine.wrap(PCGV_fake_script)()
+local function JREAIXN_fake_script() -- AutoSing.Script 
 	local script = Instance.new('Script', AutoSing)
 
 	local Button = script.Parent
@@ -331,8 +331,8 @@ local function CZGWVEL_fake_script() -- AutoSing.Script
 		startLoop()
 	end)
 end
-coroutine.wrap(CZGWVEL_fake_script)()
-local function CWYRMRL_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(JREAIXN_fake_script)()
+local function TPABUHT_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local isRunning = false
@@ -376,6 +376,10 @@ local function CWYRMRL_fake_script() -- Autoupgrade.Script
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 				wait(0.2)
 			end
+			local args = {
+				[1] = "subparnova"
+			}
+			game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
 		wait(5)
 		end
 	end
@@ -390,8 +394,8 @@ local function CWYRMRL_fake_script() -- Autoupgrade.Script
 		end
 	end)
 end
-coroutine.wrap(CWYRMRL_fake_script)()
-local function LZPHXQD_fake_script() -- AutoCentr.Script 
+coroutine.wrap(TPABUHT_fake_script)()
+local function MHCFNA_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -411,7 +415,7 @@ local function LZPHXQD_fake_script() -- AutoCentr.Script
 					}
 				}
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-				wait(0.2)
+				wait(1.5)
 			end
 		end
 		Button.BackgroundColor3 = RedColor
@@ -428,10 +432,12 @@ local function LZPHXQD_fake_script() -- AutoCentr.Script
 		end
 	end)
 end
-coroutine.wrap(LZPHXQD_fake_script)()
-local function QCLVANR_fake_script() -- AutoCut.Script 
+coroutine.wrap(MHCFNA_fake_script)()
+local function ABHPVV_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
+	local script = Instance.new('Script', AutoCut)
+	
 	local isRunning = false
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
@@ -462,13 +468,10 @@ local function QCLVANR_fake_script() -- AutoCut.Script
 	end
 	
 	local function startLoop()
-		-- Создаем корутины для каждой функции
 		for _, field in ipairs({"main", "anti", "un", "planet"}) do
 			table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, field)))
 			table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, field)))
 		end
-
-		-- Запускаем все корутины
 		for _, co in ipairs(activeCoroutines) do
 			coroutine.resume(co)
 		end
@@ -485,4 +488,4 @@ local function QCLVANR_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(QCLVANR_fake_script)()
+coroutine.wrap(ABHPVV_fake_script)()
