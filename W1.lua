@@ -302,7 +302,7 @@ local function FWKVX_fake_script() -- AutoSing.Script
 	local RedColor = Color3.new(255, 0, 0)
 	
 	local function startLoop()
-		for _, scId in ipairs({"s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"}) do
+		for _, scId in ipairs({"sol", "s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"}) do
 			local args = {
 				[1] = {
 					["id"] = "buySC",
