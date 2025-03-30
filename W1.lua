@@ -250,6 +250,10 @@ local function KBAX_fake_script() -- AutoShard.Script
 	
 	local function startLoop()
 		while isRunning do
+			local args = {
+    				[1] = "activateSynthesis"
+			}
+			game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
 			for i = 1,2 do
 				local args = {
 					[1] = {
