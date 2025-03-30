@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function PPWM_fake_script() -- OpenMenu.Script 
+local function XVDEV_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function PPWM_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(PPWM_fake_script)()
-local function JASIOT_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(XVDEV_fake_script)()
+local function YBDFFUZ_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function JASIOT_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(JASIOT_fake_script)()
-local function PCGV_fake_script() -- AutoShard.Script 
+coroutine.wrap(YBDFFUZ_fake_script)()
+local function QBHF_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -261,35 +261,21 @@ local function PCGV_fake_script() -- AutoShard.Script
 				[1] = "activateSynthesis"
 			}
 			game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
-			for i = 1,2 do
-				wait(0.2)
-				local args = {
-					[1] = {
-						["id"] = "synthesis",
-						["selected"] = "cs",
-						["syn"] = 1
+			for l = 1,2 do
+				for i = 1,3 do
+					wait(0.2)
+					local args = {
+						[1] = {
+							["id"] = "synthesis",
+							["selected"] = "cs",
+							["syn"] = i
+						}
 					}
-				}
-				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-				wait(0.2)
-				local args = {
-					[1] = {
-						["id"] = "synthesis",
-						["selected"] = "cs",
-						["syn"] = 2
-					}
-				}
-				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-				wait(0.2)
-				local args = {
-					[1] = {
-						["id"] = "synthesis",
-						["selected"] = "cs",
-						["syn"] = 3
-					}
-				}
-				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-				wait(20)
+					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+				end
+				if l == 1 then
+					wait(20)
+				end
 			end
 		end
 	end
@@ -304,8 +290,8 @@ local function PCGV_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(PCGV_fake_script)()
-local function JREAIXN_fake_script() -- AutoSing.Script 
+coroutine.wrap(QBHF_fake_script)()
+local function LQCA_fake_script() -- AutoSing.Script 
 	local script = Instance.new('Script', AutoSing)
 
 	local Button = script.Parent
@@ -331,8 +317,8 @@ local function JREAIXN_fake_script() -- AutoSing.Script
 		startLoop()
 	end)
 end
-coroutine.wrap(JREAIXN_fake_script)()
-local function TPABUHT_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(LQCA_fake_script)()
+local function NZXHLVG_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local isRunning = false
@@ -376,10 +362,6 @@ local function TPABUHT_fake_script() -- Autoupgrade.Script
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 				wait(0.2)
 			end
-			local args = {
-				[1] = "subparnova"
-			}
-			game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
 		wait(5)
 		end
 	end
@@ -394,8 +376,8 @@ local function TPABUHT_fake_script() -- Autoupgrade.Script
 		end
 	end)
 end
-coroutine.wrap(TPABUHT_fake_script)()
-local function MHCFNA_fake_script() -- AutoCentr.Script 
+coroutine.wrap(NZXHLVG_fake_script)()
+local function SJUZV_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -415,7 +397,11 @@ local function MHCFNA_fake_script() -- AutoCentr.Script
 					}
 				}
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-				wait(1.5)
+				local args = {
+					[1] = "subparnova"
+				}
+				game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
+				wait(2)
 			end
 		end
 		Button.BackgroundColor3 = RedColor
@@ -432,8 +418,8 @@ local function MHCFNA_fake_script() -- AutoCentr.Script
 		end
 	end)
 end
-coroutine.wrap(MHCFNA_fake_script)()
-local function ABHPVV_fake_script() -- AutoCut.Script 
+coroutine.wrap(SJUZV_fake_script)()
+local function GANKR_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local script = Instance.new('Script', AutoCut)
@@ -469,8 +455,8 @@ local function ABHPVV_fake_script() -- AutoCut.Script
 	
 	local function startLoop()
 		for _, field in ipairs({"main", "anti", "un", "planet"}) do
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, field)))
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, field)))
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000000, field)))
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000000, field)))
 		end
 		for _, co in ipairs(activeCoroutines) do
 			coroutine.resume(co)
@@ -488,4 +474,4 @@ local function ABHPVV_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(ABHPVV_fake_script)()
+coroutine.wrap(GANKR_fake_script)()
