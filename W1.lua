@@ -1,41 +1,9 @@
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local GenericFunction = ReplicatedStorage.Remotes.GenericFunction
-
-local function invokeCut(quantity, field)
-    local args = {
-        [1] = {
-            ["id"] = "cut",
-            ["identifier"] = "pw8", 
-            ["quantity"] = quantity,
-            ["field"] = field
-        }
-    }
-    GenericFunction:InvokeServer(unpack(args))
-end
-
-local function createCutFunction(quantity, field)
-    return function()
-        while true do
-            invokeCut(quantity, field)
-            wait(0.05) 
-        end
-    end
-end
-
-coroutine.wrap(createCutFunction(1000000000000000, "main"))()
-coroutine.wrap(createCutFunction(-10000000000000000, "main"))()
-coroutine.wrap(createCutFunction(1000000000000000, "anti"))()
-coroutine.wrap(createCutFunction(-10000000000000000, "anti"))()
-coroutine.wrap(createCutFunction(1000000000000000, "un"))()
-coroutine.wrap(createCutFunction(-10000000000000000, "un"))()
-coroutine.wrap(createCutFunction(1000000000000000, "planet"))()
-coroutine.wrap(createCutFunction(-10000000000000000, "planet"))()
 -- Gui to Lua
 -- Version: 3.2
 
 -- Instances:
 
-local ScreenGui = Instance.new("ScreenGui")
+local Solarians = Instance.new("ScreenGui")
 local OpenMenu = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
 local UIGradient = Instance.new("UIGradient")
@@ -52,14 +20,19 @@ local Autoupgrade = Instance.new("TextButton")
 local UICorner_5 = Instance.new("UICorner")
 local UICorner_6 = Instance.new("UICorner")
 local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+local AutoCentr = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local AutoCut = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
 
 --Properties:
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Solarians.Name = "Solarians"
+Solarians.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Solarians.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 OpenMenu.Name = "OpenMenu"
-OpenMenu.Parent = ScreenGui
+OpenMenu.Parent = Solarians
 OpenMenu.BackgroundColor3 = Color3.fromRGB(207, 255, 231)
 OpenMenu.BorderColor3 = Color3.fromRGB(0, 0, 0)
 OpenMenu.BorderSizePixel = 2
@@ -84,7 +57,7 @@ UIAspectRatioConstraint.Parent = OpenMenu
 UIAspectRatioConstraint.AspectRatio = 2.160
 
 Menu.Name = "Menu"
-Menu.Parent = ScreenGui
+Menu.Parent = Solarians
 Menu.BackgroundColor3 = Color3.fromRGB(255, 200, 0)
 Menu.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Menu.BorderSizePixel = 0
@@ -170,14 +143,48 @@ UICorner_6.Parent = Menu
 UIAspectRatioConstraint_2.Parent = Menu
 UIAspectRatioConstraint_2.AspectRatio = 1.360
 
+AutoCentr.Name = "AutoCentr"
+AutoCentr.Parent = Menu
+AutoCentr.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AutoCentr.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoCentr.BorderSizePixel = 0
+AutoCentr.Position = UDim2.new(0.683333278, 0, 0.548432469, 0)
+AutoCentr.Size = UDim2.new(0.266666681, 0, 0.382104486, 0)
+AutoCentr.Font = Enum.Font.SourceSans
+AutoCentr.Text = "Centr"
+AutoCentr.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoCentr.TextScaled = true
+AutoCentr.TextSize = 40.000
+AutoCentr.TextWrapped = true
+
+UICorner_7.CornerRadius = UDim.new(0, 70)
+UICorner_7.Parent = AutoCentr
+
+AutoCut.Name = "AutoCut"
+AutoCut.Parent = Menu
+AutoCut.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AutoCut.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoCut.BorderSizePixel = 0
+AutoCut.Position = UDim2.new(0.366666943, 0, 0.548432469, 0)
+AutoCut.Size = UDim2.new(0.266666681, 0, 0.382104486, 0)
+AutoCut.Font = Enum.Font.SourceSans
+AutoCut.Text = "AutoCut"
+AutoCut.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoCut.TextScaled = true
+AutoCut.TextSize = 40.000
+AutoCut.TextWrapped = true
+
+UICorner_8.CornerRadius = UDim.new(0, 70)
+UICorner_8.Parent = AutoCut
+
 -- Scripts:
 
-local function QOIES_fake_script() -- OpenMenu.Script 
+local function IOLSRTT_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
 	Menu = script.Parent.Parent.Menu
-	function onClick()
+	local function onClick()
 		if Menu.Visible == false then
 			Menu.Visible = true
 			Button.Text = "Close"
@@ -188,8 +195,8 @@ local function QOIES_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(QOIES_fake_script)()
-local function YAJNKS_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(IOLSRTT_fake_script)()
+local function PDST_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -239,8 +246,8 @@ local function YAJNKS_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(YAJNKS_fake_script)()
-local function KBAX_fake_script() -- AutoShard.Script 
+coroutine.wrap(PDST_fake_script)()
+local function INWJYRT_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -251,10 +258,11 @@ local function KBAX_fake_script() -- AutoShard.Script
 	local function startLoop()
 		while isRunning do
 			local args = {
-    				[1] = "activateSynthesis"
+				[1] = "activateSynthesis"
 			}
 			game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
 			for i = 1,2 do
+				wait(0.2)
 				local args = {
 					[1] = {
 						["id"] = "synthesis",
@@ -281,7 +289,6 @@ local function KBAX_fake_script() -- AutoShard.Script
 					}
 				}
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-				wait(0.2)
 			end
 			wait(20)
 		end
@@ -297,8 +304,8 @@ local function KBAX_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(KBAX_fake_script)()
-local function FWKVX_fake_script() -- AutoSing.Script 
+coroutine.wrap(INWJYRT_fake_script)()
+local function BDKI_fake_script() -- AutoSing.Script 
 	local script = Instance.new('Script', AutoSing)
 
 	local Button = script.Parent
@@ -324,8 +331,8 @@ local function FWKVX_fake_script() -- AutoSing.Script
 		startLoop()
 	end)
 end
-coroutine.wrap(FWKVX_fake_script)()
-local function HLNEQ_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(BDKI_fake_script)()
+local function FDAURF_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local isRunning = false
@@ -383,4 +390,93 @@ local function HLNEQ_fake_script() -- Autoupgrade.Script
 		end
 	end)
 end
-coroutine.wrap(HLNEQ_fake_script)()
+coroutine.wrap(FDAURF_fake_script)()
+local function PZHWUA_fake_script() -- AutoCentr.Script 
+	local script = Instance.new('Script', AutoCentr)
+
+	local Button = script.Parent
+	local GreenColor = Color3.new(0, 255, 0)
+	local RedColor = Color3.new(255, 0, 0)
+	
+	local function startLoop()
+		for _, ceId in ipairs({"placeholder"}) do
+			local args = {
+				[1] = {
+					["id"] = "centralize",
+					["cent"] = ceId
+				}
+			}
+			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+			wait(0.2)
+		end
+		Button.BackgroundColor3 = RedColor
+	end
+	
+	Button.MouseButton1Click:Connect(function()
+		Button.BackgroundColor3 = GreenColor
+		startLoop()
+	end)
+end
+coroutine.wrap(PZHWUA_fake_script)()
+local function CQZRMO_fake_script() -- AutoCut.Script 
+	local script = Instance.new('Script', AutoCut)
+
+	local isRunning = false
+	local Button = script.Parent
+	local GreenColor = Color3.new(0, 1, 0) -- Используем значения от 0 до 1 для Color3
+	local RedColor = Color3.new(1, 0, 0)
+	local activeCoroutines = {}
+	
+	local function invokeCut(quantity, field)
+		local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local GenericFunction = ReplicatedStorage.Remotes.GenericFunction
+	
+		local args = {
+			[1] = {
+				["id"] = "cut",
+				["identifier"] = "pw8", 
+				["quantity"] = quantity,
+				["field"] = field
+			}
+		}
+		GenericFunction:InvokeServer(unpack(args))
+	end
+	
+	local function createCutFunction(quantity, field)
+		return function()
+			while isRunning do
+				invokeCut(quantity, field)
+				wait(0.05) 
+			end
+		end
+	end
+	
+	local function startLoop()
+		-- Запускаем корутины для каждого поля
+		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(1000000000000000, "main"))())
+		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(-10000000000000000, "main"))())
+		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(1000000000000000, "anti"))())
+		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(-10000000000000000, "anti"))())
+		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(1000000000000000, "un"))())
+		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(-10000000000000000, "un"))())
+		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(1000000000000000, "planet"))())
+		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(-10000000000000000, "planet"))())
+	end
+	
+	Button.MouseButton1Click:Connect(function()
+		isRunning = not isRunning
+		if isRunning then
+			Button.BackgroundColor3 = GreenColor
+			startLoop()
+		else
+			Button.BackgroundColor3 = RedColor
+			for _, co in ipairs(activeCoroutines) do
+				if co then
+					coroutine.resume(co)
+				end
+			end
+			activeCoroutines = {}
+		end
+	end)
+end
+coroutine.wrap(CQZRMO_fake_script)()
