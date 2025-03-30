@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function IOLSRTT_fake_script() -- OpenMenu.Script 
+local function HKFG_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function IOLSRTT_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(IOLSRTT_fake_script)()
-local function PDST_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(HKFG_fake_script)()
+local function RQFETJS_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function PDST_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(PDST_fake_script)()
-local function INWJYRT_fake_script() -- AutoShard.Script 
+coroutine.wrap(RQFETJS_fake_script)()
+local function OTMNZXC_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -275,7 +275,7 @@ local function INWJYRT_fake_script() -- AutoShard.Script
 				local args = {
 					[1] = {
 						["id"] = "synthesis",
-						["selected"] = "fs",
+						["selected"] = "cs",
 						["syn"] = 2
 					}
 				}
@@ -284,7 +284,7 @@ local function INWJYRT_fake_script() -- AutoShard.Script
 				local args = {
 					[1] = {
 						["id"] = "synthesis",
-						["selected"] = "gb",
+						["selected"] = "cs",
 						["syn"] = 3
 					}
 				}
@@ -304,8 +304,8 @@ local function INWJYRT_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(INWJYRT_fake_script)()
-local function BDKI_fake_script() -- AutoSing.Script 
+coroutine.wrap(OTMNZXC_fake_script)()
+local function CMJU_fake_script() -- AutoSing.Script 
 	local script = Instance.new('Script', AutoSing)
 
 	local Button = script.Parent
@@ -331,8 +331,8 @@ local function BDKI_fake_script() -- AutoSing.Script
 		startLoop()
 	end)
 end
-coroutine.wrap(BDKI_fake_script)()
-local function FDAURF_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(CMJU_fake_script)()
+local function OVDA_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local isRunning = false
@@ -390,96 +390,114 @@ local function FDAURF_fake_script() -- Autoupgrade.Script
 		end
 	end)
 end
-coroutine.wrap(FDAURF_fake_script)()
-local function PZHWUA_fake_script() -- AutoCentr.Script 
+coroutine.wrap(OVDA_fake_script)()
+local function MWTQNZ_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
-	local GreenColor = Color3.new(0, 255, 0)
-	local RedColor = Color3.new(255, 0, 0)
-	
-	local function startLoop()
-		for _, ceId in ipairs({"placeholder"}) do
-			local args = {
-				[1] = {
-					["id"] = "centralize",
-					["cent"] = ceId
-				}
-			}
-			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-			wait(0.2)
-		end
-		Button.BackgroundColor3 = RedColor
-	end
-	
-	Button.MouseButton1Click:Connect(function()
-		Button.BackgroundColor3 = GreenColor
-		startLoop()
-	end)
-end
-coroutine.wrap(PZHWUA_fake_script)()
-local function CQZRMO_fake_script()
-	local script = Instance.new('Script', AutoCut)
-	local isRunning = false
-	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
-	local activeCoroutines = {}
-	local function invokeCut(quantity, field)
-		local ReplicatedStorage = game:GetService("ReplicatedStorage")
-		local GenericFunction = ReplicatedStorage.Remotes.GenericFunction
 	
-		local args = {
-			[1] = {
-				["id"] = "cut",
-				["identifier"] = "pw8", 
-				["quantity"] = quantity,
-				["field"] = field
-			}
-		}
-		GenericFunction:InvokeServer(unpack(args))
-	end
-	
-	local function createCutFunction(quantity, field)
-		return function()
-			while isRunning do
-				invokeCut(quantity, field)
-				wait(0.05) 
-			end
-		end
-	end
+	local isRunning = false
+	local loopCoroutine
 	
 	local function startLoop()
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "main")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "main")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "anti")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "anti")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "un")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "un")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "planet")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "planet")))
-		for _, co in ipairs(activeCoroutines) do
-			coroutine.resume(co)
+		while isRunning do
+			for _, ceId in ipairs({"pp", "crystals", "steel", "rocketfuel", "charge", "agrass", "ap", "oil", "platinum", "fun", "stars", "sfrgt", "darkMatter", "momentum", "moonstone", "ugrass", "np", "clouds", "darkFruits", "rings", "planetarium", "astro", "measure", "planets", "arcs", "lines", "obs", "res", "dcharge", "stardust", "perks2", "perks"}) do
+				local args = {
+					[1] = {
+						["id"] = "centralize",
+						["cent"] = ceId
+					}
+				}
+				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+				wait(0.2)
+			end
 		end
+		Button.BackgroundColor3 = RedColor
 	end
 	
 	Button.MouseButton1Click:Connect(function()
 		isRunning = not isRunning
 		if isRunning then
 			Button.BackgroundColor3 = GreenColor
-			startLoop()
+			loopCoroutine = coroutine.create(startLoop)
+			coroutine.resume(loopCoroutine)
 		else
 			Button.BackgroundColor3 = RedColor
-			activeCoroutines = {}
 		end
 	end)
+end
+coroutine.wrap(MWTQNZ_fake_script)()
+local function VKHRWV_fake_script() -- AutoCut.Script 
+	local script = Instance.new('Script', AutoCut)
 
-	while true do
-		for _, co in ipairs(activeCoroutines) do
-			if coroutine.status(co) ~= "dead" then
+	local function CQZRMO_fake_script()
+		local script = Instance.new('Script', AutoCut)
+	
+		local isRunning = false
+		local Button = script.Parent
+		local GreenColor = Color3.new(0, 1, 0)
+		local RedColor = Color3.new(1, 0, 0)
+		local activeCoroutines = {}
+	
+		local function invokeCut(quantity, field)
+			local ReplicatedStorage = game:GetService("ReplicatedStorage")
+			local GenericFunction = ReplicatedStorage.Remotes.GenericFunction
+	
+			local args = {
+				[1] = {
+					["id"] = "cut",
+					["identifier"] = "pw8", 
+					["quantity"] = quantity,
+					["field"] = field
+				}
+			}
+			GenericFunction:InvokeServer(unpack(args))
+		end
+	
+		local function createCutFunction(quantity, field)
+			return function()
+				while isRunning do
+					invokeCut(quantity, field)
+					wait(0.05) 
+				end
+			end
+		end
+	
+		local function startLoop()
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "main")))
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "main")))
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "anti")))
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "anti")))
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "un")))
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "un")))
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "planet")))
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "planet")))
+	
+			for _, co in ipairs(activeCoroutines) do
 				coroutine.resume(co)
+			end
+		end
+	
+		Button.MouseButton1Click:Connect(function()
+			isRunning = not isRunning
+			if isRunning then
+				Button.BackgroundColor3 = GreenColor
+				startLoop()
+			else
+				Button.BackgroundColor3 = RedColor
+				activeCoroutines = {}
+			end
+		end)
+	
+		while true do
+			for _, co in ipairs(activeCoroutines) do
+				if coroutine.status(co) ~= "dead" then
+					coroutine.resume(co)
+				end
 			end
 		end
 	end
 end
-coroutine.wrap(CQZRMO_fake_script)()
+coroutine.wrap(VKHRWV_fake_script)()
