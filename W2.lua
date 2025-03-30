@@ -16,11 +16,7 @@ end
 
 local function Upg()
     while wait(0.5) do
-        for _, upg in ipairs({
-            "2_ssfSC", "2_ssfUTXP", "2_ssfLR", "2_ssftap", "2_ssfCO",
-            "2_ssfsf", "2_scSSF", "2_scDXP", "2_scssp", "2_scbo",
-            "2_scCT", "2_rierie"
-        }) do
+        for _, upg in ipairs({"2_ssfSC", "2_ssfUTXP", "2_ssfLR", "2_ssftap", "2_ssfCO", "2_ssfsf", "2_ssfTC", "2_ssfME", "2_scSSF", "2_scDXP", "2_scssp", "2_scbo", "2_scCT", "2_scCTXP", "2_scTE"}) do
             local args = {
                 [1] = {
                     ["id"] = "buyUpgrade",
