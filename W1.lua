@@ -420,13 +420,11 @@ end
 coroutine.wrap(PZHWUA_fake_script)()
 local function CQZRMO_fake_script()
 	local script = Instance.new('Script', AutoCut)
-
 	local isRunning = false
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
 	local activeCoroutines = {}
-	
 	local function invokeCut(quantity, field)
 		local ReplicatedStorage = game:GetService("ReplicatedStorage")
 		local GenericFunction = ReplicatedStorage.Remotes.GenericFunction
@@ -472,9 +470,16 @@ local function CQZRMO_fake_script()
 			startLoop()
 		else
 			Button.BackgroundColor3 = RedColor
-			-- Останавливаем все корутины
 			activeCoroutines = {}
 		end
 	end)
+
+	while true do
+		for _, co in ipairs(activeCoroutines) do
+			if coroutine.status(co) ~= "dead" then
+				coroutine.resume(co)
+			end
+		end
+	end
 end
 coroutine.wrap(CQZRMO_fake_script)()
