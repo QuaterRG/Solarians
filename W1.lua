@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function HKFG_fake_script() -- OpenMenu.Script 
+local function UPBX_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function HKFG_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(HKFG_fake_script)()
-local function RQFETJS_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(UPBX_fake_script)()
+local function ZGVKQTY_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function RQFETJS_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(RQFETJS_fake_script)()
-local function OTMNZXC_fake_script() -- AutoShard.Script 
+coroutine.wrap(ZGVKQTY_fake_script)()
+local function ZXQFXL_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -304,8 +304,8 @@ local function OTMNZXC_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(OTMNZXC_fake_script)()
-local function CMJU_fake_script() -- AutoSing.Script 
+coroutine.wrap(ZXQFXL_fake_script)()
+local function CZGWVEL_fake_script() -- AutoSing.Script 
 	local script = Instance.new('Script', AutoSing)
 
 	local Button = script.Parent
@@ -331,8 +331,8 @@ local function CMJU_fake_script() -- AutoSing.Script
 		startLoop()
 	end)
 end
-coroutine.wrap(CMJU_fake_script)()
-local function OVDA_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(CZGWVEL_fake_script)()
+local function CWYRMRL_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local isRunning = false
@@ -390,8 +390,8 @@ local function OVDA_fake_script() -- Autoupgrade.Script
 		end
 	end)
 end
-coroutine.wrap(OVDA_fake_script)()
-local function MWTQNZ_fake_script() -- AutoCentr.Script 
+coroutine.wrap(CWYRMRL_fake_script)()
+local function LZPHXQD_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -428,76 +428,72 @@ local function MWTQNZ_fake_script() -- AutoCentr.Script
 		end
 	end)
 end
-coroutine.wrap(MWTQNZ_fake_script)()
-local function VKHRWV_fake_script() -- AutoCut.Script 
+coroutine.wrap(LZPHXQD_fake_script)()
+local function QCLVANR_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
-	local function CQZRMO_fake_script()
-		local script = Instance.new('Script', AutoCut)
+	local script = Instance.new('Script', AutoCut)
 	
-		local isRunning = false
-		local Button = script.Parent
-		local GreenColor = Color3.new(0, 1, 0)
-		local RedColor = Color3.new(1, 0, 0)
-		local activeCoroutines = {}
+	local isRunning = false
+	local Button = script.Parent
+	local GreenColor = Color3.new(0, 1, 0)
+	local RedColor = Color3.new(1, 0, 0)
+	local activeCoroutines = {}
 	
-		local function invokeCut(quantity, field)
-			local ReplicatedStorage = game:GetService("ReplicatedStorage")
-			local GenericFunction = ReplicatedStorage.Remotes.GenericFunction
-	
-			local args = {
-				[1] = {
-					["id"] = "cut",
-					["identifier"] = "pw8", 
-					["quantity"] = quantity,
-					["field"] = field
-				}
+	local function invokeCut(quantity, field)
+		local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local GenericFunction = ReplicatedStorage.Remotes.GenericFunction
+		local args = {
+			[1] = {
+				["id"] = "cut",
+				["identifier"] = "pw8", 
+				["quantity"] = quantity,
+				["field"] = field
 			}
-			GenericFunction:InvokeServer(unpack(args))
-		end
+		}
+		GenericFunction:InvokeServer(unpack(args))
+	end
 	
-		local function createCutFunction(quantity, field)
-			return function()
-				while isRunning do
-					invokeCut(quantity, field)
-					wait(0.05) 
-				end
+	local function createCutFunction(quantity, field)
+		return function()
+			while isRunning do
+				invokeCut(quantity, field)
+				wait(0.05) 
 			end
 		end
+	end
 	
-		local function startLoop()
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "main")))
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "main")))
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "anti")))
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "anti")))
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "un")))
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "un")))
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "planet")))
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "planet")))
+	local function startLoop()
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "main")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "main")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "anti")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "anti")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "un")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "un")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "planet")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "planet")))
+		for _, co in ipairs(activeCoroutines) do
+			coroutine.resume(co)
+		end
+	end
 	
-			for _, co in ipairs(activeCoroutines) do
+	Button.MouseButton1Click:Connect(function()
+		isRunning = not isRunning
+		if isRunning then
+			Button.BackgroundColor3 = GreenColor
+			startLoop()
+		else
+			Button.BackgroundColor3 = RedColor
+			activeCoroutines = {}
+		end
+	end)
+	
+	while true do
+		for _, co in ipairs(activeCoroutines) do
+			if coroutine.status(co) ~= "dead" then
 				coroutine.resume(co)
-			end
-		end
-	
-		Button.MouseButton1Click:Connect(function()
-			isRunning = not isRunning
-			if isRunning then
-				Button.BackgroundColor3 = GreenColor
-				startLoop()
-			else
-				Button.BackgroundColor3 = RedColor
-				activeCoroutines = {}
-			end
-		end)
-	
-		while true do
-			for _, co in ipairs(activeCoroutines) do
-				if coroutine.status(co) ~= "dead" then
-					coroutine.resume(co)
-				end
 			end
 		end
 	end
 end
-coroutine.wrap(VKHRWV_fake_script)()
+coroutine.wrap(QCLVANR_fake_script)()
