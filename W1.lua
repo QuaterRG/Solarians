@@ -418,12 +418,12 @@ local function PZHWUA_fake_script() -- AutoCentr.Script
 	end)
 end
 coroutine.wrap(PZHWUA_fake_script)()
-local function CQZRMO_fake_script() -- AutoCut.Script 
+local function CQZRMO_fake_script()
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
 	local Button = script.Parent
-	local GreenColor = Color3.new(0, 1, 0) -- Используем значения от 0 до 1 для Color3
+	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
 	local activeCoroutines = {}
 	
@@ -452,15 +452,17 @@ local function CQZRMO_fake_script() -- AutoCut.Script
 	end
 	
 	local function startLoop()
-		-- Запускаем корутины для каждого поля
-		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(1000000000000000, "main"))())
-		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(-10000000000000000, "main"))())
-		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(1000000000000000, "anti"))())
-		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(-10000000000000000, "anti"))())
-		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(1000000000000000, "un"))())
-		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(-10000000000000000, "un"))())
-		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(1000000000000000, "planet"))())
-		table.insert(activeCoroutines, coroutine.wrap(createCutFunction(-10000000000000000, "planet"))())
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "main")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "main")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "anti")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "anti")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "un")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "un")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "planet")))
+		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "planet")))
+		for _, co in ipairs(activeCoroutines) do
+			coroutine.resume(co)
+		end
 	end
 	
 	Button.MouseButton1Click:Connect(function()
@@ -470,11 +472,7 @@ local function CQZRMO_fake_script() -- AutoCut.Script
 			startLoop()
 		else
 			Button.BackgroundColor3 = RedColor
-			for _, co in ipairs(activeCoroutines) do
-				if co then
-					coroutine.resume(co)
-				end
-			end
+			-- Останавливаем все корутины
 			activeCoroutines = {}
 		end
 	end)
