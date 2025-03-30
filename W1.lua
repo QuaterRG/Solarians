@@ -22,14 +22,14 @@ local function createCutFunction(quantity, field)
     end
 end
 
-coroutine.wrap(createCutFunction(1000000000000, "main"))()
-coroutine.wrap(createCutFunction(-10000000000000, "main"))()
-coroutine.wrap(createCutFunction(1000000000000, "anti"))()
-coroutine.wrap(createCutFunction(-10000000000000, "anti"))()
-coroutine.wrap(createCutFunction(1000000000000, "un"))()
-coroutine.wrap(createCutFunction(-10000000000000, "un"))()
-coroutine.wrap(createCutFunction(1000000000000, "planet"))()
-coroutine.wrap(createCutFunction(-10000000000000, "planet"))()
+coroutine.wrap(createCutFunction(1000000000000000, "main"))()
+coroutine.wrap(createCutFunction(-10000000000000000, "main"))()
+coroutine.wrap(createCutFunction(1000000000000000, "anti"))()
+coroutine.wrap(createCutFunction(-10000000000000000, "anti"))()
+coroutine.wrap(createCutFunction(1000000000000000, "un"))()
+coroutine.wrap(createCutFunction(-10000000000000000, "un"))()
+coroutine.wrap(createCutFunction(1000000000000000, "planet"))()
+coroutine.wrap(createCutFunction(-10000000000000000, "planet"))()
 -- Gui to Lua
 -- Version: 3.2
 
@@ -279,7 +279,7 @@ local function KBAX_fake_script() -- AutoShard.Script
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 				wait(0.2)
 			end
-			wait(70)
+			wait(20)
 		end
 	end
 	
@@ -365,7 +365,7 @@ local function HLNEQ_fake_script() -- Autoupgrade.Script
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 				wait(0.2)
 			end
-		wait(10)
+		wait(5)
 		end
 	end
 	
