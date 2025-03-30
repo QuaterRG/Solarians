@@ -289,8 +289,8 @@ local function ZXQFXL_fake_script() -- AutoShard.Script
 					}
 				}
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-			end
 			wait(20)
+			end
 		end
 	end
 	
