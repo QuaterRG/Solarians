@@ -432,8 +432,6 @@ coroutine.wrap(LZPHXQD_fake_script)()
 local function QCLVANR_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
-	local script = Instance.new('Script', AutoCut)
-	
 	local isRunning = false
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
@@ -464,14 +462,13 @@ local function QCLVANR_fake_script() -- AutoCut.Script
 	end
 	
 	local function startLoop()
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "main")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "main")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "anti")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "anti")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "un")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "un")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, "planet")))
-		table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, "planet")))
+		-- Создаем корутины для каждой функции
+		for _, field in ipairs({"main", "anti", "un", "planet"}) do
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000, field)))
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000, field)))
+		end
+
+		-- Запускаем все корутины
 		for _, co in ipairs(activeCoroutines) do
 			coroutine.resume(co)
 		end
@@ -487,13 +484,5 @@ local function QCLVANR_fake_script() -- AutoCut.Script
 			activeCoroutines = {}
 		end
 	end)
-	
-	while true do
-		for _, co in ipairs(activeCoroutines) do
-			if coroutine.status(co) ~= "dead" then
-				coroutine.resume(co)
-			end
-		end
-	end
 end
 coroutine.wrap(QCLVANR_fake_script)()
