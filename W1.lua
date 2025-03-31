@@ -448,15 +448,15 @@ local function GANKR_fake_script() -- AutoCut.Script
 		return function()
 			while isRunning do
 				invokeCut(quantity, field)
-				wait(0.05) 
+				wait(0.5) 
 			end
 		end
 	end
 	
 	local function startLoop()
 		for _, field in ipairs({"main", "anti", "un", "planet"}) do
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(1000000000000000000, field)))
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(-10000000000000000000, field)))
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(100000000000000000000, field)))
+			table.insert(activeCoroutines, coroutine.create(createCutFunction(-1000000000000000000000, field)))
 		end
 		for _, co in ipairs(activeCoroutines) do
 			coroutine.resume(co)
