@@ -36,9 +36,9 @@ OpenMenu.Parent = Solarians
 OpenMenu.BackgroundColor3 = Color3.fromRGB(207, 255, 231)
 OpenMenu.BorderColor3 = Color3.fromRGB(0, 0, 0)
 OpenMenu.BorderSizePixel = 2
-OpenMenu.Position = UDim2.new(0.859734237, 0, 0.313789487, 0)
-OpenMenu.Size = UDim2.new(0.136010051, 0, 0.120524302, 0)
-OpenMenu.Font = Enum.Font.Unknown
+OpenMenu.Position = UDim2.new(0.86732918, 0, 0.346122056, 0)
+OpenMenu.Size = UDim2.new(0.127149284, 0, 0.121255621, 0)
+OpenMenu.Font = Enum.Font.Michroma
 OpenMenu.LineHeight = 1.010
 OpenMenu.Text = "Solarians"
 OpenMenu.TextColor3 = Color3.fromRGB(135, 99, 87)
@@ -46,7 +46,7 @@ OpenMenu.TextScaled = true
 OpenMenu.TextSize = 40.000
 OpenMenu.TextWrapped = true
 
-UICorner.CornerRadius = UDim.new(0, 60)
+UICorner.CornerRadius = UDim.new(0, 40)
 UICorner.Parent = OpenMenu
 
 UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 216, 74)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 216, 74))}
@@ -61,7 +61,7 @@ Menu.Parent = Solarians
 Menu.BackgroundColor3 = Color3.fromRGB(255, 200, 0)
 Menu.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Menu.BorderSizePixel = 0
-Menu.Position = UDim2.new(0.629166782, 0, 0.185154304, 0)
+Menu.Position = UDim2.new(0.634230077, 0, 0.182844833, 0)
 Menu.Size = UDim2.new(0.215867281, 0, 0.370094717, 0)
 Menu.Visible = false
 
@@ -70,8 +70,8 @@ AutoSoul3.Parent = Menu
 AutoSoul3.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 AutoSoul3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AutoSoul3.BorderSizePixel = 0
-AutoSoul3.Position = UDim2.new(0.0499999486, 0, 0.0938633755, 0)
-AutoSoul3.Size = UDim2.new(0.266666681, 0, 0.382104486, 0)
+AutoSoul3.Position = UDim2.new(0.0499998555, 0, 0.0938634574, 0)
+AutoSoul3.Size = UDim2.new(0.266666681, 0, 0.362167358, 0)
 AutoSoul3.Font = Enum.Font.SourceSans
 AutoSoul3.Text = "Soul3"
 AutoSoul3.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -87,8 +87,8 @@ AutoShard.Parent = Menu
 AutoShard.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 AutoShard.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AutoShard.BorderSizePixel = 0
-AutoShard.Position = UDim2.new(0.366666853, 0, 0.0938633755, 0)
-AutoShard.Size = UDim2.new(0.266666681, 0, 0.382104486, 0)
+AutoShard.Position = UDim2.new(0.366666943, 0, 0.0938634574, 0)
+AutoShard.Size = UDim2.new(0.266666681, 0, 0.36216718, 0)
 AutoShard.Font = Enum.Font.SourceSans
 AutoShard.Text = "Shard"
 AutoShard.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -104,8 +104,8 @@ AutoSing.Parent = Menu
 AutoSing.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 AutoSing.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AutoSing.BorderSizePixel = 0
-AutoSing.Position = UDim2.new(0.683333337, 0, 0.0938633755, 0)
-AutoSing.Size = UDim2.new(0.266666681, 0, 0.382104486, 0)
+AutoSing.Position = UDim2.new(0.683333278, 0, 0.0938633978, 0)
+AutoSing.Size = UDim2.new(0.266666859, 0, 0.362167269, 0)
 AutoSing.Font = Enum.Font.SourceSans
 AutoSing.Text = "Sing"
 AutoSing.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -125,8 +125,8 @@ Autoupgrade.Parent = Menu
 Autoupgrade.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Autoupgrade.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Autoupgrade.BorderSizePixel = 0
-Autoupgrade.Position = UDim2.new(0.0499999486, 0, 0.548565805, 0)
-Autoupgrade.Size = UDim2.new(0.266666681, 0, 0.382104486, 0)
+Autoupgrade.Position = UDim2.new(0.0499998555, 0, 0.568369746, 0)
+Autoupgrade.Size = UDim2.new(0.266666681, 0, 0.362300634, 0)
 Autoupgrade.Font = Enum.Font.SourceSans
 Autoupgrade.Text = "Upgrade"
 Autoupgrade.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -137,7 +137,7 @@ Autoupgrade.TextWrapped = true
 UICorner_5.CornerRadius = UDim.new(0, 70)
 UICorner_5.Parent = Autoupgrade
 
-UICorner_6.CornerRadius = UDim.new(0, 40)
+UICorner_6.CornerRadius = UDim.new(0, 30)
 UICorner_6.Parent = Menu
 
 UIAspectRatioConstraint_2.Parent = Menu
@@ -148,8 +148,8 @@ AutoCentr.Parent = Menu
 AutoCentr.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 AutoCentr.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AutoCentr.BorderSizePixel = 0
-AutoCentr.Position = UDim2.new(0.683333278, 0, 0.548432469, 0)
-AutoCentr.Size = UDim2.new(0.266666681, 0, 0.382104486, 0)
+AutoCentr.Position = UDim2.new(0.683333278, 0, 0.568369746, 0)
+AutoCentr.Size = UDim2.new(0.266666681, 0, 0.362167269, 0)
 AutoCentr.Font = Enum.Font.SourceSans
 AutoCentr.Text = "Centr"
 AutoCentr.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -165,8 +165,8 @@ AutoCut.Parent = Menu
 AutoCut.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 AutoCut.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AutoCut.BorderSizePixel = 0
-AutoCut.Position = UDim2.new(0.366666943, 0, 0.548432469, 0)
-AutoCut.Size = UDim2.new(0.266666681, 0, 0.382104486, 0)
+AutoCut.Position = UDim2.new(0.366666943, 0, 0.568369746, 0)
+AutoCut.Size = UDim2.new(0.266666681, 0, 0.362167269, 0)
 AutoCut.Font = Enum.Font.SourceSans
 AutoCut.Text = "AutoCut"
 AutoCut.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function VWBPGC_fake_script() -- OpenMenu.Script 
+local function QKWIDU_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function VWBPGC_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(VWBPGC_fake_script)()
-local function BYMD_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(QKWIDU_fake_script)()
+local function MJMQQEL_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function BYMD_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(BYMD_fake_script)()
-local function OEZUO_fake_script() -- AutoShard.Script 
+coroutine.wrap(MJMQQEL_fake_script)()
+local function EQHMRET_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -290,8 +290,8 @@ local function OEZUO_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(OEZUO_fake_script)()
-local function KAHWJY_fake_script() -- AutoSing.Script 
+coroutine.wrap(EQHMRET_fake_script)()
+local function KWCXB_fake_script() -- AutoSing.Script 
 	local script = Instance.new('Script', AutoSing)
 
 	local Button = script.Parent
@@ -317,8 +317,8 @@ local function KAHWJY_fake_script() -- AutoSing.Script
 		startLoop()
 	end)
 end
-coroutine.wrap(KAHWJY_fake_script)()
-local function UMGNISB_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(KWCXB_fake_script)()
+local function OAIDH_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local isRunning = false
@@ -376,32 +376,33 @@ local function UMGNISB_fake_script() -- Autoupgrade.Script
 		end
 	end)
 end
-coroutine.wrap(UMGNISB_fake_script)()
-local function DFUZ_fake_script() -- AutoCentr.Script 
+coroutine.wrap(OAIDH_fake_script)()
+local function OABTCY_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
-	local ReplicatedStorage = game:GetService("ReplicatedStorage")
-	local Data_upvr = require(ReplicatedStorage.Data)
-	local CurrencyTypes_upvr = require(ReplicatedStorage.CurrencyTypes)
-	local BuyUpgrade_upvr = require(ReplicatedStorage.BuyUpgrade)
-	local identifiers = {"pp", "crystals", "steel", "rocketFuel", "charge", "agrass", "ap", "oil", "platinum", "fun", "stars", "sfrgt", "darkMatter", "momentum", "moonstone", "ugrass", "np", "clouds", "darkFruits", "rings", "planetarium", "astro", "measure", "planets", "arcs", "lines", "obs", "res", "dcharge", "stardust", "perks2", "perks"}
+	
 	local isRunning = false
 	local loopCoroutine
 	
 	local function startLoop()
 		while isRunning do
-			for _, identifier in ipairs(identifiers) do
-				BuyUpgrade_upvr.Centralize(identifier)
-				wait(0.1)
+			for _, ceId in ipairs({"pp", "crystals", "steel", "rocketfuel", "charge", "agrass", "ap", "oil", "platinum", "fun", "stars", "sfrgt", "darkMatter", "momentum", "moonstone", "ugrass", "np", "clouds", "darkFruits", "rings", "planetarium", "astro", "measure", "planets", "arcs", "lines", "obs", "res", "dcharge", "stardust", "perks2", "perks"}) do
+				local args = {
+					[1] = {
+						["id"] = "centralize",
+						["cent"] = ceId
+					}
+				}
+				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 				local args = {
 					[1] = "subparnova"
 				}
 				game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
+				wait(2)
 			end
-			wait(1)	
 		end
 		Button.BackgroundColor3 = RedColor
 	end
@@ -417,8 +418,8 @@ local function DFUZ_fake_script() -- AutoCentr.Script
 		end
 	end)
 end
-coroutine.wrap(DFUZ_fake_script)()
-local function PDFPH_fake_script() -- AutoCut.Script 
+coroutine.wrap(OABTCY_fake_script)()
+local function GIYJS_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -471,4 +472,4 @@ local function PDFPH_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(PDFPH_fake_script)()
+coroutine.wrap(GIYJS_fake_script)()
