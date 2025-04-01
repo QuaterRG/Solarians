@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function QKWIDU_fake_script() -- OpenMenu.Script 
+local function RLPM_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function QKWIDU_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(QKWIDU_fake_script)()
-local function MJMQQEL_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(RLPM_fake_script)()
+local function LHODRR_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,52 +246,53 @@ local function MJMQQEL_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(MJMQQEL_fake_script)()
-local function EQHMRET_fake_script() -- AutoShard.Script 
+coroutine.wrap(LHODRR_fake_script)()
+local function HKPDNR_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
 	local Button = script.Parent
-	local GreenColor = Color3.new(0, 255, 0)
-	local RedColor = Color3.new(255, 0, 0)
+	local GreenColor = Color3.new(0, 1, 0)
+	local RedColor = Color3.new(1, 0, 0)
+	local Players = game:GetService("Players")
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local player = Players.LocalPlayer
+	local scrollingFrame = player.PlayerGui.W1.SythesisPlots.ShopContainer.ScrollingFrame
 	
 	local function startLoop()
 		while isRunning do
-			local args = {
-				[1] = "activateSynthesis"
-			}
-			game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
-			for l = 1,2 do
-				for i = 1,3 do
-					wait(0.2)
-					local args = {
-						[1] = {
-							["id"] = "synthesis",
-							["selected"] = "cs",
-							["syn"] = i
+			for _, child in ipairs(scrollingFrame:GetChildren()) do
+				if child.Name == "Plot" then
+					if child.Normal and child.Normal.DisplayName.Text == "S1" and child.Normal.PB.Progress.Text ~= "0s" then
+						local args = {
+							[1] = {
+								["id"] = "synthesis",
+								["selected"] = "cs",
+								["syn"] = 1
+							}
 						}
-					}
-					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-				end
-				if l == 1 then
-					wait(20)
+						ReplicatedStorage.Remotes.GenericEvent:FireServer(unpack(args))
+						break
+					end
 				end
 			end
+			wait(5)
 		end
 	end
 	
 	Button.MouseButton1Click:Connect(function()
 		isRunning = not isRunning
+	
 		if isRunning then
 			Button.BackgroundColor3 = GreenColor
-			startLoop()
+			coroutine.wrap(startLoop)() 
 		else
 			Button.BackgroundColor3 = RedColor
 		end
 	end)
 end
-coroutine.wrap(EQHMRET_fake_script)()
-local function KWCXB_fake_script() -- AutoSing.Script 
+coroutine.wrap(HKPDNR_fake_script)()
+local function ZMHPF_fake_script() -- AutoSing.Script 
 	local script = Instance.new('Script', AutoSing)
 
 	local Button = script.Parent
@@ -317,8 +318,8 @@ local function KWCXB_fake_script() -- AutoSing.Script
 		startLoop()
 	end)
 end
-coroutine.wrap(KWCXB_fake_script)()
-local function OAIDH_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(ZMHPF_fake_script)()
+local function WMBUQ_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local isRunning = false
@@ -376,8 +377,8 @@ local function OAIDH_fake_script() -- Autoupgrade.Script
 		end
 	end)
 end
-coroutine.wrap(OAIDH_fake_script)()
-local function OABTCY_fake_script() -- AutoCentr.Script 
+coroutine.wrap(WMBUQ_fake_script)()
+local function NWABG_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -397,12 +398,11 @@ local function OABTCY_fake_script() -- AutoCentr.Script
 					}
 				}
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-				wait(2)
 				local args = {
 					[1] = "subparnova"
 				}
 				game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
-				wait(0.5)
+				wait(2)
 			end
 		end
 		Button.BackgroundColor3 = RedColor
@@ -419,8 +419,8 @@ local function OABTCY_fake_script() -- AutoCentr.Script
 		end
 	end)
 end
-coroutine.wrap(OABTCY_fake_script)()
-local function GIYJS_fake_script() -- AutoCut.Script 
+coroutine.wrap(NWABG_fake_script)()
+local function CTOZC_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -455,6 +455,7 @@ local function GIYJS_fake_script() -- AutoCut.Script
 	local function startLoop()
 		for _, field in ipairs({"main", "anti", "un", "planet"}) do
 			table.insert(activeCoroutines, coroutine.create(createCutFunction(-1000000000000000000000, field)))
+			wait(0.1)
 			table.insert(activeCoroutines, coroutine.create(createCutFunction(100000000000000000000, field)))
 		end
 		for _, co in ipairs(activeCoroutines) do
@@ -473,4 +474,4 @@ local function GIYJS_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(GIYJS_fake_script)()
+coroutine.wrap(CTOZC_fake_script)()
