@@ -397,11 +397,12 @@ local function OABTCY_fake_script() -- AutoCentr.Script
 					}
 				}
 				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+				wait(2)
 				local args = {
 					[1] = "subparnova"
 				}
 				game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
-				wait(2)
+				wait(0.5)
 			end
 		end
 		Button.BackgroundColor3 = RedColor
@@ -446,7 +447,7 @@ local function GIYJS_fake_script() -- AutoCut.Script
 		return function()
 			while isRunning do
 				invokeCut(quantity, field)
-				wait(0.2) 
+				wait(0.1) 
 			end
 		end
 	end
