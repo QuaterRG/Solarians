@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function XVDEV_fake_script() -- OpenMenu.Script 
+local function VWBPGC_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function XVDEV_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(XVDEV_fake_script)()
-local function YBDFFUZ_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(VWBPGC_fake_script)()
+local function BYMD_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function YBDFFUZ_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(YBDFFUZ_fake_script)()
-local function QBHF_fake_script() -- AutoShard.Script 
+coroutine.wrap(BYMD_fake_script)()
+local function OEZUO_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -290,8 +290,8 @@ local function QBHF_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(QBHF_fake_script)()
-local function LQCA_fake_script() -- AutoSing.Script 
+coroutine.wrap(OEZUO_fake_script)()
+local function KAHWJY_fake_script() -- AutoSing.Script 
 	local script = Instance.new('Script', AutoSing)
 
 	local Button = script.Parent
@@ -317,8 +317,8 @@ local function LQCA_fake_script() -- AutoSing.Script
 		startLoop()
 	end)
 end
-coroutine.wrap(LQCA_fake_script)()
-local function NZXHLVG_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(KAHWJY_fake_script)()
+local function UMGNISB_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local isRunning = false
@@ -376,33 +376,32 @@ local function NZXHLVG_fake_script() -- Autoupgrade.Script
 		end
 	end)
 end
-coroutine.wrap(NZXHLVG_fake_script)()
-local function SJUZV_fake_script() -- AutoCentr.Script 
+coroutine.wrap(UMGNISB_fake_script)()
+local function DFUZ_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
-	
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local Data_upvr = require(ReplicatedStorage.Data)
+	local CurrencyTypes_upvr = require(ReplicatedStorage.CurrencyTypes)
+	local BuyUpgrade_upvr = require(ReplicatedStorage.BuyUpgrade)
+	local identifiers = {"pp", "crystals", "steel", "rocketFuel", "charge", "agrass", "ap", "oil", "platinum", "fun", "stars", "sfrgt", "darkMatter", "momentum", "moonstone", "ugrass", "np", "clouds", "darkFruits", "rings", "planetarium", "astro", "measure", "planets", "arcs", "lines", "obs", "res", "dcharge", "stardust", "perks2", "perks"}
 	local isRunning = false
 	local loopCoroutine
 	
 	local function startLoop()
 		while isRunning do
-			for _, ceId in ipairs({"pp", "crystals", "steel", "rocketfuel", "charge", "agrass", "ap", "oil", "platinum", "fun", "stars", "sfrgt", "darkMatter", "momentum", "moonstone", "ugrass", "np", "clouds", "darkFruits", "rings", "planetarium", "astro", "measure", "planets", "arcs", "lines", "obs", "res", "dcharge", "stardust", "perks2", "perks"}) do
-				local args = {
-					[1] = {
-						["id"] = "centralize",
-						["cent"] = ceId
-					}
-				}
-				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+			for _, identifier in ipairs(identifiers) do
+				BuyUpgrade_upvr.Centralize(identifier)
+				wait(0.1)
 				local args = {
 					[1] = "subparnova"
 				}
 				game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
-				wait(2)
 			end
+			wait(1)	
 		end
 		Button.BackgroundColor3 = RedColor
 	end
@@ -418,12 +417,10 @@ local function SJUZV_fake_script() -- AutoCentr.Script
 		end
 	end)
 end
-coroutine.wrap(SJUZV_fake_script)()
-local function GANKR_fake_script() -- AutoCut.Script 
+coroutine.wrap(DFUZ_fake_script)()
+local function PDFPH_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
-	local script = Instance.new('Script', AutoCut)
-	
 	local isRunning = false
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
@@ -448,7 +445,7 @@ local function GANKR_fake_script() -- AutoCut.Script
 		return function()
 			while isRunning do
 				invokeCut(quantity, field)
-				wait(0.1) 
+				wait(0.2) 
 			end
 		end
 	end
@@ -474,4 +471,4 @@ local function GANKR_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(GANKR_fake_script)()
+coroutine.wrap(PDFPH_fake_script)()
