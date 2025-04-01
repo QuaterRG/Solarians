@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function UGZKYU_fake_script() -- OpenMenu.Script 
+local function LLTOUK_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function UGZKYU_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(UGZKYU_fake_script)()
-local function YJXPCU_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(LLTOUK_fake_script)()
+local function EDUVI_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function YJXPCU_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(YJXPCU_fake_script)()
-local function RYVWZ_fake_script() -- AutoShard.Script 
+coroutine.wrap(EDUVI_fake_script)()
+local function PUJAI_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -291,8 +291,8 @@ local function RYVWZ_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(RYVWZ_fake_script)()
-local function KEYXO_fake_script() -- AutoSing.Script 
+coroutine.wrap(PUJAI_fake_script)()
+local function QDSE_fake_script() -- AutoSing.Script 
 	local script = Instance.new('Script', AutoSing)
 
 	local Button = script.Parent
@@ -318,8 +318,8 @@ local function KEYXO_fake_script() -- AutoSing.Script
 		startLoop()
 	end)
 end
-coroutine.wrap(KEYXO_fake_script)()
-local function RQLR_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(QDSE_fake_script)()
+local function VJLVDSH_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local isRunning = false
@@ -377,8 +377,8 @@ local function RQLR_fake_script() -- Autoupgrade.Script
 		end
 	end)
 end
-coroutine.wrap(RQLR_fake_script)()
-local function HOLQBW_fake_script() -- AutoCentr.Script 
+coroutine.wrap(VJLVDSH_fake_script)()
+local function XGHDB_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -399,9 +399,23 @@ local function HOLQBW_fake_script() -- AutoCentr.Script
 						}
 					}
 					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+					for _, i in ipairs({"sol", "s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"}) do
+						for _, unlock in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops.SingularityShop:GetChildren()) do
+							if unlock.Indetifer.Value == i and not unlock.Unlocked.Button.Gradient.Cost.Text:find("Unlocked") then
+								local args = {
+									[1] = {
+										["id"] = "buySC",
+										["scId"] = i
+									}
+								}
+								game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+								break
+							end
+						end
+					end
 				end
 			end
-			wait(3) -- Добавляем задержку для предотвращения перегрузки сервера
+			wait(3)
 		end
 	end
 	
@@ -417,8 +431,8 @@ local function HOLQBW_fake_script() -- AutoCentr.Script
 		end
 	end)
 end
-coroutine.wrap(HOLQBW_fake_script)()
-local function XRWOVZ_fake_script() -- AutoCut.Script 
+coroutine.wrap(XGHDB_fake_script)()
+local function TWPRBIK_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -472,4 +486,4 @@ local function XRWOVZ_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(XRWOVZ_fake_script)()
+coroutine.wrap(TWPRBIK_fake_script)()
