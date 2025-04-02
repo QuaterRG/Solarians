@@ -13,7 +13,7 @@ local AutoSoul3 = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 local AutoShard = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
-local AutoSing = Instance.new("TextButton")
+local AutoNova = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
 local UIGradient_2 = Instance.new("UIGradient")
 local Autoupgrade = Instance.new("TextButton")
@@ -99,22 +99,22 @@ AutoShard.TextWrapped = true
 UICorner_3.CornerRadius = UDim.new(0, 70)
 UICorner_3.Parent = AutoShard
 
-AutoSing.Name = "AutoSing"
-AutoSing.Parent = Menu
-AutoSing.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-AutoSing.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AutoSing.BorderSizePixel = 0
-AutoSing.Position = UDim2.new(0.683333278, 0, 0.0938633978, 0)
-AutoSing.Size = UDim2.new(0.266666859, 0, 0.362167269, 0)
-AutoSing.Font = Enum.Font.SourceSans
-AutoSing.Text = "Sing"
-AutoSing.TextColor3 = Color3.fromRGB(0, 0, 0)
-AutoSing.TextScaled = true
-AutoSing.TextSize = 40.000
-AutoSing.TextWrapped = true
+AutoNova.Name = "AutoNova"
+AutoNova.Parent = Menu
+AutoNova.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AutoNova.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoNova.BorderSizePixel = 0
+AutoNova.Position = UDim2.new(0.683333278, 0, 0.0938633978, 0)
+AutoNova.Size = UDim2.new(0.266666859, 0, 0.362167269, 0)
+AutoNova.Font = Enum.Font.SourceSans
+AutoNova.Text = "Supernova"
+AutoNova.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoNova.TextScaled = true
+AutoNova.TextSize = 40.000
+AutoNova.TextWrapped = true
 
 UICorner_4.CornerRadius = UDim.new(0, 70)
-UICorner_4.Parent = AutoSing
+UICorner_4.Parent = AutoNova
 
 UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 238, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 238, 0))}
 UIGradient_2.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.21), NumberSequenceKeypoint.new(0.10, 0.49), NumberSequenceKeypoint.new(0.49, 0.26), NumberSequenceKeypoint.new(0.83, 0.52), NumberSequenceKeypoint.new(1.00, 0.16)}
@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function LLTOUK_fake_script() -- OpenMenu.Script 
+local function HXCUCG_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function LLTOUK_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(LLTOUK_fake_script)()
-local function EDUVI_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(HXCUCG_fake_script)()
+local function IBGD_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,22 +246,18 @@ local function EDUVI_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(EDUVI_fake_script)()
-local function PUJAI_fake_script() -- AutoShard.Script 
+coroutine.wrap(IBGD_fake_script)()
+local function JLBRT_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
-	local Players = game:GetService("Players")
-	local ReplicatedStorage = game:GetService("ReplicatedStorage")
-	local player = Players.LocalPlayer
-	local scrollingFrame = player.PlayerGui.W1.SythesisPlots.ShopContainer.ScrollingFrame
 	
 	local function startLoop()
 		while isRunning do
-			for _, child in ipairs(scrollingFrame:GetChildren()) do
+			for _, child in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.W1.SythesisPlots.ShopContainer.ScrollingFrame:GetChildren()) do
 				if child.Name == "Plot" then
 					if child.Normal and child.Normal.DisplayName.Text == "S1" and child.Normal.PB.Progress.Text ~= "0s" then
 						local args = {
@@ -271,12 +267,12 @@ local function PUJAI_fake_script() -- AutoShard.Script
 								["syn"] = 1
 							}
 						}
-						ReplicatedStorage.Remotes.GenericEvent:FireServer(unpack(args))
+						game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 						break
 					end
 				end
 			end
-			wait(5)
+			wait(3)
 		end
 	end
 	
@@ -291,35 +287,48 @@ local function PUJAI_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(PUJAI_fake_script)()
-local function QDSE_fake_script() -- AutoSing.Script 
-	local script = Instance.new('Script', AutoSing)
+coroutine.wrap(JLBRT_fake_script)()
+local function IEWGH_fake_script() -- AutoNova.Script 
+	local script = Instance.new('Script', AutoNova)
 
+	local isRunning = false
 	local Button = script.Parent
-	local GreenColor = Color3.new(0, 255, 0)
-	local RedColor = Color3.new(255, 0, 0)
+	local GreenColor = Color3.new(0, 1, 0)
+	local RedColor = Color3.new(1, 0, 0)
 	
 	local function startLoop()
-		for _, scId in ipairs({"sol", "s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"}) do
-			local args = {
-				[1] = {
-					["id"] = "buySC",
-					["scId"] = scId
+		while isRunning do
+			if game:GetService("Players").LocalPlayer.PlayerGui.Solarians.Restoration.ShopContainer.Menus.StarTier.UpgradeSNT.Visible == true then
+				local args = {
+					[1] = "subparnova"
 				}
-			}
-			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-			wait(0.2)
+				game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
+				wait(1)
+			end
+			if game:GetService("Players").LocalPlayer.PlayerGui.W1.Synthesis.PrestigeMenu.Visible == true then
+				local args = {
+					[1] = "activateSynthesis"
+				}
+				game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
+				wait(1)
+			end
+			wait(0.5)
 		end
-		Button.BackgroundColor3 = RedColor
 	end
 	
 	Button.MouseButton1Click:Connect(function()
-		Button.BackgroundColor3 = GreenColor
-		startLoop()
+		isRunning = not isRunning
+	
+		if isRunning then
+			Button.BackgroundColor3 = GreenColor
+			coroutine.wrap(startLoop)() 
+		else
+			Button.BackgroundColor3 = RedColor
+		end
 	end)
 end
-coroutine.wrap(QDSE_fake_script)()
-local function VJLVDSH_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(IEWGH_fake_script)()
+local function VLRZ_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local isRunning = false
@@ -377,8 +386,41 @@ local function VJLVDSH_fake_script() -- Autoupgrade.Script
 		end
 	end)
 end
-coroutine.wrap(VJLVDSH_fake_script)()
-local function XGHDB_fake_script() -- AutoCentr.Script 
+coroutine.wrap(VLRZ_fake_script)()
+local function KYPXGKO_fake_script() -- Autoupgrade.Script 
+	local script = Instance.new('Script', Autoupgrade)
+
+	local Button = script.Parent
+	local GreenColor = Color3.new(0, 1, 0)
+	local RedColor = Color3.new(1, 0, 0)
+	local isRunning = false
+	local loopCoroutine
+	
+	local function startLoop()
+		while isRunning do
+			for _, shop in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops:GetChildren()) do
+				if shop.name == "SoulShop" or shop.name == "MagicShop" or shop.name == "UnstableShop" then
+					for _, unlock in ipairs(shop:GetChildren()) do
+						if unlock.Name == "Unlock" then
+							if unlock.Level.Value == 0 and not unlock.Unlocked.Button.Gradient.Cost.Text:find("#ff0000") then
+								local args = {
+									[1] = {
+										["id"] = "buySC",
+										["scId"] = unlock.Identifier.Value
+									}
+								}
+								game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+								wait(0.2)
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+end
+coroutine.wrap(KYPXGKO_fake_script)()
+local function JYAOAPL_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -401,21 +443,24 @@ local function XGHDB_fake_script() -- AutoCentr.Script
 					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 					for _, i in ipairs({"sol", "s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"}) do
 						for _, unlock in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops.SingularityShop:GetChildren()) do
-							if unlock.Indetifer.Value == i and not unlock.Unlocked.Button.Gradient.Cost.Text:find("Unlocked") then
-								local args = {
-									[1] = {
-										["id"] = "buySC",
-										["scId"] = i
+							if unlock.Name == "Unlock" then
+								if unlock.Identifier.Value == i and unlock.Level.Value == 0 then
+									local args = {
+										[1] = {
+											["id"] = "buySC",
+											["scId"] = i
+										}
 									}
-								}
-								game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-								break
+									game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+									wait(0.1)
+									break
+								end
 							end
 						end
+					wait(3)
 					end
 				end
 			end
-			wait(3)
 		end
 	end
 	
@@ -431,8 +476,8 @@ local function XGHDB_fake_script() -- AutoCentr.Script
 		end
 	end)
 end
-coroutine.wrap(XGHDB_fake_script)()
-local function TWPRBIK_fake_script() -- AutoCut.Script 
+coroutine.wrap(JYAOAPL_fake_script)()
+local function MPYMKF_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -486,4 +531,4 @@ local function TWPRBIK_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(TWPRBIK_fake_script)()
+coroutine.wrap(MPYMKF_fake_script)()
