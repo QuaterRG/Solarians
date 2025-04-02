@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function AVAN_fake_script() -- OpenMenu.Script 
+local function HTFR_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function AVAN_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(AVAN_fake_script)()
-local function XSAP_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(HTFR_fake_script)()
+local function JZUL_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function XSAP_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(XSAP_fake_script)()
-local function NMJXLYC_fake_script() -- AutoShard.Script 
+coroutine.wrap(JZUL_fake_script)()
+local function GFZGZV_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -287,8 +287,8 @@ local function NMJXLYC_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(NMJXLYC_fake_script)()
-local function CZFYMS_fake_script() -- AutoNova.Script 
+coroutine.wrap(GFZGZV_fake_script)()
+local function NWEJSGF_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
@@ -327,8 +327,8 @@ local function CZFYMS_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(CZFYMS_fake_script)()
-local function AZMJW_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(NWEJSGF_fake_script)()
+local function QNCGYKE_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local Button = script.Parent
@@ -360,8 +360,8 @@ local function AZMJW_fake_script() -- Autoupgrade.Script
 		end
 	end
 end
-coroutine.wrap(AZMJW_fake_script)()
-local function IUEAQ_fake_script() -- AutoCentr.Script 
+coroutine.wrap(QNCGYKE_fake_script)()
+local function YWTQGI_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -374,7 +374,7 @@ local function IUEAQ_fake_script() -- AutoCentr.Script
 	local function startLoop()
 		while isRunning do
 			for _, centralizeItem in ipairs(ShopContainer:GetChildren()) do
-				if centralizeItem:FindFirstChild("CentralizeButton") and centralizeItem.CentralizeButton.Info.Text:find("Centralize Ready") and centralizeItem.Visible == true then
+				if centralizeItem:FindFirstChild("CentralizeButton") and centralizeItem.CentralizeButton.Info.Text:find("Centralize Ready") and centralizeItem.Visible then
 					local args = {
 						[1] = {
 							["id"] = "centralize",
@@ -382,20 +382,18 @@ local function IUEAQ_fake_script() -- AutoCentr.Script
 						}
 					}
 					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-					for _, i in ipairs({"sol", "s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"}) do
-						for _, unlock in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops.SingularityShop:GetChildren()) do
-							if unlock.Name == "Unlock" then
-								if unlock.Identifier.Value == i and unlock.Level.Value == 0 then
-									local args = {
-										[1] = {
-											["id"] = "buySC",
-											["scId"] = i
-										}
+					wait(0.5)
+					for _, unlock in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops.SingularityShop:GetChildren()) do
+						for _, i in ipairs({"sol", "s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"}) do
+							if unlock.Name == "Unlock" and unlock.Identifier.Value == i and unlock.Level.Value == 0 then
+								local args = {
+									[1] = {
+										["id"] = "buySC",
+										["scId"] = i
 									}
-									game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-									wait(0.1)
-									break
-								end
+								}
+								game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+								wait(0.1)
 							end
 						end
 					end
@@ -412,13 +410,12 @@ local function IUEAQ_fake_script() -- AutoCentr.Script
 			loopCoroutine = coroutine.create(startLoop)
 			coroutine.resume(loopCoroutine)
 		else
-			Button.BackgroundColor3 = RedColor
-			isRunning = false 
+			Button.BackgroundColor3 = RedColor 
 		end
 	end)
 end
-coroutine.wrap(IUEAQ_fake_script)()
-local function VNNULMY_fake_script() -- AutoCut.Script 
+coroutine.wrap(YWTQGI_fake_script)()
+local function IGZKQY_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -472,4 +469,4 @@ local function VNNULMY_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(VNNULMY_fake_script)()
+coroutine.wrap(IGZKQY_fake_script)()
