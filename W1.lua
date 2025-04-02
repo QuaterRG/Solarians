@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function QLAN_fake_script() -- OpenMenu.Script 
+local function QVMERUI_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,15 +195,15 @@ local function QLAN_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(QLAN_fake_script)()
-local function DEBXSY_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(QVMERUI_fake_script)()
+local function PJVILI_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
 	local Button = script.Parent
-	local GreenColor = Color3.new(0, 255, 0)
-	local RedColor = Color3.new(255, 0, 0)
-	
+	local GreenColor = Color3.new(0, 1, 0)
+	local RedColor = Color3.new(1, 0, 0)
+	local event = game:GetService("ReplicatedStorage").Remotes.GenericEvent
 	local function startLoop()
 		while isRunning do
 			local args = {
@@ -212,7 +212,7 @@ local function DEBXSY_fake_script() -- AutoSoul3.Script
 					["x"] = 3
 				}
 			}
-			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+			event:FireServer(unpack(args))
 			wait(0.2)
 			local args = {
 				[1] = {
@@ -220,7 +220,7 @@ local function DEBXSY_fake_script() -- AutoSoul3.Script
 					["x"] = 0.25
 				}
 			}
-			game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+			event:FireServer(unpack(args))
 			wait(0.5)
 			for _, buy in ipairs({"soul2", "offdef2", "syncs", "syngs"}) do
 				local args = {
@@ -229,7 +229,7 @@ local function DEBXSY_fake_script() -- AutoSoul3.Script
 						["soulId"] = buy
 					}
 				}
-				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+				event:FireServer(unpack(args))
 				wait(0.2)
 			end
 			wait(10)
@@ -246,20 +246,20 @@ local function DEBXSY_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(DEBXSY_fake_script)()
-local function IPLM_fake_script() -- AutoShard.Script 
+coroutine.wrap(PJVILI_fake_script)()
+local function HDRNHBH_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
-	
+	local Scroll = game:GetService("Players").LocalPlayer.PlayerGui.W1.SythesisPlots.ShopContainer.ScrollingFrame:GetChildren()
 	local function startLoop()
 		while isRunning do
-			for _, child in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.W1.SythesisPlots.ShopContainer.ScrollingFrame:GetChildren()) do
+			for _, child in ipairs(Scroll) do
 				if child.Name == "Plot" then
-					if child.Normal and child.Normal.DisplayName.Text == "S1" and child.Normal.PB.Progress.Text ~= "0s" then
+					if child.Identifier.Value == 1 and child.Normal.PB.Progress.Text ~= "0s" then
 						local args = {
 							[1] = {
 								["id"] = "synthesis",
@@ -287,8 +287,8 @@ local function IPLM_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(IPLM_fake_script)()
-local function HYYQMAP_fake_script() -- AutoNova.Script 
+coroutine.wrap(HDRNHBH_fake_script)()
+local function TFYVFNA_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
@@ -327,8 +327,8 @@ local function HYYQMAP_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(HYYQMAP_fake_script)()
-local function QEOSW_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(TFYVFNA_fake_script)()
+local function ZAWIQDL_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local Button = script.Parent
@@ -336,32 +336,31 @@ local function QEOSW_fake_script() -- Autoupgrade.Script
 	local RedColor = Color3.new(1, 0, 0)
 	local isRunning = false
 	local loopCoroutine
+	local shops = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops
 	
 	local function startLoop()
 		while isRunning do
-			for _, shop in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops:GetChildren()) do
-				if shop.name == "SoulShop" or shop.name == "MagicShop" or shop.name == "UnstableShop" then
-					for _, unlock in ipairs(shop:GetChildren()) do
-						if unlock.Name == "Unlock" then
-							if unlock.Level.Value == 0 and not unlock.Unlocked.Button.Gradient.Cost.Text:find("#ff0000") then
-								local args = {
-									[1] = {
-										["id"] = "buySC",
-										["scId"] = unlock.Identifier.Value
-									}
+			for _, shop in ipairs({shops.MagicShop, shops.SoulShop, shops.UnstableShop}) do
+				for _, unlock in ipairs(shop:GetChildren()) do
+					if unlock.Name == "Unlock" then
+						if unlock.Level.Value == 0 and not unlock.Unlocked.Button.Gradient.Cost.Text:find("#ff0000") then
+							local args = {
+								[1] = {
+									["id"] = "buySC",
+									["scId"] = unlock.Identifier.Value
 								}
-								game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-								wait(0.2)
-							end
+							}
+							game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 						end
 					end
+					wait(0.05)
 				end
 			end
 		end
 	end
 end
-coroutine.wrap(QEOSW_fake_script)()
-local function SCXG_fake_script() -- AutoCentr.Script 
+coroutine.wrap(ZAWIQDL_fake_script)()
+local function OYCIJL_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -369,37 +368,42 @@ local function SCXG_fake_script() -- AutoCentr.Script
 	local RedColor = Color3.new(1, 0, 0)
 	local ShopContainer = game:GetService("Players").LocalPlayer.PlayerGui.W1.VoidObelisk.ShopContainer.ScrollingFrame
 	local isRunning = false
-	local loopCoroutine
-	
+	local singularityShopItems = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops.SingularityShop:GetChildren()
+	local centralizeItems = ShopContainer:GetChildren()
 	local function startLoop()
 		while isRunning do
-			for _, centralizeItem in ipairs(ShopContainer:GetChildren()) do
+	
+			for _, centralizeItem in ipairs(	) do
 				if centralizeItem:FindFirstChild("CentralizeButton") and centralizeItem.CentralizeButton.Info.Text:find("Centralize Ready") and centralizeItem.Visible then
-					local args = {
+					local argsCentralize = {
 						[1] = {
 							["id"] = "centralize",
 							["cent"] = centralizeItem.Identifier.Value
 						}
 					}
-					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsCentralize))
 					wait(0.5)
-					for _, unlock in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops.SingularityShop:GetChildren()) do
-						for _, i in ipairs({"sol", "s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"}) do
-							if unlock.Name == "Unlock" and unlock.Identifier.Value == i and unlock.Level.Value == 0 then
-								local args = {
-									[1] = {
-										["id"] = "buySC",
-										["scId"] = i
+					for _, unlock in ipairs(singularityShopItems) do
+						if unlock.Name == "Unlock" and unlock.Level.Value == 0 then
+							for _, identifier in ipairs({"sol", "s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"}) do
+								if unlock.Identifier.Value == identifier then
+									local argsBuySC = {
+										[1] = {
+											["id"] = "buySC",
+											["scId"] = unlock.Identifier.Value
+										}
 									}
-								}
-								game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+									game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsBuySC))
+									break
+								end
 							end
-							wait(0.1)
 						end
+						wait(0.05)
 					end
+	
 					wait(2)
 				end
-				wait(0.1)
+				wait(0.05)
 			end
 		end
 	end
@@ -408,15 +412,14 @@ local function SCXG_fake_script() -- AutoCentr.Script
 		isRunning = not isRunning
 		if isRunning then
 			Button.BackgroundColor3 = GreenColor
-			loopCoroutine = coroutine.create(startLoop)
-			coroutine.resume(loopCoroutine)
+			startLoop()
 		else
 			Button.BackgroundColor3 = RedColor 
 		end
 	end)
 end
-coroutine.wrap(SCXG_fake_script)()
-local function DWTRJB_fake_script() -- AutoCut.Script 
+coroutine.wrap(OYCIJL_fake_script)()
+local function TUITOLM_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -470,4 +473,4 @@ local function DWTRJB_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(DWTRJB_fake_script)()
+coroutine.wrap(TUITOLM_fake_script)()
