@@ -181,10 +181,10 @@ local function JEKDRP_fake_script() -- AutoBuy.Script
 						}
 					}
 					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-					wait(1)
+					wait(0.5)
 				end
 			end
-			wait(5)
+			wait(3)
 		end
 	end
 	
