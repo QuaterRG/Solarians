@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function HXCUCG_fake_script() -- OpenMenu.Script 
+local function AVAN_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function HXCUCG_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(HXCUCG_fake_script)()
-local function IBGD_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(AVAN_fake_script)()
+local function XSAP_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function IBGD_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(IBGD_fake_script)()
-local function JLBRT_fake_script() -- AutoShard.Script 
+coroutine.wrap(XSAP_fake_script)()
+local function NMJXLYC_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -287,8 +287,8 @@ local function JLBRT_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(JLBRT_fake_script)()
-local function IEWGH_fake_script() -- AutoNova.Script 
+coroutine.wrap(NMJXLYC_fake_script)()
+local function CZFYMS_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
@@ -327,67 +327,8 @@ local function IEWGH_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(IEWGH_fake_script)()
-local function VLRZ_fake_script() -- Autoupgrade.Script 
-	local script = Instance.new('Script', Autoupgrade)
-
-	local isRunning = false
-	local Button = script.Parent
-	local GreenColor = Color3.new(0, 255, 0)
-	local RedColor = Color3.new(255, 0, 0)
-	
-	local function startLoop()
-		while isRunning do
-			for _, prefix in ipairs({"od", "cs", "fs", "sol", "ll", "ps", "fg", "sg", "cm", "ge"}) do
-				for i = 1, 9 do
-					local args = {
-						[1] = {
-							["id"] = "buySC",
-							["scId"] = prefix .. i
-						}
-					}
-					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-					wait(0.2)
-				end
-			end
-			for _, prefix in ipairs({"skr", "ss", "sco", "ls", "kr"}) do
-				for i = 1, 5 do
-					local args = {
-						[1] = {
-							["id"] = "buySC",
-							["scId"] = prefix .. i
-						}
-					}
-					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-					wait(0.2)
-				end
-			end
-			for _, scId in ipairs({"skr6", "sco6", "sco7", "auto3", "kr6", "kkr4", "kkr5", "kkr6"}) do
-				local args = {
-					[1] = {
-						["id"] = "buySC",
-						["scId"] = scId
-					}
-				}
-				game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-				wait(0.2)
-			end
-		wait(5)
-		end
-	end
-	
-	Button.MouseButton1Click:Connect(function()
-		isRunning = not isRunning
-		if isRunning then
-			Button.BackgroundColor3 = GreenColor
-			startLoop()
-		else
-			Button.BackgroundColor3 = RedColor
-		end
-	end)
-end
-coroutine.wrap(VLRZ_fake_script)()
-local function KYPXGKO_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(CZFYMS_fake_script)()
+local function AZMJW_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local Button = script.Parent
@@ -419,8 +360,8 @@ local function KYPXGKO_fake_script() -- Autoupgrade.Script
 		end
 	end
 end
-coroutine.wrap(KYPXGKO_fake_script)()
-local function JYAOAPL_fake_script() -- AutoCentr.Script 
+coroutine.wrap(AZMJW_fake_script)()
+local function IUEAQ_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -476,8 +417,8 @@ local function JYAOAPL_fake_script() -- AutoCentr.Script
 		end
 	end)
 end
-coroutine.wrap(JYAOAPL_fake_script)()
-local function MPYMKF_fake_script() -- AutoCut.Script 
+coroutine.wrap(IUEAQ_fake_script)()
+local function VNNULMY_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -531,4 +472,4 @@ local function MPYMKF_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(MPYMKF_fake_script)()
+coroutine.wrap(VNNULMY_fake_script)()
