@@ -90,7 +90,7 @@ UICorner_4.Parent = Blue_2
 
 -- Scripts:
 
-local function GKYBK_fake_script() -- BlueMenu.Script 
+local function ZCMX_fake_script() -- BlueMenu.Script 
 	local script = Instance.new('Script', BlueMenu)
 
 	local Button = script.Parent
@@ -106,8 +106,8 @@ local function GKYBK_fake_script() -- BlueMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(GKYBK_fake_script)()
-local function LVWWO_fake_script() -- AutoCut.Script 
+coroutine.wrap(ZCMX_fake_script)()
+local function LTWR_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -141,45 +141,47 @@ local function LVWWO_fake_script() -- AutoCut.Script
 			game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
 		end
 	end
-	local function startLoop()
-		coroutine.wrap(runBasicCut)()
-		coroutine.wrap(runIridiumCut)()
-	end
 	
 	Button.MouseButton1Click:Connect(function()
 		isRunning = not isRunning
 		if isRunning then
 			Button.BackgroundColor3 = GreenColor
-			startLoop()
+			coroutine.wrap(runBasicCut)()
+			wait(0.05)
+			coroutine.wrap(runIridiumCut)()
 		else
 			Button.BackgroundColor3 = RedColor
 		end
 	end)
 end
-coroutine.wrap(LVWWO_fake_script)()
-local function WBDSSXH_fake_script() -- AutoBuy.Script 
+coroutine.wrap(LTWR_fake_script)()
+local function JEKDRP_fake_script() -- AutoBuy.Script 
 	local script = Instance.new('Script', AutoBuy)
 
 	local isRunning = false
 	local Button = script.Parent
 	local GreenColor = Color3.new(0.0588235, 1, 0.733333)
 	local RedColor = Color3.new(0.521569, 0.486275, 1)
-	
+	local paths = {}
+	local frame = game:GetService("Players").LocalPlayer.PlayerGui.W1.Brass.ShopContainer.ScrollingFrame
+	for _, child in ipairs(frame:GetChildren()) do
+		if child.Name == "BasicUpgrade" then
+			table.insert(paths, child)
+		end
+	end
 	local function startLoop()
 		while isRunning do
-			for _, upgrade in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.W1.Brass.ShopContainer.ScrollingFrame:GetChildren()) do
-				if upgrade.Name == "BasicUpgrade" then
-					if upgrade.Display.CostDisplay.Text:find("#00ff00") then
-						local args = {
-							[1] = {
-								["id"] = "buyUpgrade",
-								["mode"] = "max",
-								["upgradeId"] = upgrade.Variables.Identifier.Value
-							}
+			for _, upgrade in ipairs(paths) do
+				if upgrade.Display.CostDisplay.Text:find("#00ff00") and upgrade.Variables.Identifier.Value ~= "br3" then
+					local args = {
+						[1] = {
+							["id"] = "buyUpgrade",
+							["mode"] = "max",
+							["upgradeId"] = upgrade.Variables.Identifier.Value
 						}
-						game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-						wait(1)
-					end
+					}
+					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+					wait(1)
 				end
 			end
 			wait(5)
@@ -196,4 +198,4 @@ local function WBDSSXH_fake_script() -- AutoBuy.Script
 		end
 	end)
 end
-coroutine.wrap(WBDSSXH_fake_script)()
+coroutine.wrap(JEKDRP_fake_script)()
