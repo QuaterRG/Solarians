@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function HTFR_fake_script() -- OpenMenu.Script 
+local function QLAN_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function HTFR_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(HTFR_fake_script)()
-local function JZUL_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(QLAN_fake_script)()
+local function DEBXSY_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function JZUL_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(JZUL_fake_script)()
-local function GFZGZV_fake_script() -- AutoShard.Script 
+coroutine.wrap(DEBXSY_fake_script)()
+local function IPLM_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -287,8 +287,8 @@ local function GFZGZV_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(GFZGZV_fake_script)()
-local function NWEJSGF_fake_script() -- AutoNova.Script 
+coroutine.wrap(IPLM_fake_script)()
+local function HYYQMAP_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
@@ -327,8 +327,8 @@ local function NWEJSGF_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(NWEJSGF_fake_script)()
-local function QNCGYKE_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(HYYQMAP_fake_script)()
+local function QEOSW_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local Button = script.Parent
@@ -360,8 +360,8 @@ local function QNCGYKE_fake_script() -- Autoupgrade.Script
 		end
 	end
 end
-coroutine.wrap(QNCGYKE_fake_script)()
-local function YWTQGI_fake_script() -- AutoCentr.Script 
+coroutine.wrap(QEOSW_fake_script)()
+local function SCXG_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -393,12 +393,13 @@ local function YWTQGI_fake_script() -- AutoCentr.Script
 									}
 								}
 								game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-								wait(0.1)
 							end
+							wait(0.1)
 						end
 					end
 					wait(2)
 				end
+				wait(0.1)
 			end
 		end
 	end
@@ -414,8 +415,8 @@ local function YWTQGI_fake_script() -- AutoCentr.Script
 		end
 	end)
 end
-coroutine.wrap(YWTQGI_fake_script)()
-local function IGZKQY_fake_script() -- AutoCut.Script 
+coroutine.wrap(SCXG_fake_script)()
+local function DWTRJB_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -442,7 +443,7 @@ local function IGZKQY_fake_script() -- AutoCut.Script
 		return function()
 			while isRunning do
 				invokeCut(quantity, field)
-				wait(0.1) 
+				wait(0.2) 
 			end
 		end
 	end
@@ -469,4 +470,4 @@ local function IGZKQY_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(IGZKQY_fake_script)()
+coroutine.wrap(DWTRJB_fake_script)()
