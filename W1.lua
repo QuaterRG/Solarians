@@ -457,8 +457,8 @@ local function JYAOAPL_fake_script() -- AutoCentr.Script
 								end
 							end
 						end
-					wait(3)
 					end
+					wait(2)
 				end
 			end
 		end
