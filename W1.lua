@@ -506,3 +506,4 @@ local function KXABGE_fake_script() -- AutoCut.Script
 	end)
 end
 coroutine.wrap(KXABGE_fake_script)()
+print(1.0)
