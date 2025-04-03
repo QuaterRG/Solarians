@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function GTIJJE_fake_script() -- OpenMenu.Script 
+local function TJZZKT_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function GTIJJE_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(GTIJJE_fake_script)()
-local function QGCRFS_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(TJZZKT_fake_script)()
+local function JRFF_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function QGCRFS_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(QGCRFS_fake_script)()
-local function NIBG_fake_script() -- AutoShard.Script 
+coroutine.wrap(JRFF_fake_script)()
+local function KNHZPMN_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -255,7 +255,7 @@ local function NIBG_fake_script() -- AutoShard.Script
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
 	local Scroll = game:GetService("Players").LocalPlayer.PlayerGui.W1.SythesisPlots.ShopContainer.ScrollingFrame:GetChildren()
-	paths = {}
+	local paths = {}
 	for _, child in ipairs(Scroll) do
 		if child.Name == "BasicUpgrade" then
 			table.insert(paths, child)
@@ -293,8 +293,8 @@ local function NIBG_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(NIBG_fake_script)()
-local function UMEKWG_fake_script() -- AutoNova.Script 
+coroutine.wrap(KNHZPMN_fake_script)()
+local function CWTTVB_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
@@ -333,8 +333,8 @@ local function UMEKWG_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(UMEKWG_fake_script)()
-local function EZAI_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(CWTTVB_fake_script)()
+local function TYHSXL_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local Button = script.Parent
@@ -344,7 +344,7 @@ local function EZAI_fake_script() -- Autoupgrade.Script
 	local shops = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops
 	local paths = {}
 	for _, i in ipairs({shops.MagicShop, shops.SoulShop, shops.UnstableShop}) do
-		for _, child in ipairs(shops.i:GetChildren()) do
+		for _, child in ipairs(i:GetChildren()) do
 			if child.Name == "Unlock" then
 				table.insert(paths, child)
 			end
@@ -377,8 +377,8 @@ local function EZAI_fake_script() -- Autoupgrade.Script
 		end 
 	end)
 end
-coroutine.wrap(EZAI_fake_script)()
-local function FQLZR_fake_script() -- AutoCentr.Script 
+coroutine.wrap(TYHSXL_fake_script)()
+local function OSYV_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -450,8 +450,8 @@ local function FQLZR_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(FQLZR_fake_script)()
-local function EDMWIY_fake_script() -- AutoCut.Script 
+coroutine.wrap(OSYV_fake_script)()
+local function KXABGE_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -505,4 +505,4 @@ local function EDMWIY_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(EDMWIY_fake_script)()
+coroutine.wrap(KXABGE_fake_script)()
