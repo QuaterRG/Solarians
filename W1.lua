@@ -418,8 +418,8 @@ local function OSYV_fake_script() -- AutoCentr.Script
 					wait(0.2)
 					for _, unlock in ipairs(pathsU) do
 						wait(0.1)
-						if unlock.Level.Value == 0 then
-							print(unlock.Identifier.Value)
+						print(unlock.Identifier.Value)
+						if unlock.Level.Value == 0 then)
 							local argsBuySC = {
 								[1] = {
 									["id"] = "buySC",
@@ -503,4 +503,4 @@ local function KXABGE_fake_script() -- AutoCut.Script
 	end)
 end
 coroutine.wrap(KXABGE_fake_script)()
-print(2.3)
+print(2.4)
