@@ -1,3 +1,8 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
 local Solarians = Instance.new("ScreenGui")
 local OpenMenu = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
@@ -11,7 +16,7 @@ local UICorner_3 = Instance.new("UICorner")
 local AutoNova = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
 local UIGradient_2 = Instance.new("UIGradient")
-local Autoupgrade = Instance.new("TextButton")
+local AutoUpgrade = Instance.new("TextButton")
 local UICorner_5 = Instance.new("UICorner")
 local UICorner_6 = Instance.new("UICorner")
 local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
@@ -115,22 +120,22 @@ UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fr
 UIGradient_2.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.21), NumberSequenceKeypoint.new(0.10, 0.49), NumberSequenceKeypoint.new(0.49, 0.26), NumberSequenceKeypoint.new(0.83, 0.52), NumberSequenceKeypoint.new(1.00, 0.16)}
 UIGradient_2.Parent = Menu
 
-Autoupgrade.Name = "Auto upgrade"
-Autoupgrade.Parent = Menu
-Autoupgrade.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-Autoupgrade.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Autoupgrade.BorderSizePixel = 0
-Autoupgrade.Position = UDim2.new(0.0499998555, 0, 0.568369746, 0)
-Autoupgrade.Size = UDim2.new(0.266666681, 0, 0.362300634, 0)
-Autoupgrade.Font = Enum.Font.SourceSans
-Autoupgrade.Text = "Upgrade"
-Autoupgrade.TextColor3 = Color3.fromRGB(0, 0, 0)
-Autoupgrade.TextScaled = true
-Autoupgrade.TextSize = 40.000
-Autoupgrade.TextWrapped = true
+AutoUpgrade.Name = "AutoUpgrade"
+AutoUpgrade.Parent = Menu
+AutoUpgrade.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AutoUpgrade.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoUpgrade.BorderSizePixel = 0
+AutoUpgrade.Position = UDim2.new(0.0499998555, 0, 0.568369746, 0)
+AutoUpgrade.Size = UDim2.new(0.266666681, 0, 0.362300634, 0)
+AutoUpgrade.Font = Enum.Font.SourceSans
+AutoUpgrade.Text = "Upgrade"
+AutoUpgrade.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoUpgrade.TextScaled = true
+AutoUpgrade.TextSize = 40.000
+AutoUpgrade.TextWrapped = true
 
 UICorner_5.CornerRadius = UDim.new(0, 70)
-UICorner_5.Parent = Autoupgrade
+UICorner_5.Parent = AutoUpgrade
 
 UICorner_6.CornerRadius = UDim.new(0, 30)
 UICorner_6.Parent = Menu
@@ -174,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function TJZZKT_fake_script() -- OpenMenu.Script 
+local function IQFUVQP_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -190,8 +195,8 @@ local function TJZZKT_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(TJZZKT_fake_script)()
-local function JRFF_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(IQFUVQP_fake_script)()
+local function JEML_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -241,8 +246,8 @@ local function JRFF_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(JRFF_fake_script)()
-local function KNHZPMN_fake_script() -- AutoShard.Script 
+coroutine.wrap(JEML_fake_script)()
+local function QBYSYD_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -288,8 +293,8 @@ local function KNHZPMN_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(KNHZPMN_fake_script)()
-local function CWTTVB_fake_script() -- AutoNova.Script 
+coroutine.wrap(QBYSYD_fake_script)()
+local function WTKWOI_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
@@ -328,9 +333,9 @@ local function CWTTVB_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(CWTTVB_fake_script)()
-local function TYHSXL_fake_script() -- Autoupgrade.Script 
-	local script = Instance.new('Script', Autoupgrade)
+coroutine.wrap(WTKWOI_fake_script)()
+local function QTEFEU_fake_script() -- AutoUpgrade.Script 
+	local script = Instance.new('Script', AutoUpgrade)
 
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
@@ -338,8 +343,8 @@ local function TYHSXL_fake_script() -- Autoupgrade.Script
 	local isRunning = false
 	local shops = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops
 	local paths = {}
-	for _, i in ipairs({shops.MagicShop, shops.SoulShop, shops.UnstableShop}) do
-		for _, child in ipairs(i:GetChildren()) do
+	for _, shop in ipairs({shops.MagicShop, shops.SoulShop, shops.UnstableShop}) do
+		for _, child in ipairs(shop:GetChildren()) do
 			if child.Name == "Unlock" then
 				table.insert(paths, child)
 			end
@@ -372,8 +377,8 @@ local function TYHSXL_fake_script() -- Autoupgrade.Script
 		end 
 	end)
 end
-coroutine.wrap(TYHSXL_fake_script)()
-local function OSYV_fake_script() -- AutoCentr.Script 
+coroutine.wrap(QTEFEU_fake_script)()
+local function FSBH_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -384,24 +389,22 @@ local function OSYV_fake_script() -- AutoCentr.Script
 	local singularityShopItems = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops.SingularityShop:GetChildren()
 	local pathsC = {}
 	local pathsU = {}
-	
-	-- Заполнение pathsC
+	local order = {["sol"] = 1, ["s1"] = 2, ["s13"] = 3, ["s28"] = 4, ["s22"] = 5, ["rem"] = 6, ["s12"] = 7, ["s29"] = 8, ["s17"] = 9, ["s25"] = 10, ["s31"] = 11, ["s10"] = 12, ["s19"] = 13, ["s21"] = 14, ["s16"] = 15, ["soulc"] = 16, ["sword"] = 17, ["s23"] = 18, ["s30"] = 19, ["s27"] = 20, ["s26"] = 21}
 	for _, child in ipairs(ShopContainer) do
-		if child.Name == "CentralizeItem" then
+		if child.Name == "CentralizeButton" then
 			table.insert(pathsC, child)
 		end
 	end
-	
-	-- Заполнение pathsU
 	for _, child in ipairs(singularityShopItems) do
 		if child.Name == "Unlock" then
 			for _, i in ipairs{"sol", "s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"} do
 				if child.Identifier.Value == i then
-					table.insert(pathsU, child) -- Добавляем в pathsU
+					table.insert(pathsU, child)
 				end
 			end
 		end
 	end
+	table.sort(pathsU, function(a, b) return order[a.Identifier.Value] < order[b.Identifier.Value] end)
 	
 	local function startLoop()
 		while isRunning do
@@ -420,7 +423,6 @@ local function OSYV_fake_script() -- AutoCentr.Script
 						wait(0.1)
 						print(unlock.Identifier.Value)
 						if unlock.Level.Value == 0 then
-							print(unlock.Identifier.Value)
 							local argsBuySC = {
 								[1] = {
 									["id"] = "buySC",
@@ -448,8 +450,8 @@ local function OSYV_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(OSYV_fake_script)()
-local function KXABGE_fake_script() -- AutoCut.Script 
+coroutine.wrap(FSBH_fake_script)()
+local function XDUJLHR_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -503,5 +505,5 @@ local function KXABGE_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(KXABGE_fake_script)()
-print(2.4)
+coroutine.wrap(XDUJLHR_fake_script)()
+print(3)
