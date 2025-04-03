@@ -391,7 +391,7 @@ local function FSBH_fake_script() -- AutoCentr.Script
 	local pathsU = {}
 	local order = {["sol"] = 1, ["s1"] = 2, ["s13"] = 3, ["s28"] = 4, ["s22"] = 5, ["rem"] = 6, ["s12"] = 7, ["s29"] = 8, ["s17"] = 9, ["s25"] = 10, ["s31"] = 11, ["s10"] = 12, ["s19"] = 13, ["s21"] = 14, ["s16"] = 15, ["soulc"] = 16, ["sword"] = 17, ["s23"] = 18, ["s30"] = 19, ["s27"] = 20, ["s26"] = 21}
 	for _, child in ipairs(ShopContainer) do
-		if child.Name == "CentralizeButton" then
+		if child.Name == "CentralizeItem" then
 			table.insert(pathsC, child)
 		end
 	end
