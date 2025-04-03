@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function QVMERUI_fake_script() -- OpenMenu.Script 
+local function QGYH_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function QVMERUI_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(QVMERUI_fake_script)()
-local function PJVILI_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(QGYH_fake_script)()
+local function HBGVEB_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function PJVILI_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(PJVILI_fake_script)()
-local function HDRNHBH_fake_script() -- AutoShard.Script 
+coroutine.wrap(HBGVEB_fake_script)()
+local function QYWSYQM_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -255,6 +255,12 @@ local function HDRNHBH_fake_script() -- AutoShard.Script
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
 	local Scroll = game:GetService("Players").LocalPlayer.PlayerGui.W1.SythesisPlots.ShopContainer.ScrollingFrame:GetChildren()
+	paths = {}
+	for _, child in ipairs(Scroll) do
+		if child.Name == "BasicUpgrade" then
+			table.insert(paths, child)
+		end
+	end
 	local function startLoop()
 		while isRunning do
 			for _, child in ipairs(Scroll) do
@@ -287,25 +293,25 @@ local function HDRNHBH_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(HDRNHBH_fake_script)()
-local function TFYVFNA_fake_script() -- AutoNova.Script 
+coroutine.wrap(QYWSYQM_fake_script)()
+local function UBCBP_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
-	
+	local gui = game:GetService("Players").LocalPlayer.PlayerGui
 	local function startLoop()
 		while isRunning do
-			if game:GetService("Players").LocalPlayer.PlayerGui.Solarians.Restoration.ShopContainer.Menus.StarTier.UpgradeSNT.Visible == true then
+			if gui.Solarians.Restoration.ShopContainer.Menus.StarTier.UpgradeSNT.Visible == true then
 				local args = {
 					[1] = "subparnova"
 				}
 				game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
 				wait(1)
 			end
-			if game:GetService("Players").LocalPlayer.PlayerGui.W1.Synthesis.PrestigeMenu.Visible == true then
+			if gui.W1.Synthesis.PrestigeMenu.Visible == true then
 				local args = {
 					[1] = "activateSynthesis"
 				}
@@ -327,8 +333,8 @@ local function TFYVFNA_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(TFYVFNA_fake_script)()
-local function ZAWIQDL_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(UBCBP_fake_script)()
+local function OLWPV_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local Button = script.Parent
@@ -337,44 +343,61 @@ local function ZAWIQDL_fake_script() -- Autoupgrade.Script
 	local isRunning = false
 	local loopCoroutine
 	local shops = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops
-	
+	local paths = {}
+	for i in ipairs({shops.MagicShop, shops.SoulShop, shops.UnstableShop}) do
+		for _, child in ipairs(shops.i:GetChildren()) do
+			if child.Name == "Unlock" then
+				table.insert(paths, child)
+			end
+		end
+	end
 	local function startLoop()
 		while isRunning do
-			for _, shop in ipairs({shops.MagicShop, shops.SoulShop, shops.UnstableShop}) do
-				for _, unlock in ipairs(shop:GetChildren()) do
-					if unlock.Name == "Unlock" then
-						if unlock.Level.Value == 0 and not unlock.Unlocked.Button.Gradient.Cost.Text:find("#ff0000") then
-							local args = {
-								[1] = {
-									["id"] = "buySC",
-									["scId"] = unlock.Identifier.Value
-								}
-							}
-							game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-						end
-					end
+			for _, unlock in ipairs(paths) do
+				if unlock.Level.Value == 0 and not unlock.Unlocked.Button.Gradient.Cost.Text:find("#ff0000") then
+					local args = {
+						[1] = {
+							["id"] = "buySC",
+							["scId"] = unlock.Identifier.Value
+						}
+					}
+					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
 					wait(0.05)
 				end
 			end
 		end
 	end
 end
-coroutine.wrap(ZAWIQDL_fake_script)()
-local function OYCIJL_fake_script() -- AutoCentr.Script 
+coroutine.wrap(OLWPV_fake_script)()
+local function SKKEFVM_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
-	local ShopContainer = game:GetService("Players").LocalPlayer.PlayerGui.W1.VoidObelisk.ShopContainer.ScrollingFrame
+	local ShopContainer = game:GetService("Players").LocalPlayer.PlayerGui.W1.VoidObelisk.ShopContainer.ScrollingFrame:GetChildren()
 	local isRunning = false
 	local singularityShopItems = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops.SingularityShop:GetChildren()
-	local centralizeItems = ShopContainer:GetChildren()
+	local pathsC = {}
+	local pathsU = {}
+	for _, child in ipairs(ShopContainer) do
+		if child.Name == "CentralizeButton" then
+			table.insert(pathsC, child)
+		end
+	end
+	for _, child in ipairs(singularityShopItems) do
+		if child.Name == "Unlock" then
+			for _, i in ipairs{"sol", "s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"} do
+				if child.Identifier.Value == i then
+					table.insert(pathsC, child)
+				end
+			end
+		end
+	end
 	local function startLoop()
 		while isRunning do
-	
-			for _, centralizeItem in ipairs(	) do
-				if centralizeItem:FindFirstChild("CentralizeButton") and centralizeItem.CentralizeButton.Info.Text:find("Centralize Ready") and centralizeItem.Visible then
+			for _, centralizeItem in ipairs(pathsC) do
+				if centralizeItem.CentralizeButton.Info.Text:find("Centralize Ready") and centralizeItem.Visible then
 					local argsCentralize = {
 						[1] = {
 							["id"] = "centralize",
@@ -383,24 +406,18 @@ local function OYCIJL_fake_script() -- AutoCentr.Script
 					}
 					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsCentralize))
 					wait(0.5)
-					for _, unlock in ipairs(singularityShopItems) do
-						if unlock.Name == "Unlock" and unlock.Level.Value == 0 then
-							for _, identifier in ipairs({"sol", "s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"}) do
-								if unlock.Identifier.Value == identifier then
-									local argsBuySC = {
-										[1] = {
-											["id"] = "buySC",
-											["scId"] = unlock.Identifier.Value
-										}
-									}
-									game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsBuySC))
-									break
-								end
-							end
+					for _, unlock in ipairs(pathsU) do
+						if unlock.Level.Value == 0 then
+							local argsBuySC = {
+								[1] = {
+									["id"] = "buySC",
+									["scId"] = unlock.Identifier.Value
+								}
+							}
+							game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsBuySC))
 						end
 						wait(0.05)
 					end
-	
 					wait(2)
 				end
 				wait(0.05)
@@ -418,8 +435,8 @@ local function OYCIJL_fake_script() -- AutoCentr.Script
 		end
 	end)
 end
-coroutine.wrap(OYCIJL_fake_script)()
-local function TUITOLM_fake_script() -- AutoCut.Script 
+coroutine.wrap(SKKEFVM_fake_script)()
+local function IOXLLP_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -473,4 +490,4 @@ local function TUITOLM_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(TUITOLM_fake_script)()
+coroutine.wrap(IOXLLP_fake_script)()
