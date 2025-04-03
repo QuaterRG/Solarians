@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function IQFUVQP_fake_script() -- OpenMenu.Script 
+local function OEMTA_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function IQFUVQP_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(IQFUVQP_fake_script)()
-local function JEML_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(OEMTA_fake_script)()
+local function DUDW_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function JEML_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(JEML_fake_script)()
-local function QBYSYD_fake_script() -- AutoShard.Script 
+coroutine.wrap(DUDW_fake_script)()
+local function GASYUTL_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -293,8 +293,8 @@ local function QBYSYD_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(QBYSYD_fake_script)()
-local function WTKWOI_fake_script() -- AutoNova.Script 
+coroutine.wrap(GASYUTL_fake_script)()
+local function UIDWBMS_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
@@ -333,8 +333,8 @@ local function WTKWOI_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(WTKWOI_fake_script)()
-local function QTEFEU_fake_script() -- AutoUpgrade.Script 
+coroutine.wrap(UIDWBMS_fake_script)()
+local function EBSCMPN_fake_script() -- AutoUpgrade.Script 
 	local script = Instance.new('Script', AutoUpgrade)
 
 	local Button = script.Parent
@@ -353,7 +353,7 @@ local function QTEFEU_fake_script() -- AutoUpgrade.Script
 	local function startLoop()
 		while isRunning do
 			for _, unlock in ipairs(paths) do
-				if unlock.Level.Value == 0 and not unlock.Unlocked.Button.Gradient.Cost.Text:find("#ff0000") then
+				if unlock.Level.Value == 0 and unlock.Unlocked.Button.Gradient.Cost.Text:find("#00ff00") then
 					local args = {
 						[1] = {
 							["id"] = "buySC",
@@ -377,8 +377,8 @@ local function QTEFEU_fake_script() -- AutoUpgrade.Script
 		end 
 	end)
 end
-coroutine.wrap(QTEFEU_fake_script)()
-local function FSBH_fake_script() -- AutoCentr.Script 
+coroutine.wrap(EBSCMPN_fake_script)()
+local function KSYJF_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -389,7 +389,7 @@ local function FSBH_fake_script() -- AutoCentr.Script
 	local singularityShopItems = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops.SingularityShop:GetChildren()
 	local pathsC = {}
 	local pathsU = {}
-	local order = {["sol"] = 1, ["s1"] = 2, ["s13"] = 3, ["s28"] = 4, ["s22"] = 5, ["rem"] = 6, ["s12"] = 7, ["s29"] = 8, ["s17"] = 9, ["s25"] = 10, ["s31"] = 11, ["s10"] = 12, ["s19"] = 13, ["s21"] = 14, ["s16"] = 15, ["soulc"] = 16, ["sword"] = 17, ["s23"] = 18, ["s30"] = 19, ["s27"] = 20, ["s26"] = 21}
+	local order = {["sol"] = 1, ["s13"] = 2, ["s28"] = 3, ["s22"] = 4, ["rem"] = 5, ["s12"] = 6, ["s29"] = 7, ["s17"] = 8, ["s25"] = 9, ["s31"] = 10, ["s10"] = 11, ["s19"] = 12, ["s21"] = 13, ["s16"] = 14, ["soulc"] = 15, ["sword"] = 16, ["s23"] = 17, ["s30"] = 18, ["s27"] = 19, ["s26"] = 20}
 	for _, child in ipairs(ShopContainer) do
 		if child.Name == "CentralizeItem" then
 			table.insert(pathsC, child)
@@ -397,7 +397,7 @@ local function FSBH_fake_script() -- AutoCentr.Script
 	end
 	for _, child in ipairs(singularityShopItems) do
 		if child.Name == "Unlock" then
-			for _, i in ipairs{"sol", "s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"} do
+			for _, i in ipairs{"sol", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"} do
 				if child.Identifier.Value == i then
 					table.insert(pathsU, child)
 				end
@@ -450,8 +450,8 @@ local function FSBH_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(FSBH_fake_script)()
-local function XDUJLHR_fake_script() -- AutoCut.Script 
+coroutine.wrap(KSYJF_fake_script)()
+local function LXRGPA_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -505,5 +505,4 @@ local function XDUJLHR_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(XDUJLHR_fake_script)()
-print(3)
+coroutine.wrap(LXRGPA_fake_script)()
