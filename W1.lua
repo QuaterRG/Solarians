@@ -410,6 +410,7 @@ local function OSYV_fake_script() -- AutoCentr.Script
 	
 	local function startLoop()
 		while isRunning do
+			waut(0.1)
 			for _, centralizeItem in ipairs(pathsC) do
 				wait(0.1)
 				if centralizeItem.CentralizeButton.Info.Text:find("Centralize Ready") and centralizeItem.Visible then
@@ -422,7 +423,7 @@ local function OSYV_fake_script() -- AutoCentr.Script
 					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsCentralize))
 					wait(0.5)
 					for _, unlock in ipairs(pathsU) do
-						wait(0.05)
+						wait(0.1)
 						if unlock.Level.Value == 0 then
 							local argsBuySC = {
 								[1] = {
@@ -506,4 +507,4 @@ local function KXABGE_fake_script() -- AutoCut.Script
 	end)
 end
 coroutine.wrap(KXABGE_fake_script)()
-print(1.0)
+print(1.1)
