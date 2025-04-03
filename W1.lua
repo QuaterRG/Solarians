@@ -1,8 +1,3 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
 local Solarians = Instance.new("ScreenGui")
 local OpenMenu = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
@@ -507,4 +502,4 @@ local function KXABGE_fake_script() -- AutoCut.Script
 	end)
 end
 coroutine.wrap(KXABGE_fake_script)()
-print(1.1)
+print(1.2)
