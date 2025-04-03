@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function QGYH_fake_script() -- OpenMenu.Script 
+local function QEKEKC_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function QGYH_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(QGYH_fake_script)()
-local function HBGVEB_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(QEKEKC_fake_script)()
+local function PQOUNES_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function HBGVEB_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(HBGVEB_fake_script)()
-local function QYWSYQM_fake_script() -- AutoShard.Script 
+coroutine.wrap(PQOUNES_fake_script)()
+local function UILF_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -293,8 +293,8 @@ local function QYWSYQM_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(QYWSYQM_fake_script)()
-local function UBCBP_fake_script() -- AutoNova.Script 
+coroutine.wrap(UILF_fake_script)()
+local function MVCO_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
@@ -333,15 +333,14 @@ local function UBCBP_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(UBCBP_fake_script)()
-local function OLWPV_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(MVCO_fake_script)()
+local function ULNM_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
 	local isRunning = false
-	local loopCoroutine
 	local shops = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops
 	local paths = {}
 	for i in ipairs({shops.MagicShop, shops.SoulShop, shops.UnstableShop}) do
@@ -367,9 +366,19 @@ local function OLWPV_fake_script() -- Autoupgrade.Script
 			end
 		end
 	end
+	
+	Button.MouseButton1Click:Connect(function()
+		isRunning = not isRunning
+		if isRunning then 
+			Button.BackgroundColor3 = GreenColor 
+			startLoop()
+		else 
+			Button.BackgroundColor3 = RedColor 
+		end 
+	end)
 end
-coroutine.wrap(OLWPV_fake_script)()
-local function SKKEFVM_fake_script() -- AutoCentr.Script 
+coroutine.wrap(ULNM_fake_script)()
+local function JVLGO_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -380,20 +389,25 @@ local function SKKEFVM_fake_script() -- AutoCentr.Script
 	local singularityShopItems = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops.SingularityShop:GetChildren()
 	local pathsC = {}
 	local pathsU = {}
+	
+	-- Заполнение pathsC
 	for _, child in ipairs(ShopContainer) do
 		if child.Name == "CentralizeButton" then
 			table.insert(pathsC, child)
 		end
 	end
+	
+	-- Заполнение pathsU
 	for _, child in ipairs(singularityShopItems) do
 		if child.Name == "Unlock" then
 			for _, i in ipairs{"sol", "s1", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"} do
 				if child.Identifier.Value == i then
-					table.insert(pathsC, child)
+					table.insert(pathsU, child) -- Добавляем в pathsU
 				end
 			end
 		end
 	end
+	
 	local function startLoop()
 		while isRunning do
 			for _, centralizeItem in ipairs(pathsC) do
@@ -426,17 +440,18 @@ local function SKKEFVM_fake_script() -- AutoCentr.Script
 	end
 	
 	Button.MouseButton1Click:Connect(function()
-		isRunning = not isRunning
-		if isRunning then
-			Button.BackgroundColor3 = GreenColor
-			startLoop()
-		else
+		isRunning = not isRunning -- Переключаем состояние isRunning
+	
+		if isRunning then 
+			Button.BackgroundColor3 = GreenColor 
+			startLoop() -- Запускаем цикл только если он не запущен 
+		else 
 			Button.BackgroundColor3 = RedColor 
-		end
+		end 
 	end)
 end
-coroutine.wrap(SKKEFVM_fake_script)()
-local function IOXLLP_fake_script() -- AutoCut.Script 
+coroutine.wrap(JVLGO_fake_script)()
+local function MGEWA_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -444,10 +459,9 @@ local function IOXLLP_fake_script() -- AutoCut.Script
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
 	local activeCoroutines = {}
+	local GenericFunction = game:GetService("ReplicatedStorage").Remotes.GenericFunction
 	
 	local function invokeCut(quantity, field)
-		local ReplicatedStorage = game:GetService("ReplicatedStorage")
-		local GenericFunction = ReplicatedStorage.Remotes.GenericFunction
 		local args = {
 			[1] = {
 				["id"] = "cut",
@@ -458,7 +472,6 @@ local function IOXLLP_fake_script() -- AutoCut.Script
 		}
 		GenericFunction:InvokeServer(unpack(args))
 	end
-	
 	local function createCutFunction(quantity, field)
 		return function()
 			while isRunning do
@@ -467,15 +480,18 @@ local function IOXLLP_fake_script() -- AutoCut.Script
 			end
 		end
 	end
-	
 	local function startLoop()
 		for _, field in ipairs({"main", "anti", "un", "planet"}) do
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(-1000000000000000000000, field)))
+			local co1 = coroutine.create(createCutFunction(-1000000000000000000000, field))
+			local co2 = coroutine.create(createCutFunction(100000000000000000000, field))
+	
+			table.insert(activeCoroutines, co1)
+			table.insert(activeCoroutines, co2)
+	
+			coroutine.resume(co1)
+			coroutine.resume(co2)
+	
 			wait(0.1)
-			table.insert(activeCoroutines, coroutine.create(createCutFunction(100000000000000000000, field)))
-		end
-		for _, co in ipairs(activeCoroutines) do
-			coroutine.resume(co)
 		end
 	end
 	
@@ -486,8 +502,7 @@ local function IOXLLP_fake_script() -- AutoCut.Script
 			startLoop()
 		else
 			Button.BackgroundColor3 = RedColor
-			activeCoroutines = {}
 		end
 	end)
 end
-coroutine.wrap(IOXLLP_fake_script)()
+coroutine.wrap(MGEWA_fake_script)()
