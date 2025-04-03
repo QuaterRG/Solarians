@@ -361,8 +361,8 @@ local function EBSCMPN_fake_script() -- AutoUpgrade.Script
 						}
 					}
 					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
-					wait(0.05)
 				end
+				wait(0.05)
 			end
 		end
 	end
