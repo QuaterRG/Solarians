@@ -410,6 +410,7 @@ local function OSYV_fake_script() -- AutoCentr.Script
 	
 	local function startLoop()
 		while isRunning do
+			wait(5)
 			for _, centralizeItem in ipairs(pathsC) do
 				if centralizeItem.CentralizeButton.Info.Text:find("Centralize Ready") and centralizeItem.Visible then
 					local argsCentralize = {
