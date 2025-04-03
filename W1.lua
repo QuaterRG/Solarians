@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function QEKEKC_fake_script() -- OpenMenu.Script 
+local function GTIJJE_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function QEKEKC_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(QEKEKC_fake_script)()
-local function PQOUNES_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(GTIJJE_fake_script)()
+local function QGCRFS_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function PQOUNES_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(PQOUNES_fake_script)()
-local function UILF_fake_script() -- AutoShard.Script 
+coroutine.wrap(QGCRFS_fake_script)()
+local function NIBG_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -293,8 +293,8 @@ local function UILF_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(UILF_fake_script)()
-local function MVCO_fake_script() -- AutoNova.Script 
+coroutine.wrap(NIBG_fake_script)()
+local function UMEKWG_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
@@ -333,8 +333,8 @@ local function MVCO_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(MVCO_fake_script)()
-local function ULNM_fake_script() -- Autoupgrade.Script 
+coroutine.wrap(UMEKWG_fake_script)()
+local function EZAI_fake_script() -- Autoupgrade.Script 
 	local script = Instance.new('Script', Autoupgrade)
 
 	local Button = script.Parent
@@ -343,7 +343,7 @@ local function ULNM_fake_script() -- Autoupgrade.Script
 	local isRunning = false
 	local shops = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops
 	local paths = {}
-	for i in ipairs({shops.MagicShop, shops.SoulShop, shops.UnstableShop}) do
+	for _, i in ipairs({shops.MagicShop, shops.SoulShop, shops.UnstableShop}) do
 		for _, child in ipairs(shops.i:GetChildren()) do
 			if child.Name == "Unlock" then
 				table.insert(paths, child)
@@ -377,8 +377,8 @@ local function ULNM_fake_script() -- Autoupgrade.Script
 		end 
 	end)
 end
-coroutine.wrap(ULNM_fake_script)()
-local function JVLGO_fake_script() -- AutoCentr.Script 
+coroutine.wrap(EZAI_fake_script)()
+local function FQLZR_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -450,8 +450,8 @@ local function JVLGO_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(JVLGO_fake_script)()
-local function MGEWA_fake_script() -- AutoCut.Script 
+coroutine.wrap(FQLZR_fake_script)()
+local function EDMWIY_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -472,6 +472,7 @@ local function MGEWA_fake_script() -- AutoCut.Script
 		}
 		GenericFunction:InvokeServer(unpack(args))
 	end
+	
 	local function createCutFunction(quantity, field)
 		return function()
 			while isRunning do
@@ -480,17 +481,15 @@ local function MGEWA_fake_script() -- AutoCut.Script
 			end
 		end
 	end
+	
 	local function startLoop()
 		for _, field in ipairs({"main", "anti", "un", "planet"}) do
 			local co1 = coroutine.create(createCutFunction(-1000000000000000000000, field))
 			local co2 = coroutine.create(createCutFunction(100000000000000000000, field))
-	
 			table.insert(activeCoroutines, co1)
 			table.insert(activeCoroutines, co2)
-	
 			coroutine.resume(co1)
 			coroutine.resume(co2)
-	
 			wait(0.1)
 		end
 	end
@@ -502,7 +501,8 @@ local function MGEWA_fake_script() -- AutoCut.Script
 			startLoop()
 		else
 			Button.BackgroundColor3 = RedColor
+			isRunning = false
 		end
 	end)
 end
-coroutine.wrap(MGEWA_fake_script)()
+coroutine.wrap(EDMWIY_fake_script)()
