@@ -405,10 +405,8 @@ local function OSYV_fake_script() -- AutoCentr.Script
 	
 	local function startLoop()
 		while isRunning do
-			print(pathC)
-			wait(0.1)
 			for _, centralizeItem in ipairs(pathsC) do
-				print(2)
+				print(pathsC)
 				wait(0.1)
 				if centralizeItem.CentralizeButton.Info.Text:find("Centralize Ready") and centralizeItem.Visible then
 					local argsCentralize = {
@@ -504,4 +502,4 @@ local function KXABGE_fake_script() -- AutoCut.Script
 	end)
 end
 coroutine.wrap(KXABGE_fake_script)()
-print(2)
+print(2.1)
