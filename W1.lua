@@ -387,7 +387,7 @@ local function OSYV_fake_script() -- AutoCentr.Script
 	
 	-- Заполнение pathsC
 	for _, child in ipairs(ShopContainer) do
-		if child.Name == "CentralizeButton" then
+		if child.Name == "CentralizeItem" then
 			table.insert(pathsC, child)
 		end
 	end
@@ -504,4 +504,4 @@ local function KXABGE_fake_script() -- AutoCut.Script
 	end)
 end
 coroutine.wrap(KXABGE_fake_script)()
-print(1.5)
+print(2)
