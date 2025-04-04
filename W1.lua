@@ -429,6 +429,7 @@ local function XUIR_fake_script() -- AutoCentr.Script
 							}
 							game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsBuySC))
 							print(unlock.Level.Value)
+							wait(0.05)
 						end
 						break
 					end
