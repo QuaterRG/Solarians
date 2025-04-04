@@ -430,6 +430,7 @@ local function XUIR_fake_script() -- AutoCentr.Script
 							game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsBuySC))
 							print(unlock.Level.Value)
 						end
+						break
 					end
 					wait(1)
 				end
@@ -505,3 +506,4 @@ local function TPEZGP_fake_script() -- AutoCut.Script
 	end)
 end
 coroutine.wrap(TPEZGP_fake_script)()
+print(1)
