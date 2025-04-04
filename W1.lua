@@ -427,10 +427,9 @@ local function XUIR_fake_script() -- AutoCentr.Script
 	local function buyUnlockItems()
 		while isRunning do
 			for _, unlock in ipairs(pathsU) do
-				wait(0.05)
+				wait(0.1)
 				while unlock.Level.Value == 0 do
-					if sing.CurrencyHolder.CurrencyAmount.Text ~= 0 then
-						print(unlock.Identifier.Value)
+					if sing.CurrencyHolder.CurrencyAmount.Text ~= "0" then
 						local argsBuySC = {
 							[1] = {
 								["id"] = "buySC",
@@ -438,9 +437,9 @@ local function XUIR_fake_script() -- AutoCentr.Script
 							}
 						}
 						game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsBuySC))
-						print(unlock.Level.Value)
+						print(unlock.Identifier.Value)
 					end
-					wait(0.5)
+					wait(1)
 				end
 			end
 			wait(1) -- Задержка между итерациями цикла (можно настроить по необходимости)
@@ -515,4 +514,4 @@ local function TPEZGP_fake_script() -- AutoCut.Script
 	end)
 end
 coroutine.wrap(TPEZGP_fake_script)()
-print(3)
+print(5)
