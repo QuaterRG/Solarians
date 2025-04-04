@@ -1,4 +1,4 @@
-	-- Gui to Lua
+-- Gui to Lua
 -- Version: 3.2
 
 -- Instances:
@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function CUIJE_fake_script() -- OpenMenu.Script 
+local function LTOSO_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function CUIJE_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(CUIJE_fake_script)()
-local function CQWX_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(LTOSO_fake_script)()
+local function MXIYE_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function CQWX_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(CQWX_fake_script)()
-local function QGVIN_fake_script() -- AutoShard.Script 
+coroutine.wrap(MXIYE_fake_script)()
+local function XCKKNWO_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -255,6 +255,7 @@ local function QGVIN_fake_script() -- AutoShard.Script
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
 	local Scroll = game:GetService("Players").LocalPlayer.PlayerGui.W1.SythesisPlots.ShopContainer.ScrollingFrame:GetChildren()
+	local event = game:GetService("ReplicatedStorage").Remotes.GenericEvent
 	local paths = {}
 	for _, child in ipairs(Scroll) do
 		if child.Name == "BasicUpgrade" then
@@ -273,7 +274,7 @@ local function QGVIN_fake_script() -- AutoShard.Script
 								["syn"] = 1
 							}
 						}
-						game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+						event:FireServer(unpack(args))
 						break
 					end
 				end
@@ -293,29 +294,30 @@ local function QGVIN_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(QGVIN_fake_script)()
-local function EZGIFAX_fake_script() -- AutoNova.Script 
+coroutine.wrap(XCKKNWO_fake_script)()
+local function ZGGYA_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
-	local gui = game:GetService("Players").LocalPlayer.PlayerGui
+	local gui = game:GetService("Players").LocalPlayer.PlayerGui.W1.Synthesis.PrestigeMenu
+	local reset = game:GetService("ReplicatedStorage").Remotes.TriggerReset
 	local function startLoop()
 		while isRunning do
 			if gui.Solarians.Restoration.ShopContainer.Menus.StarTier.UpgradeSNT.Visible == true then
 				local args = {
 					[1] = "subparnova"
 				}
-				game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
+				reset:FireServer(unpack(args))
 				wait(1)
 			end
-			if gui.W1.Synthesis.PrestigeMenu.Visible == true then
+			if gui.Visible == true then
 				local args = {
 					[1] = "activateSynthesis"
 				}
-				game:GetService("ReplicatedStorage").Remotes.TriggerReset:FireServer(unpack(args))
+				reset:FireServer(unpack(args))
 				wait(1)
 			end
 			wait(0.5)
@@ -333,8 +335,8 @@ local function EZGIFAX_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(EZGIFAX_fake_script)()
-local function EWNTTR_fake_script() -- AutoUpgrade.Script 
+coroutine.wrap(ZGGYA_fake_script)()
+local function OXVTZ_fake_script() -- AutoUpgrade.Script 
 	local script = Instance.new('Script', AutoUpgrade)
 
 	local Button = script.Parent
@@ -343,6 +345,7 @@ local function EWNTTR_fake_script() -- AutoUpgrade.Script
 	local isRunning = false
 	local shops = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops
 	local paths = {}
+	local event = game:GetService("ReplicatedStorage").Remotes.GenericEvent
 	for _, shop in ipairs({shops.MagicShop, shops.SoulShop, shops.UnstableShop}) do
 		for _, child in ipairs(shop:GetChildren()) do
 			if child.Name == "Unlock" then
@@ -360,7 +363,7 @@ local function EWNTTR_fake_script() -- AutoUpgrade.Script
 							["scId"] = unlock.Identifier.Value
 						}
 					}
-					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+					event:FireServer(unpack(args))
 				end
 				wait(0.05)
 			end
@@ -377,8 +380,8 @@ local function EWNTTR_fake_script() -- AutoUpgrade.Script
 		end 
 	end)
 end
-coroutine.wrap(EWNTTR_fake_script)()
-local function XUIR_fake_script() -- AutoCentr.Script 
+coroutine.wrap(OXVTZ_fake_script)()
+local function AENYRHL_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -390,14 +393,13 @@ local function XUIR_fake_script() -- AutoCentr.Script
 	local singularityShopItems = sing.Shops.SingularityShop:GetChildren()
 	local pathsC = {}
 	local pathsU = {}
-	local storage = game:GetService("ReplicatedStorage").Remotes.GenericEvent
-
+	local event = game:GetService("ReplicatedStorage").Remotes.GenericEvent
 	for _, child in ipairs(ShopContainer) do
 		if child.Name == "CentralizeItem" then
 			table.insert(pathsC, child)
 		end
 	end
-
+	
 	for _, i in ipairs{"sol", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"} do
 		for _, child in ipairs(singularityShopItems) do
 			if child.Name == "Unlock" and child.Identifier.Value == i then
@@ -417,7 +419,7 @@ local function XUIR_fake_script() -- AutoCentr.Script
 							["cent"] = centralizeItem.Identifier.Value
 						}
 					}
-					storage:FireServer(unpack(argsCentralize))
+					event:FireServer(unpack(argsCentralize))
 					wait(2) -- Задержка после централизации
 				end
 			end
@@ -436,7 +438,7 @@ local function XUIR_fake_script() -- AutoCentr.Script
 								["scId"] = unlock.Identifier.Value
 							}
 						}
-						game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsBuySC))
+						event:FireServer(unpack(argsBuySC))
 						print(unlock.Identifier.Value)
 					end
 					wait(1)
@@ -457,8 +459,8 @@ local function XUIR_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-XUIR_fake_script()
-local function TPEZGP_fake_script() -- AutoCut.Script 
+coroutine.wrap(AENYRHL_fake_script)()
+local function GWNOYBR_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -513,5 +515,4 @@ local function TPEZGP_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(TPEZGP_fake_script)()
-print(5)
+coroutine.wrap(GWNOYBR_fake_script)()
