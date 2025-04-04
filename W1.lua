@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function OEMTA_fake_script() -- OpenMenu.Script 
+local function TDZZUM_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function OEMTA_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(OEMTA_fake_script)()
-local function DUDW_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(TDZZUM_fake_script)()
+local function UUBHH_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function DUDW_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(DUDW_fake_script)()
-local function GASYUTL_fake_script() -- AutoShard.Script 
+coroutine.wrap(UUBHH_fake_script)()
+local function IAEQPT_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -293,8 +293,8 @@ local function GASYUTL_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(GASYUTL_fake_script)()
-local function UIDWBMS_fake_script() -- AutoNova.Script 
+coroutine.wrap(IAEQPT_fake_script)()
+local function WKOEBEE_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
@@ -333,8 +333,8 @@ local function UIDWBMS_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(UIDWBMS_fake_script)()
-local function EBSCMPN_fake_script() -- AutoUpgrade.Script 
+coroutine.wrap(WKOEBEE_fake_script)()
+local function EMYOBXJ_fake_script() -- AutoUpgrade.Script 
 	local script = Instance.new('Script', AutoUpgrade)
 
 	local Button = script.Parent
@@ -377,8 +377,8 @@ local function EBSCMPN_fake_script() -- AutoUpgrade.Script
 		end 
 	end)
 end
-coroutine.wrap(EBSCMPN_fake_script)()
-local function KSYJF_fake_script() -- AutoCentr.Script 
+coroutine.wrap(EMYOBXJ_fake_script)()
+local function DGEAQ_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -389,27 +389,23 @@ local function KSYJF_fake_script() -- AutoCentr.Script
 	local singularityShopItems = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops.SingularityShop:GetChildren()
 	local pathsC = {}
 	local pathsU = {}
-	local order = {["sol"] = 1, ["s13"] = 2, ["s28"] = 3, ["s22"] = 4, ["rem"] = 5, ["s12"] = 6, ["s29"] = 7, ["s17"] = 8, ["s25"] = 9, ["s31"] = 10, ["s10"] = 11, ["s19"] = 12, ["s21"] = 13, ["s16"] = 14, ["soulc"] = 15, ["sword"] = 16, ["s23"] = 17, ["s30"] = 18, ["s27"] = 19, ["s26"] = 20}
 	for _, child in ipairs(ShopContainer) do
 		if child.Name == "CentralizeItem" then
 			table.insert(pathsC, child)
 		end
 	end
-	for _, child in ipairs(singularityShopItems) do
-		if child.Name == "Unlock" then
-			for _, i in ipairs{"sol", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"} do
-				if child.Identifier.Value == i then
-					table.insert(pathsU, child)
-				end
+	for _, i in ipairs{"sol", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"} do
+		for _, child in ipairs(singularityShopItems) do
+			if child.Name == "Unlock" and child.Identifier.Value == i then
+				table.insert(pathsU, child)
 			end
 		end
 	end
-	table.sort(pathsU, function(a, b) return order[a.Identifier.Value] < order[b.Identifier.Value] end)
 	
 	local function startLoop()
 		while isRunning do
 			for _, centralizeItem in ipairs(pathsC) do
-				wait(0.05)
+				wait(0.1)
 				if centralizeItem.CentralizeButton.Info.Text:find("Centralize Ready") and centralizeItem.Visible then
 					local argsCentralize = {
 						[1] = {
@@ -418,9 +414,9 @@ local function KSYJF_fake_script() -- AutoCentr.Script
 						}
 					}
 					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsCentralize))
-					wait(0.5)
+					wait(0.2)
 					for _, unlock in ipairs(pathsU) do
-						wait(0.05)
+						wait(0.1)
 						print(unlock.Identifier.Value)
 						if unlock.Level.Value == 0 then
 							local argsBuySC = {
@@ -433,7 +429,7 @@ local function KSYJF_fake_script() -- AutoCentr.Script
 							break
 						end
 					end
-					wait(1)
+					wait(2)
 				end
 			end
 		end
@@ -450,8 +446,8 @@ local function KSYJF_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(KSYJF_fake_script)()
-local function LXRGPA_fake_script() -- AutoCut.Script 
+coroutine.wrap(DGEAQ_fake_script)()
+local function DFEHN_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -477,18 +473,19 @@ local function LXRGPA_fake_script() -- AutoCut.Script
 		return function()
 			while isRunning do
 				invokeCut(quantity, field)
-				wait(0.2) 
+				wait(0.3) 
 			end
 		end
 	end
 	
 	local function startLoop()
 		for _, field in ipairs({"main", "anti", "un", "planet"}) do
-			local co1 = coroutine.create(createCutFunction(-1000000000000000000000, field))
-			local co2 = coroutine.create(createCutFunction(100000000000000000000, field))
+			local co1 = coroutine.create(createCutFunction(-1e20, field))
+			local co2 = coroutine.create(createCutFunction(1e20, field))
 			table.insert(activeCoroutines, co1)
 			table.insert(activeCoroutines, co2)
 			coroutine.resume(co1)
+			wait(0.05)
 			coroutine.resume(co2)
 			wait(0.1)
 		end
@@ -505,4 +502,4 @@ local function LXRGPA_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(LXRGPA_fake_script)()
+coroutine.wrap(DFEHN_fake_script)()
