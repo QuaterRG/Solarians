@@ -13,7 +13,7 @@ local AutoSoul3 = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 local AutoShard = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
-local AutoNova = Instance.new("TextButton")
+local AutoReset = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
 local UIGradient_2 = Instance.new("UIGradient")
 local AutoUpgrade = Instance.new("TextButton")
@@ -99,22 +99,22 @@ AutoShard.TextWrapped = true
 UICorner_3.CornerRadius = UDim.new(0, 70)
 UICorner_3.Parent = AutoShard
 
-AutoNova.Name = "AutoNova"
-AutoNova.Parent = Menu
-AutoNova.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-AutoNova.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AutoNova.BorderSizePixel = 0
-AutoNova.Position = UDim2.new(0.683333278, 0, 0.0938633978, 0)
-AutoNova.Size = UDim2.new(0.266666859, 0, 0.362167269, 0)
-AutoNova.Font = Enum.Font.SourceSans
-AutoNova.Text = "Supernova"
-AutoNova.TextColor3 = Color3.fromRGB(0, 0, 0)
-AutoNova.TextScaled = true
-AutoNova.TextSize = 40.000
-AutoNova.TextWrapped = true
+AutoReset.Name = "AutoReset"
+AutoReset.Parent = Menu
+AutoReset.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AutoReset.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoReset.BorderSizePixel = 0
+AutoReset.Position = UDim2.new(0.683333278, 0, 0.0938633978, 0)
+AutoReset.Size = UDim2.new(0.266666859, 0, 0.362167269, 0)
+AutoReset.Font = Enum.Font.SourceSans
+AutoReset.Text = "AutoReset"
+AutoReset.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoReset.TextScaled = true
+AutoReset.TextSize = 40.000
+AutoReset.TextWrapped = true
 
 UICorner_4.CornerRadius = UDim.new(0, 70)
-UICorner_4.Parent = AutoNova
+UICorner_4.Parent = AutoReset
 
 UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 238, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 238, 0))}
 UIGradient_2.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.21), NumberSequenceKeypoint.new(0.10, 0.49), NumberSequenceKeypoint.new(0.49, 0.26), NumberSequenceKeypoint.new(0.83, 0.52), NumberSequenceKeypoint.new(1.00, 0.16)}
@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function LTOSO_fake_script() -- OpenMenu.Script 
+local function JRKFBWQ_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function LTOSO_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(LTOSO_fake_script)()
-local function MXIYE_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(JRKFBWQ_fake_script)()
+local function LACGDF_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function MXIYE_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(MXIYE_fake_script)()
-local function XCKKNWO_fake_script() -- AutoShard.Script 
+coroutine.wrap(LACGDF_fake_script)()
+local function ETLVQNH_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -294,9 +294,9 @@ local function XCKKNWO_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(XCKKNWO_fake_script)()
-local function ZGGYA_fake_script() -- AutoNova.Script 
-	local script = Instance.new('Script', AutoNova)
+coroutine.wrap(ETLVQNH_fake_script)()
+local function GVSQQYG_fake_script() -- AutoReset.Script 
+	local script = Instance.new('Script', AutoReset)
 
 	local isRunning = false
 	local Button = script.Parent
@@ -320,6 +320,13 @@ local function ZGGYA_fake_script() -- AutoNova.Script
 				reset:FireServer(unpack(args))
 				wait(1)
 			end
+			if game:GetService("Players").LocalPlayer.PlayerGui.W1.BrokenRing.Locked.Visible == false then
+				local args = {
+					[1] = "breakRing"
+				}
+				reset:FireServer(unpack(args))
+				wait(1)
+			end
 			wait(0.5)
 		end
 	end
@@ -335,8 +342,8 @@ local function ZGGYA_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(ZGGYA_fake_script)()
-local function OXVTZ_fake_script() -- AutoUpgrade.Script 
+coroutine.wrap(GVSQQYG_fake_script)()
+local function NRDIOP_fake_script() -- AutoUpgrade.Script 
 	local script = Instance.new('Script', AutoUpgrade)
 
 	local Button = script.Parent
@@ -380,8 +387,8 @@ local function OXVTZ_fake_script() -- AutoUpgrade.Script
 		end 
 	end)
 end
-coroutine.wrap(OXVTZ_fake_script)()
-local function AENYRHL_fake_script() -- AutoCentr.Script 
+coroutine.wrap(NRDIOP_fake_script)()
+local function NKVZ_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -459,8 +466,8 @@ local function AENYRHL_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(AENYRHL_fake_script)()
-local function GWNOYBR_fake_script() -- AutoCut.Script 
+coroutine.wrap(NKVZ_fake_script)()
+local function IHHEX_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -515,4 +522,4 @@ local function GWNOYBR_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(GWNOYBR_fake_script)()
+coroutine.wrap(IHHEX_fake_script)()
