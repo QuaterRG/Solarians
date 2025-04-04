@@ -440,7 +440,7 @@ local function XUIR_fake_script() -- AutoCentr.Script
 						game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsBuySC))
 						print(unlock.Level.Value)
 					end
-					wait(0.05)
+					wait(0.5)
 				end
 			end
 			wait(1) -- Задержка между итерациями цикла (можно настроить по необходимости)
@@ -515,4 +515,4 @@ local function TPEZGP_fake_script() -- AutoCut.Script
 	end)
 end
 coroutine.wrap(TPEZGP_fake_script)()
-print(2)
+print(3)
