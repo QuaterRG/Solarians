@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function TDZZUM_fake_script() -- OpenMenu.Script 
+local function QMPD_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function TDZZUM_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(TDZZUM_fake_script)()
-local function UUBHH_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(QMPD_fake_script)()
+local function TGQFYZ_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function UUBHH_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(UUBHH_fake_script)()
-local function IAEQPT_fake_script() -- AutoShard.Script 
+coroutine.wrap(TGQFYZ_fake_script)()
+local function ULMR_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -293,8 +293,8 @@ local function IAEQPT_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(IAEQPT_fake_script)()
-local function WKOEBEE_fake_script() -- AutoNova.Script 
+coroutine.wrap(ULMR_fake_script)()
+local function JIKZY_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
@@ -333,8 +333,8 @@ local function WKOEBEE_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(WKOEBEE_fake_script)()
-local function EMYOBXJ_fake_script() -- AutoUpgrade.Script 
+coroutine.wrap(JIKZY_fake_script)()
+local function IFFNCOG_fake_script() -- AutoUpgrade.Script 
 	local script = Instance.new('Script', AutoUpgrade)
 
 	local Button = script.Parent
@@ -377,8 +377,8 @@ local function EMYOBXJ_fake_script() -- AutoUpgrade.Script
 		end 
 	end)
 end
-coroutine.wrap(EMYOBXJ_fake_script)()
-local function DGEAQ_fake_script() -- AutoCentr.Script 
+coroutine.wrap(IFFNCOG_fake_script)()
+local function TECJDR_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -386,7 +386,8 @@ local function DGEAQ_fake_script() -- AutoCentr.Script
 	local RedColor = Color3.new(1, 0, 0)
 	local ShopContainer = game:GetService("Players").LocalPlayer.PlayerGui.W1.VoidObelisk.ShopContainer.ScrollingFrame:GetChildren()
 	local isRunning = false
-	local singularityShopItems = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops.SingularityShop:GetChildren()
+	local sing = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer
+	local singularityShopItems = sing.Shops.SingularityShop:GetChildren()
 	local pathsC = {}
 	local pathsU = {}
 	for _, child in ipairs(ShopContainer) do
@@ -417,7 +418,7 @@ local function DGEAQ_fake_script() -- AutoCentr.Script
 					wait(0.2)
 					for _, unlock in ipairs(pathsU) do
 						wait(0.1)
-						if unlock.Level.Value == 0 then
+						if unlock.Level.Value == 0 and sing.CurrencyHolder.CurrencyAmount.Text ~= 0 then
 							print(unlock.Identifier.Value)
 							local argsBuySC = {
 								[1] = {
@@ -426,7 +427,8 @@ local function DGEAQ_fake_script() -- AutoCentr.Script
 								}
 							}
 							game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsBuySC))
-							break
+							wait(0.2)
+							print(unlock.Level.Value)
 						end
 					end
 					wait(2)
@@ -446,8 +448,8 @@ local function DGEAQ_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(DGEAQ_fake_script)()
-local function DFEHN_fake_script() -- AutoCut.Script 
+coroutine.wrap(TECJDR_fake_script)()
+local function SNYRYM_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -502,4 +504,5 @@ local function DFEHN_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(DFEHN_fake_script)()
+coroutine.wrap(SNYRYM_fake_script)()
+print(1)
