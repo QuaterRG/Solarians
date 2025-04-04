@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function JRKFBWQ_fake_script() -- OpenMenu.Script 
+local function KMAPF_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function JRKFBWQ_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(JRKFBWQ_fake_script)()
-local function LACGDF_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(KMAPF_fake_script)()
+local function JUGD_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function LACGDF_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(LACGDF_fake_script)()
-local function ETLVQNH_fake_script() -- AutoShard.Script 
+coroutine.wrap(JUGD_fake_script)()
+local function WERL_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -294,15 +294,15 @@ local function ETLVQNH_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(ETLVQNH_fake_script)()
-local function GVSQQYG_fake_script() -- AutoReset.Script 
+coroutine.wrap(WERL_fake_script)()
+local function FXQFZ_fake_script() -- AutoReset.Script 
 	local script = Instance.new('Script', AutoReset)
 
 	local isRunning = false
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
-	local gui = game:GetService("Players").LocalPlayer.PlayerGui.W1.Synthesis.PrestigeMenu
+	local gui = game:GetService("Players").LocalPlayer.PlayerGui
 	local reset = game:GetService("ReplicatedStorage").Remotes.TriggerReset
 	local function startLoop()
 		while isRunning do
@@ -313,14 +313,14 @@ local function GVSQQYG_fake_script() -- AutoReset.Script
 				reset:FireServer(unpack(args))
 				wait(1)
 			end
-			if gui.Visible == true then
+			if gui.W1.Synthesis.PrestigeMenu.Visible == true then
 				local args = {
 					[1] = "activateSynthesis"
 				}
 				reset:FireServer(unpack(args))
 				wait(1)
 			end
-			if game:GetService("Players").LocalPlayer.PlayerGui.W1.BrokenRing.Locked.Visible == false then
+			if gui.W1.BrokenRing.Locked.Visible == false then
 				local args = {
 					[1] = "breakRing"
 				}
@@ -342,8 +342,8 @@ local function GVSQQYG_fake_script() -- AutoReset.Script
 		end
 	end)
 end
-coroutine.wrap(GVSQQYG_fake_script)()
-local function NRDIOP_fake_script() -- AutoUpgrade.Script 
+coroutine.wrap(FXQFZ_fake_script)()
+local function ITZTHW_fake_script() -- AutoUpgrade.Script 
 	local script = Instance.new('Script', AutoUpgrade)
 
 	local Button = script.Parent
@@ -387,8 +387,8 @@ local function NRDIOP_fake_script() -- AutoUpgrade.Script
 		end 
 	end)
 end
-coroutine.wrap(NRDIOP_fake_script)()
-local function NKVZ_fake_script() -- AutoCentr.Script 
+coroutine.wrap(ITZTHW_fake_script)()
+local function DYYC_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -466,8 +466,8 @@ local function NKVZ_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(NKVZ_fake_script)()
-local function IHHEX_fake_script() -- AutoCut.Script 
+coroutine.wrap(DYYC_fake_script)()
+local function AABGO_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -522,4 +522,4 @@ local function IHHEX_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(IHHEX_fake_script)()
+coroutine.wrap(AABGO_fake_script)()
