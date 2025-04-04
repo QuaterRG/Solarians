@@ -515,7 +515,7 @@ local function RLNOVVD_fake_script() -- AutoCut.Script
 	end)
 end
 coroutine.wrap(RLNOVVD_fake_script)()
-local function JJSASNL_fake_script() -- Menu.Script 
+function JJSASNL_fake_script() -- Menu.Script 
 	local script = Instance.new('Script', Menu)
 
 	_G.storage = game:GetService("ReplicatedStorage").Remotes
