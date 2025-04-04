@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function KMAPF_fake_script() -- OpenMenu.Script 
+local function FWSCO_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function KMAPF_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(KMAPF_fake_script)()
-local function JUGD_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(FWSCO_fake_script)()
+local function PSDIWAM_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function JUGD_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(JUGD_fake_script)()
-local function WERL_fake_script() -- AutoShard.Script 
+coroutine.wrap(PSDIWAM_fake_script)()
+local function MYCIG_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -294,8 +294,8 @@ local function WERL_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(WERL_fake_script)()
-local function FXQFZ_fake_script() -- AutoReset.Script 
+coroutine.wrap(MYCIG_fake_script)()
+local function KLBY_fake_script() -- AutoReset.Script 
 	local script = Instance.new('Script', AutoReset)
 
 	local isRunning = false
@@ -320,7 +320,7 @@ local function FXQFZ_fake_script() -- AutoReset.Script
 				reset:FireServer(unpack(args))
 				wait(1)
 			end
-			if gui.W1.BrokenRing.Locked.Visible == false then
+			if gui.W1.BrokenRing.Locked.Visible == false and gui.W1.BrokenRing.Enabled then
 				local args = {
 					[1] = "breakRing"
 				}
@@ -342,8 +342,8 @@ local function FXQFZ_fake_script() -- AutoReset.Script
 		end
 	end)
 end
-coroutine.wrap(FXQFZ_fake_script)()
-local function ITZTHW_fake_script() -- AutoUpgrade.Script 
+coroutine.wrap(KLBY_fake_script)()
+local function QTIMTZ_fake_script() -- AutoUpgrade.Script 
 	local script = Instance.new('Script', AutoUpgrade)
 
 	local Button = script.Parent
@@ -387,8 +387,8 @@ local function ITZTHW_fake_script() -- AutoUpgrade.Script
 		end 
 	end)
 end
-coroutine.wrap(ITZTHW_fake_script)()
-local function DYYC_fake_script() -- AutoCentr.Script 
+coroutine.wrap(QTIMTZ_fake_script)()
+local function OSHDZVU_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -407,7 +407,7 @@ local function DYYC_fake_script() -- AutoCentr.Script
 		end
 	end
 	
-	for _, i in ipairs{"sol", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"} do
+	for _, i in ipairs{"sol", "s28", "s22", "rem", "s12", "s29", "s13", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"} do
 		for _, child in ipairs(singularityShopItems) do
 			if child.Name == "Unlock" and child.Identifier.Value == i then
 				table.insert(pathsU, child)
@@ -446,7 +446,6 @@ local function DYYC_fake_script() -- AutoCentr.Script
 							}
 						}
 						event:FireServer(unpack(argsBuySC))
-						print(unlock.Identifier.Value)
 					end
 					wait(1)
 				end
@@ -466,8 +465,8 @@ local function DYYC_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(DYYC_fake_script)()
-local function AABGO_fake_script() -- AutoCut.Script 
+coroutine.wrap(OSHDZVU_fake_script)()
+local function IRVPUJH_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -522,4 +521,4 @@ local function AABGO_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(AABGO_fake_script)()
+coroutine.wrap(IRVPUJH_fake_script)()
