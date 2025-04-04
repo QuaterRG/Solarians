@@ -391,11 +391,13 @@ local function XUIR_fake_script() -- AutoCentr.Script
 	local pathsC = {}
 	local pathsU = {}
 	local storage = game:GetService("ReplicatedStorage").Remotes.GenericEvent
+
 	for _, child in ipairs(ShopContainer) do
 		if child.Name == "CentralizeItem" then
 			table.insert(pathsC, child)
 		end
 	end
+
 	for _, i in ipairs{"sol", "s13", "s28", "s22", "rem", "s12", "s29", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"} do
 		for _, child in ipairs(singularityShopItems) do
 			if child.Name == "Unlock" and child.Identifier.Value == i then
@@ -404,7 +406,7 @@ local function XUIR_fake_script() -- AutoCentr.Script
 		end
 	end
 	
-	local function startLoop()
+	local function centralizeLoop()
 		while isRunning do
 			for _, centralizeItem in ipairs(pathsC) do
 				wait(0.05)
@@ -416,41 +418,47 @@ local function XUIR_fake_script() -- AutoCentr.Script
 						}
 					}
 					storage:FireServer(unpack(argsCentralize))
-					wait(1)
-					for _, unlock in ipairs(pathsU) do
-						wait(0.05)
-						while unlock.Level.Value == 0 and sing.CurrencyHolder.CurrencyAmount.Text ~= 0 do
-							print(unlock.Identifier.Value)
-							local argsBuySC = {
-								[1] = {
-									["id"] = "buySC",
-									["scId"] = unlock.Identifier.Value
-								}
-							}
-							game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsBuySC))
-							print(unlock.Level.Value)
-							wait(0.05)
-						end
-						break
-					end
-					wait(1)
+					wait(2) -- Задержка после централизации
 				end
 			end
 		end
 	end
 	
+	local function buyUnlockItems()
+		while isRunning do
+			for _, unlock in ipairs(pathsU) do
+				wait(0.05)
+				while unlock.Level.Value == 0 do
+					if sing.CurrencyHolder.CurrencyAmount.Text ~= 0 then
+						print(unlock.Identifier.Value)
+						local argsBuySC = {
+							[1] = {
+								["id"] = "buySC",
+								["scId"] = unlock.Identifier.Value
+							}
+						}
+						game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsBuySC))
+						print(unlock.Level.Value)
+					end
+					wait(0.05)
+				end
+			end
+			wait(1) -- Задержка между итерациями цикла (можно настроить по необходимости)
+		end
+	end
+	
 	Button.MouseButton1Click:Connect(function()
 		isRunning = not isRunning -- Переключаем состояние isRunning
-	
 		if isRunning then 
 			Button.BackgroundColor3 = GreenColor 
-			startLoop() -- Запускаем цикл только если он не запущен 
+			coroutine.wrap(centralizeLoop)() -- Запускаем корутину для централизации 
+			coroutine.wrap(buyUnlockItems)() -- Запускаем корутину для покупок 
 		else 
 			Button.BackgroundColor3 = RedColor 
 		end 
 	end)
 end
-coroutine.wrap(XUIR_fake_script)()
+XUIR_fake_script()
 local function TPEZGP_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
@@ -507,4 +515,4 @@ local function TPEZGP_fake_script() -- AutoCut.Script
 	end)
 end
 coroutine.wrap(TPEZGP_fake_script)()
-print(1)
+print(2)
