@@ -417,8 +417,8 @@ local function DGEAQ_fake_script() -- AutoCentr.Script
 					wait(0.2)
 					for _, unlock in ipairs(pathsU) do
 						wait(0.1)
-						print(unlock.Identifier.Value)
 						if unlock.Level.Value == 0 then
+							print(unlock.Identifier.Value)
 							local argsBuySC = {
 								[1] = {
 									["id"] = "buySC",
