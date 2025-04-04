@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function QMPD_fake_script() -- OpenMenu.Script 
+local function CUIJE_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function QMPD_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(QMPD_fake_script)()
-local function TGQFYZ_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(CUIJE_fake_script)()
+local function CQWX_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function TGQFYZ_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(TGQFYZ_fake_script)()
-local function ULMR_fake_script() -- AutoShard.Script 
+coroutine.wrap(CQWX_fake_script)()
+local function QGVIN_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -293,8 +293,8 @@ local function ULMR_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(ULMR_fake_script)()
-local function JIKZY_fake_script() -- AutoNova.Script 
+coroutine.wrap(QGVIN_fake_script)()
+local function EZGIFAX_fake_script() -- AutoNova.Script 
 	local script = Instance.new('Script', AutoNova)
 
 	local isRunning = false
@@ -333,8 +333,8 @@ local function JIKZY_fake_script() -- AutoNova.Script
 		end
 	end)
 end
-coroutine.wrap(JIKZY_fake_script)()
-local function IFFNCOG_fake_script() -- AutoUpgrade.Script 
+coroutine.wrap(EZGIFAX_fake_script)()
+local function EWNTTR_fake_script() -- AutoUpgrade.Script 
 	local script = Instance.new('Script', AutoUpgrade)
 
 	local Button = script.Parent
@@ -377,8 +377,8 @@ local function IFFNCOG_fake_script() -- AutoUpgrade.Script
 		end 
 	end)
 end
-coroutine.wrap(IFFNCOG_fake_script)()
-local function TECJDR_fake_script() -- AutoCentr.Script 
+coroutine.wrap(EWNTTR_fake_script)()
+local function XUIR_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -390,6 +390,7 @@ local function TECJDR_fake_script() -- AutoCentr.Script
 	local singularityShopItems = sing.Shops.SingularityShop:GetChildren()
 	local pathsC = {}
 	local pathsU = {}
+	local storage = game:GetService("ReplicatedStorage").Remotes.GenericEvent
 	for _, child in ipairs(ShopContainer) do
 		if child.Name == "CentralizeItem" then
 			table.insert(pathsC, child)
@@ -414,11 +415,11 @@ local function TECJDR_fake_script() -- AutoCentr.Script
 							["cent"] = centralizeItem.Identifier.Value
 						}
 					}
-					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsCentralize))
+					storage:FireServer(unpack(argsCentralize))
 					wait(1)
 					for _, unlock in ipairs(pathsU) do
 						wait(0.05)
-						if unlock.Level.Value == 0 and sing.CurrencyHolder.CurrencyAmount.Text ~= 0 then
+						while unlock.Level.Value == 0 and sing.CurrencyHolder.CurrencyAmount.Text ~= 0 do
 							print(unlock.Identifier.Value)
 							local argsBuySC = {
 								[1] = {
@@ -427,11 +428,7 @@ local function TECJDR_fake_script() -- AutoCentr.Script
 								}
 							}
 							game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsBuySC))
-							wait(0.5)
 							print(unlock.Level.Value)
-						end
-						if sing.CurrencyHolder.CurrencyAmount.Text == 0 then
-							break
 						end
 					end
 					wait(1)
@@ -451,8 +448,8 @@ local function TECJDR_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(TECJDR_fake_script)()
-local function SNYRYM_fake_script() -- AutoCut.Script 
+coroutine.wrap(XUIR_fake_script)()
+local function TPEZGP_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -507,5 +504,4 @@ local function SNYRYM_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(SNYRYM_fake_script)()
-print(2)
+coroutine.wrap(TPEZGP_fake_script)()
