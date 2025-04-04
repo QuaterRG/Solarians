@@ -406,7 +406,7 @@ local function TECJDR_fake_script() -- AutoCentr.Script
 	local function startLoop()
 		while isRunning do
 			for _, centralizeItem in ipairs(pathsC) do
-				wait(0.1)
+				wait(0.05)
 				if centralizeItem.CentralizeButton.Info.Text:find("Centralize Ready") and centralizeItem.Visible then
 					local argsCentralize = {
 						[1] = {
@@ -415,9 +415,9 @@ local function TECJDR_fake_script() -- AutoCentr.Script
 						}
 					}
 					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsCentralize))
-					wait(0.2)
+					wait(1)
 					for _, unlock in ipairs(pathsU) do
-						wait(0.1)
+						wait(0.05)
 						if unlock.Level.Value == 0 and sing.CurrencyHolder.CurrencyAmount.Text ~= 0 then
 							print(unlock.Identifier.Value)
 							local argsBuySC = {
@@ -427,11 +427,14 @@ local function TECJDR_fake_script() -- AutoCentr.Script
 								}
 							}
 							game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(argsBuySC))
-							wait(0.2)
+							wait(0.5)
 							print(unlock.Level.Value)
 						end
+						if sing.CurrencyHolder.CurrencyAmount.Text == 0 then
+							break
+						end
 					end
-					wait(2)
+					wait(1)
 				end
 			end
 		end
@@ -505,4 +508,4 @@ local function SNYRYM_fake_script() -- AutoCut.Script
 	end)
 end
 coroutine.wrap(SNYRYM_fake_script)()
-print(1)
+print(2)
