@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function PUBSBFA_fake_script() -- OpenMenu.Script 
+local function BXYQIDX_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function PUBSBFA_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(PUBSBFA_fake_script)()
-local function ZYOJVE_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(BXYQIDX_fake_script)()
+local function PQOKM_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function ZYOJVE_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(ZYOJVE_fake_script)()
-local function AQDIFH_fake_script() -- AutoShard.Script 
+coroutine.wrap(PQOKM_fake_script)()
+local function LPPLS_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -294,8 +294,8 @@ local function AQDIFH_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(AQDIFH_fake_script)()
-local function LMDOO_fake_script() -- AutoReset.Script 
+coroutine.wrap(LPPLS_fake_script)()
+local function OHEUMUX_fake_script() -- AutoReset.Script 
 	local script = Instance.new('Script', AutoReset)
 
 	local isRunning = false
@@ -313,13 +313,11 @@ local function LMDOO_fake_script() -- AutoReset.Script
 				reset:FireServer(unpack(args))
 				wait(1)
 			end
-			if gui.W1.Synthesis.PrestigeMenu.Visible == true then
-				local args = {
-					[1] = "activateSynthesis"
-				}
-				reset:FireServer(unpack(args))
-				wait(1)
-			end
+			local args = {
+				[1] = "activateSynthesis"
+			}
+			reset:FireServer(unpack(args))
+			wait(1)
 			if gui.W1.BrokenRing.Locked.Visible == false and gui.W1.BrokenRing.Enabled then
 				local args = {
 					[1] = "breakRing"
@@ -342,8 +340,8 @@ local function LMDOO_fake_script() -- AutoReset.Script
 		end
 	end)
 end
-coroutine.wrap(LMDOO_fake_script)()
-local function HQDVF_fake_script() -- AutoUpgrade.Script 
+coroutine.wrap(OHEUMUX_fake_script)()
+local function JNKN_fake_script() -- AutoUpgrade.Script 
 	local script = Instance.new('Script', AutoUpgrade)
 
 	local Button = script.Parent
@@ -387,8 +385,8 @@ local function HQDVF_fake_script() -- AutoUpgrade.Script
 		end 
 	end)
 end
-coroutine.wrap(HQDVF_fake_script)()
-local function ZOMMRPG_fake_script() -- AutoCentr.Script 
+coroutine.wrap(JNKN_fake_script)()
+local function RSCLQO_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -469,8 +467,8 @@ local function ZOMMRPG_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(ZOMMRPG_fake_script)()
-local function QNZXBK_fake_script() -- AutoCut.Script 
+coroutine.wrap(RSCLQO_fake_script)()
+local function AULDRGS_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -525,4 +523,4 @@ local function QNZXBK_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(QNZXBK_fake_script)()
+coroutine.wrap(AULDRGS_fake_script)()
