@@ -3,15 +3,7 @@ local GenericFunction = ReplicatedStorage.Remotes.GenericFunction
 local GenericEvent = ReplicatedStorage.Remotes.GenericEvent
 
 local function invokeCut(identifier, quantity, field)
-    local args = {
-        [1] = {
-            ["id"] = "cut",
-            ["identifier"] = identifier,
-            ["quantity"] = quantity,
-            ["field"] = field
-        }
-    }
-    GenericFunction:InvokeServer(unpack(args))
+    GenericFunction:InvokeServer(unpack({[1] = {["id"] = "cut", ["identifier"] = identifier, ["quantity"] = quantity, ["field"] = field}}))
 end
 
 local function createCutFunction(identifier, quantity, field)
