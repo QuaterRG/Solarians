@@ -297,7 +297,7 @@ local function JRLFO_fake_script() -- AutoReset.Script
 				reset:FireServer("breakRing")
 				wait(1)
 			end
-			wait(0.5)
+			wait(5)
 		end
 	end
 	
@@ -437,7 +437,7 @@ local function TTZHV_fake_script() -- AutoCut.Script
 		return function()
 			while isRunning do
 				GenericFunction:InvokeServer({["id"] = "cut", ["identifier"] = "pw8", ["quantity"] = quantity, ["field"] = field})
-				wait(0.2) 
+				wait(0.5) 
 			end
 		end
 	end
