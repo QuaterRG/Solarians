@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function GGWNS_fake_script() -- OpenMenu.Script 
+local function JKLQ_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function GGWNS_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(GGWNS_fake_script)()
-local function BNPTYVI_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(JKLQ_fake_script)()
+local function BFJJ_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -204,32 +204,20 @@ local function BNPTYVI_fake_script() -- AutoSoul3.Script
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
 	local event = game:GetService("ReplicatedStorage").Remotes.GenericEvent
+	
+	local function fireEvent(id, x)
+		event:FireServer({[1] = {["id"] = id, ["x"] = x}})
+	end
+	
 	local function startLoop()
 		while isRunning do
-			local args = {
-				[1] = {
-					["id"] = "changeSoul",
-					["x"] = 3
-				}
-			}
-			event:FireServer(unpack(args))
+			fireEvent("changeSoul", 3)
 			wait(0.2)
-			local args = {
-				[1] = {
-					["id"] = "setSoul",
-					["x"] = 0.25
-				}
-			}
-			event:FireServer(unpack(args))
+			fireEvent("setSoul", 0.25)
 			wait(0.5)
+	
 			for _, buy in ipairs({"soul2", "offdef2", "syncs", "syngs"}) do
-				local args = {
-					[1] = {
-						["id"] = "buySoul",
-						["soulId"] = buy
-					}
-				}
-				event:FireServer(unpack(args))
+				event:FireServer({[1] = {["id"] = "buySoul", ["soulId"] = buy}})
 				wait(0.2)
 			end
 			wait(10)
@@ -238,16 +226,15 @@ local function BNPTYVI_fake_script() -- AutoSoul3.Script
 	
 	Button.MouseButton1Click:Connect(function()
 		isRunning = not isRunning
+		Button.BackgroundColor3 = isRunning and GreenColor or RedColor
+	
 		if isRunning then
-			Button.BackgroundColor3 = GreenColor
 			startLoop()
-		else
-			Button.BackgroundColor3 = RedColor
 		end
 	end)
 end
-coroutine.wrap(BNPTYVI_fake_script)()
-local function CLYMDPR_fake_script() -- AutoShard.Script 
+coroutine.wrap(BFJJ_fake_script)()
+local function EWXRAL_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -257,26 +244,19 @@ local function CLYMDPR_fake_script() -- AutoShard.Script
 	local Scroll = game:GetService("Players").LocalPlayer.PlayerGui.W1.SythesisPlots.ShopContainer.ScrollingFrame:GetChildren()
 	local event = game:GetService("ReplicatedStorage").Remotes.GenericEvent
 	local paths = {}
+	
 	for _, child in ipairs(Scroll) do
 		if child.Name == "BasicUpgrade" then
 			table.insert(paths, child)
 		end
 	end
+	
 	local function startLoop()
 		while isRunning do
 			for _, child in ipairs(Scroll) do
-				if child.Name == "Plot" then
-					if child.Identifier.Value == 1 and child.Normal.PB.Progress.Text ~= "0s" then
-						local args = {
-							[1] = {
-								["id"] = "synthesis",
-								["selected"] = "cs",
-								["syn"] = 1
-							}
-						}
-						event:FireServer(unpack(args))
-						break
-					end
+				if child.Name == "Plot" and child.Identifier.Value == 1 and child.Normal.PB.Progress.Text ~= "0s" then
+					event:FireServer({[1] = {["id"] = "synthesis", ["selected"] = "cs", ["syn"] = 1}})
+					break
 				end
 			end
 			wait(3)
@@ -294,8 +274,8 @@ local function CLYMDPR_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(CLYMDPR_fake_script)()
-local function VMWY_fake_script() -- AutoReset.Script 
+coroutine.wrap(EWXRAL_fake_script)()
+local function JTQQLYI_fake_script() -- AutoReset.Script 
 	local script = Instance.new('Script', AutoReset)
 
 	local isRunning = false
@@ -304,25 +284,17 @@ local function VMWY_fake_script() -- AutoReset.Script
 	local RedColor = Color3.new(1, 0, 0)
 	local gui = game:GetService("Players").LocalPlayer.PlayerGui
 	local reset = game:GetService("ReplicatedStorage").Remotes.TriggerReset
+	
 	local function startLoop()
 		while isRunning do
-			if gui.Solarians.Restoration.ShopContainer.Menus.StarTier.UpgradeSNT.Visible == true then
-				local args = {
-					[1] = "subparnova"
-				}
-				reset:FireServer(unpack(args))
+			if gui.Solarians.Restoration.ShopContainer.Menus.StarTier.UpgradeSNT.Visible then
+				reset:FireServer("subparnova")
 				wait(1)
 			end
-			local args = {
-				[1] = "activateSynthesis"
-			}
-			reset:FireServer(unpack(args))
+			reset:FireServer("activateSynthesis")
 			wait(1)
-			if gui.W1.BrokenRing.Locked.Visible == false and gui.W1.BrokenRing.Enabled then
-				local args = {
-					[1] = "breakRing"
-				}
-				reset:FireServer(unpack(args))
+			if not gui.W1.BrokenRing.Locked.Visible and gui.W1.BrokenRing.Enabled then
+				reset:FireServer("breakRing")
 				wait(1)
 			end
 			wait(0.5)
@@ -340,8 +312,8 @@ local function VMWY_fake_script() -- AutoReset.Script
 		end
 	end)
 end
-coroutine.wrap(VMWY_fake_script)()
-local function FUTIYZ_fake_script() -- AutoUpgrade.Script 
+coroutine.wrap(JTQQLYI_fake_script)()
+local function LSKKNVU_fake_script() -- AutoUpgrade.Script 
 	local script = Instance.new('Script', AutoUpgrade)
 
 	local Button = script.Parent
@@ -351,6 +323,7 @@ local function FUTIYZ_fake_script() -- AutoUpgrade.Script
 	local shops = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops
 	local paths = {}
 	local event = game:GetService("ReplicatedStorage").Remotes.GenericEvent
+	
 	for _, shop in ipairs({shops.MagicShop, shops.SoulShop, shops.UnstableShop}) do
 		for _, child in ipairs(shop:GetChildren()) do
 			if child.Name == "Unlock" then
@@ -358,17 +331,12 @@ local function FUTIYZ_fake_script() -- AutoUpgrade.Script
 			end
 		end
 	end
+	
 	local function startLoop()
 		while isRunning do
 			for _, unlock in ipairs(paths) do
 				if unlock.Level.Value == 0 and unlock.Unlocked.Button.Gradient.Cost.Text:find("#00ff00") then
-					local args = {
-						[1] = {
-							["id"] = "buySC",
-							["scId"] = unlock.Identifier.Value
-						}
-					}
-					event:FireServer(unpack(args))
+					event:FireServer({[1] = {["id"] = "buySC", ["scId"] = unlock.Identifier.Value}})
 				end
 				wait(0.05)
 			end
@@ -377,16 +345,15 @@ local function FUTIYZ_fake_script() -- AutoUpgrade.Script
 	
 	Button.MouseButton1Click:Connect(function()
 		isRunning = not isRunning
+		Button.BackgroundColor3 = isRunning and GreenColor or RedColor
+	
 		if isRunning then 
-			Button.BackgroundColor3 = GreenColor 
 			startLoop()
-		else 
-			Button.BackgroundColor3 = RedColor 
 		end 
-	end)
+	end)	
 end
-coroutine.wrap(FUTIYZ_fake_script)()
-local function QFFKD_fake_script() -- AutoCentr.Script 
+coroutine.wrap(LSKKNVU_fake_script)()
+local function LPNSQ_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -419,13 +386,7 @@ local function QFFKD_fake_script() -- AutoCentr.Script
 			for _, centralizeItem in ipairs(pathsC) do
 				wait(0.05)
 				if centralizeItem.CentralizeButton.Info.Text:find("Centralize Ready") and centralizeItem.Visible then
-					local argsCentralize = {
-						[1] = {
-							["id"] = "centralize",
-							["cent"] = centralizeItem.Identifier.Value
-						}
-					}
-					event:FireServer(unpack(argsCentralize))
+					event:FireServer({["id"] = "centralize", ["cent"] = centralizeItem.Identifier.Value})
 					wait(2)
 				end
 			end
@@ -438,13 +399,7 @@ local function QFFKD_fake_script() -- AutoCentr.Script
 				wait(0.1)
 				while unlock.Level.Value == 0 do
 					if sing.CurrencyHolder.CurrencyAmount.Text ~= "0" then
-						local argsBuySC = {
-							[1] = {
-								["id"] = "buySC",
-								["scId"] = unlock.Identifier.Value
-							}
-						}
-						event:FireServer(unpack(argsBuySC))
+						event:FireServer({["id"] = "buySC", ["scId"] = unlock.Identifier.Value})
 					end
 					wait(0.5)
 				end
@@ -467,8 +422,8 @@ local function QFFKD_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(QFFKD_fake_script)()
-local function OUGRS_fake_script() -- AutoCut.Script 
+coroutine.wrap(LPNSQ_fake_script)()
+local function NKKC_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -481,15 +436,7 @@ local function OUGRS_fake_script() -- AutoCut.Script
 	local function createCutFunction(quantity, field)
 		return function()
 			while isRunning do
-				local args = {
-					[1] = {
-						["id"] = "cut",
-						["identifier"] = "pw8", 
-						["quantity"] = quantity,
-						["field"] = field
-					}
-				}
-				GenericFunction:InvokeServer(unpack(args))
+				GenericFunction:InvokeServer({[1] = {["id"] = "cut", ["identifier"] = "pw8", ["quantity"] = quantity, ["field"] = field}})
 				wait(0.2) 
 			end
 		end
@@ -510,7 +457,6 @@ local function OUGRS_fake_script() -- AutoCut.Script
 	
 			for _, co in ipairs(activeCoroutines) do
 				coroutine.resume(co)
-				wait(0.05)
 			end
 	
 		else
@@ -518,4 +464,4 @@ local function OUGRS_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(OUGRS_fake_script)()
+coroutine.wrap(NKKC_fake_script)()
