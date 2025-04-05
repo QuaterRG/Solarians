@@ -90,7 +90,7 @@ UICorner_4.Parent = Blue_2
 
 -- Scripts:
 
-local function KAXDHFQ_fake_script() -- BlueMenu.Script 
+local function WDXUEIF_fake_script() -- BlueMenu.Script 
 	local script = Instance.new('Script', BlueMenu)
 
 	local Button = script.Parent
@@ -104,8 +104,8 @@ local function KAXDHFQ_fake_script() -- BlueMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(KAXDHFQ_fake_script)()
-local function DYTTBBO_fake_script() -- AutoCut.Script 
+coroutine.wrap(WDXUEIF_fake_script)()
+local function EVJME_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -116,8 +116,8 @@ local function DYTTBBO_fake_script() -- AutoCut.Script
 	
 	local function startloop()
 		while isRunning do
-			func:InvokeServer({[1] = {["id"] = "cut", ["identifier"] = "basic", ["quantity"] = 1e8, ["field"] = "blue"}}) 
-			func:InvokeServer({[1] = {["id"] = "cut", ["identifier"] = "iridium", ["quantity"] = -1e8, ["field"] = "blue"}})
+			func:InvokeServer({["id"] = "cut", ["identifier"] = "basic", ["quantity"] = 1e8, ["field"] = "blue"}) 
+			func:InvokeServer({["id"] = "cut", ["identifier"] = "iridium", ["quantity"] = -1e8, ["field"] = "blue"})
 			wait(0.2)
 		end
 	end
@@ -130,8 +130,8 @@ local function DYTTBBO_fake_script() -- AutoCut.Script
 		end 
 	end)
 end
-coroutine.wrap(DYTTBBO_fake_script)()
-local function NGXSS_fake_script() -- AutoBuy.Script 
+coroutine.wrap(EVJME_fake_script)()
+local function SFNJIQS_fake_script() -- AutoBuy.Script 
 	local script = Instance.new('Script', AutoBuy)
 
 	local isRunning = false
@@ -151,7 +151,7 @@ local function NGXSS_fake_script() -- AutoBuy.Script
 		while isRunning do
 			for _, upgrade in ipairs(paths) do
 				if upgrade.Display.CostDisplay.Text:find("#00ff00") and upgrade.Variables.Identifier.Value ~= "br3" then
-					event:FireServer({[1] = {["id"] = "buyUpgrade", ["mode"] = "max", ["upgradeId"] = upgrade.Variables.Identifier.Value}})
+					event:FireServer({["id"] = "buyUpgrade", ["mode"] = "max", ["upgradeId"] = upgrade.Variables.Identifier.Value})
 					wait(0.5)
 				end
 			end
@@ -168,4 +168,4 @@ local function NGXSS_fake_script() -- AutoBuy.Script
 		end 
 	end)
 end
-coroutine.wrap(NGXSS_fake_script)()
+coroutine.wrap(SFNJIQS_fake_script)()
