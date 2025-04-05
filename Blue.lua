@@ -116,9 +116,9 @@ local function EVJME_fake_script() -- AutoCut.Script
 	
 	local function startloop()
 		while isRunning do
-			func:InvokeServer({["id"] = "cut", ["identifier"] = "basic", ["quantity"] = 1e8, ["field"] = "blue"}) 
-			func:InvokeServer({["id"] = "cut", ["identifier"] = "iridium", ["quantity"] = -1e8, ["field"] = "blue"})
-			wait(0.2)
+			func:InvokeServer({["id"] = "cut", ["identifier"] = "basic", ["quantity"] = 1e7, ["field"] = "blue"}) 
+			func:InvokeServer({["id"] = "cut", ["identifier"] = "iridium", ["quantity"] = -1e7, ["field"] = "blue"})
+			wait(0.05)
 		end
 	end
 	
