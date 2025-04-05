@@ -118,7 +118,6 @@ local function EVJME_fake_script() -- AutoCut.Script
 		while isRunning do
 			func:InvokeServer({["id"] = "cut", ["identifier"] = "basic", ["quantity"] = 1e7, ["field"] = "blue"}) 
 			func:InvokeServer({["id"] = "cut", ["identifier"] = "iridium", ["quantity"] = -1e7, ["field"] = "blue"})
-			wait(0.05)
 		end
 	end
 	
@@ -169,3 +168,4 @@ local function SFNJIQS_fake_script() -- AutoBuy.Script
 	end)
 end
 coroutine.wrap(SFNJIQS_fake_script)()
+print(1)
