@@ -179,7 +179,7 @@ UICorner_8.Parent = AutoCut
 
 -- Scripts:
 
-local function FWSCO_fake_script() -- OpenMenu.Script 
+local function PUBSBFA_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -195,8 +195,8 @@ local function FWSCO_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(FWSCO_fake_script)()
-local function PSDIWAM_fake_script() -- AutoSoul3.Script 
+coroutine.wrap(PUBSBFA_fake_script)()
+local function ZYOJVE_fake_script() -- AutoSoul3.Script 
 	local script = Instance.new('Script', AutoSoul3)
 
 	local isRunning = false
@@ -246,8 +246,8 @@ local function PSDIWAM_fake_script() -- AutoSoul3.Script
 		end
 	end)
 end
-coroutine.wrap(PSDIWAM_fake_script)()
-local function MYCIG_fake_script() -- AutoShard.Script 
+coroutine.wrap(ZYOJVE_fake_script)()
+local function AQDIFH_fake_script() -- AutoShard.Script 
 	local script = Instance.new('Script', AutoShard)
 
 	local isRunning = false
@@ -294,8 +294,8 @@ local function MYCIG_fake_script() -- AutoShard.Script
 		end
 	end)
 end
-coroutine.wrap(MYCIG_fake_script)()
-local function KLBY_fake_script() -- AutoReset.Script 
+coroutine.wrap(AQDIFH_fake_script)()
+local function LMDOO_fake_script() -- AutoReset.Script 
 	local script = Instance.new('Script', AutoReset)
 
 	local isRunning = false
@@ -342,8 +342,8 @@ local function KLBY_fake_script() -- AutoReset.Script
 		end
 	end)
 end
-coroutine.wrap(KLBY_fake_script)()
-local function QTIMTZ_fake_script() -- AutoUpgrade.Script 
+coroutine.wrap(LMDOO_fake_script)()
+local function HQDVF_fake_script() -- AutoUpgrade.Script 
 	local script = Instance.new('Script', AutoUpgrade)
 
 	local Button = script.Parent
@@ -387,8 +387,8 @@ local function QTIMTZ_fake_script() -- AutoUpgrade.Script
 		end 
 	end)
 end
-coroutine.wrap(QTIMTZ_fake_script)()
-local function OSHDZVU_fake_script() -- AutoCentr.Script 
+coroutine.wrap(HQDVF_fake_script)()
+local function ZOMMRPG_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -401,13 +401,14 @@ local function OSHDZVU_fake_script() -- AutoCentr.Script
 	local pathsC = {}
 	local pathsU = {}
 	local event = game:GetService("ReplicatedStorage").Remotes.GenericEvent
+	
 	for _, child in ipairs(ShopContainer) do
 		if child.Name == "CentralizeItem" then
 			table.insert(pathsC, child)
 		end
 	end
 	
-	for _, i in ipairs{"sol", "s28", "s22", "rem", "s12", "s29", "s13", "s17", "s25", "s31", "s10", "s19", "s21", "s16", "soulc", "sword", "s23", "s30", "s27", "s26"} do
+	for _, i in ipairs{"sol", "s28", "s22", "rem", "s12", "s29", "s25", "s31", "s13", "s16", "s17", "s10", "s19", "s21", "soulc", "sword", "s23", "s30", "s27", "s26"} do
 		for _, child in ipairs(singularityShopItems) do
 			if child.Name == "Unlock" and child.Identifier.Value == i then
 				table.insert(pathsU, child)
@@ -427,7 +428,7 @@ local function OSHDZVU_fake_script() -- AutoCentr.Script
 						}
 					}
 					event:FireServer(unpack(argsCentralize))
-					wait(2) -- Задержка после централизации
+					wait(2)
 				end
 			end
 		end
@@ -447,26 +448,29 @@ local function OSHDZVU_fake_script() -- AutoCentr.Script
 						}
 						event:FireServer(unpack(argsBuySC))
 					end
-					wait(1)
+					wait(0.5)
 				end
 			end
-			wait(1) -- Задержка между итерациями цикла (можно настроить по необходимости)
-		end
+	
+			Button.BackgroundColor3 = RedColor 
+			isRunning = false 
+			break 
+		end 
 	end
 	
 	Button.MouseButton1Click:Connect(function()
-		isRunning = not isRunning -- Переключаем состояние isRunning
+		isRunning = not isRunning 
 		if isRunning then 
 			Button.BackgroundColor3 = GreenColor 
-			coroutine.wrap(centralizeLoop)() -- Запускаем корутину для централизации 
-			coroutine.wrap(buyUnlockItems)() -- Запускаем корутину для покупок 
+			coroutine.wrap(centralizeLoop)() 
+			coroutine.wrap(buyUnlockItems)() 
 		else 
 			Button.BackgroundColor3 = RedColor 
 		end 
 	end)
 end
-coroutine.wrap(OSHDZVU_fake_script)()
-local function IRVPUJH_fake_script() -- AutoCut.Script 
+coroutine.wrap(ZOMMRPG_fake_script)()
+local function QNZXBK_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -521,4 +525,4 @@ local function IRVPUJH_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(IRVPUJH_fake_script)()
+coroutine.wrap(QNZXBK_fake_script)()
