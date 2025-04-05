@@ -90,72 +90,48 @@ UICorner_4.Parent = Blue_2
 
 -- Scripts:
 
-local function ZCMX_fake_script() -- BlueMenu.Script 
+local function KAXDHFQ_fake_script() -- BlueMenu.Script 
 	local script = Instance.new('Script', BlueMenu)
 
 	local Button = script.Parent
-	BlueMenu = script.Parent.Parent.Blue
+	local BlueMenu = script.Parent.Parent.Blue
 	function onClick()
 		if BlueMenu.Visible == false then
 			BlueMenu.Visible = true
-			Button.Text = "Close"
 		elseif BlueMenu.Visible == true then
 			BlueMenu.Visible = false
-			Button.Text = "Solarians"
 		end
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(ZCMX_fake_script)()
-local function LTWR_fake_script() -- AutoCut.Script 
+coroutine.wrap(KAXDHFQ_fake_script)()
+local function DYTTBBO_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
 	local Button = script.Parent
 	local GreenColor = Color3.new(0.0588235, 1, 0.733333)
 	local RedColor = Color3.new(0.521569, 0.486275, 1)
+	local func = game:GetService("ReplicatedStorage").Remotes.GenericFunction
 	
-	local function runBasicCut()
+	local function startloop()
 		while isRunning do
-			local args = {
-				[1] = {
-					["id"] = "cut",
-					["identifier"] = "basic",
-					["quantity"] = 10000000,
-					["field"] = "blue"
-				}
-			} 
-			game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
-		end
-	end
-	local function runIridiumCut()
-		while isRunning do
-			local args = {
-				[1] = {
-					["id"] = "cut",
-					["identifier"] = "iridium",
-					["quantity"] = -100000000,
-					["field"] = "blue"
-				}
-			} 
-			game:GetService("ReplicatedStorage").Remotes.GenericFunction:InvokeServer(unpack(args))
+			func:InvokeServer({[1] = {["id"] = "cut", ["identifier"] = "basic", ["quantity"] = 1e8, ["field"] = "blue"}}) 
+			func:InvokeServer({[1] = {["id"] = "cut", ["identifier"] = "iridium", ["quantity"] = -1e8, ["field"] = "blue"}})
+			wait(0.2)
 		end
 	end
 	
 	Button.MouseButton1Click:Connect(function()
 		isRunning = not isRunning
-		if isRunning then
-			Button.BackgroundColor3 = GreenColor
-			coroutine.wrap(runBasicCut)()
-			wait(0.05)
-			coroutine.wrap(runIridiumCut)()
-		else
-			Button.BackgroundColor3 = RedColor
-		end
+		Button.BackgroundColor3 = isRunning and GreenColor or RedColor
+		if isRunning then 
+			startloop()
+		end 
 	end)
 end
-coroutine.wrap(LTWR_fake_script)()
-local function JEKDRP_fake_script() -- AutoBuy.Script 
+coroutine.wrap(DYTTBBO_fake_script)()
+local function NGXSS_fake_script() -- AutoBuy.Script 
 	local script = Instance.new('Script', AutoBuy)
 
 	local isRunning = false
@@ -164,23 +140,18 @@ local function JEKDRP_fake_script() -- AutoBuy.Script
 	local RedColor = Color3.new(0.521569, 0.486275, 1)
 	local paths = {}
 	local frame = game:GetService("Players").LocalPlayer.PlayerGui.W1.Brass.ShopContainer.ScrollingFrame
+	local event = game:GetService("ReplicatedStorage").Remotes.GenericEvent
 	for _, child in ipairs(frame:GetChildren()) do
 		if child.Name == "BasicUpgrade" then
 			table.insert(paths, child)
 		end
 	end
+	
 	local function startLoop()
 		while isRunning do
 			for _, upgrade in ipairs(paths) do
 				if upgrade.Display.CostDisplay.Text:find("#00ff00") and upgrade.Variables.Identifier.Value ~= "br3" then
-					local args = {
-						[1] = {
-							["id"] = "buyUpgrade",
-							["mode"] = "max",
-							["upgradeId"] = upgrade.Variables.Identifier.Value
-						}
-					}
-					game:GetService("ReplicatedStorage").Remotes.GenericEvent:FireServer(unpack(args))
+					event:FireServer({[1] = {["id"] = "buyUpgrade", ["mode"] = "max", ["upgradeId"] = upgrade.Variables.Identifier.Value}})
 					wait(0.5)
 				end
 			end
@@ -190,12 +161,11 @@ local function JEKDRP_fake_script() -- AutoBuy.Script
 	
 	Button.MouseButton1Click:Connect(function()
 		isRunning = not isRunning
-		if isRunning then
-			Button.BackgroundColor3 = GreenColor
+		Button.BackgroundColor3 = isRunning and GreenColor or RedColor
+	
+		if isRunning then 
 			startLoop()
-		else
-			Button.BackgroundColor3 = RedColor
-		end
+		end 
 	end)
 end
-coroutine.wrap(JEKDRP_fake_script)()
+coroutine.wrap(NGXSS_fake_script)()
