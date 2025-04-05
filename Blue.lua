@@ -116,17 +116,22 @@ local function EVJME_fake_script() -- AutoCut.Script
 	
 	local function startloop()
 		while isRunning do
-			func:InvokeServer({["id"] = "cut", ["identifier"] = "iridium", ["quantity"] = -1e8, ["field"] = "blue"})
 			func:InvokeServer({["id"] = "cut", ["identifier"] = "basic", ["quantity"] = 1e7, ["field"] = "blue"}) 
-			wait(0.05)
 		end
 	end
-	
+
+	local function startIrid()
+		while isRunning do
+			func:InvokeServer({["id"] = "cut", ["identifier"] = "iridium", ["quantity"] = -1e8, ["field"] = "blue"})
+		end
+	end
+
 	Button.MouseButton1Click:Connect(function()
 		isRunning = not isRunning
 		Button.BackgroundColor3 = isRunning and GreenColor or RedColor
 		if isRunning then 
-			startloop()
+			coroutine.wrap(startloop)()
+			coroutine.wrap(startIrid)()
 		end 
 	end)
 end
@@ -169,4 +174,4 @@ local function SFNJIQS_fake_script() -- AutoBuy.Script
 	end)
 end
 coroutine.wrap(SFNJIQS_fake_script)()
-print(3)
+print(4)
