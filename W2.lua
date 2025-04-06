@@ -35,8 +35,8 @@ coroutine.wrap(createCutFunction("platinum", -1e18, "temple"))()
 coroutine.wrap(createCutFunction("moonstone", -1e18, "temple"))()
 coroutine.wrap(createCutFunction("fractal", 1e18, "temple"))()
 
-coroutine.wrap(createCutFunction("platinum", -1e18, "cactus"))()
-coroutine.wrap(createCutFunction("pw8", 1e18, "cactus"))()
+coroutine.wrap(createCutFunction("platinum", -1e36, "cactus"))()
+coroutine.wrap(createCutFunction("pw8", 1e36, "cactus"))()
 
 coroutine.wrap(createCutFunction("fractal", -1e18, "understand"))()
 coroutine.wrap(createCutFunction("fractal", 1e18, "understand"))()
