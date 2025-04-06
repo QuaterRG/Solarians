@@ -297,7 +297,7 @@ local function JRLFO_fake_script() -- AutoReset.Script
 				reset:FireServer("breakRing")
 				wait(1)
 			end
-			wait(5)
+			wait(1)
 		end
 	end
 	
