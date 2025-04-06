@@ -47,9 +47,10 @@ coroutine.wrap(createCutFunction("pw8", 1e36, "cactus"))()
 
 coroutine.wrap(createCutFunction("fractal", -1e18, "understand"))()
 coroutine.wrap(createCutFunction("fractal", 1e18, "understand"))()
-while True do
+print(1)
+while true do
 	for _, upgrade in ipairs(paths) do
-		if upgrade.MaxedDisplay.Visible == False then
+		if not upgrade.MaxedDisplay.Visible then  -- Исправлено на 'not'
 			event:FireServer({["id"] = "buyUpgrade", ["mode"] = "max", ["upgradeId"] = upgrade.Variables.Identifier.Value})
 			wait(0.5)
 		end
