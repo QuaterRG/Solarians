@@ -1,6 +1,13 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local GenericFunction = ReplicatedStorage.Remotes.GenericFunction
-
+local paths = {}
+local frame = game:GetService("Players").LocalPlayer.PlayerGui.W2.CactusTokenUpgrades.ShopContainer.ScrollingFrame
+local event = game:GetService("ReplicatedStorage").Remotes.GenericEvent
+for _, child in ipairs(frame:GetChildren()) do
+	if child.Name == "BasicUpgrade" then
+		table.insert(paths, child)
+	end
+end
 local function invokeCut(identifier, quantity, field)
     GenericFunction:InvokeServer({["id"] = "cut", ["identifier"] = identifier, ["quantity"] = quantity, ["field"] = field})
 end
@@ -40,3 +47,12 @@ coroutine.wrap(createCutFunction("pw8", 1e36, "cactus"))()
 
 coroutine.wrap(createCutFunction("fractal", -1e18, "understand"))()
 coroutine.wrap(createCutFunction("fractal", 1e18, "understand"))()
+while True do
+	for _, upgrade in ipairs(paths) do
+		if upgrade.MaxedDisplay.Visible == False then
+			event:FireServer({["id"] = "buyUpgrade", ["mode"] = "max", ["upgradeId"] = upgrade.Variables.Identifier.Value})
+			wait(0.5)
+		end
+	end
+	wait(0.5)
+end
