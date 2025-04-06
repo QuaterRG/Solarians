@@ -9,7 +9,7 @@ local function createCutFunction(identifier, quantity, field)
     return function()
         while true do
             invokeCut(identifier, quantity, field)
-            wait(0.5) 
+            wait(0.1) 
         end
     end
 end
