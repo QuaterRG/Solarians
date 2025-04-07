@@ -437,7 +437,7 @@ local function TTZHV_fake_script() -- AutoCut.Script
 		return function()
 			while isRunning do
 				GenericFunction:InvokeServer({["id"] = "cut", ["identifier"] = "pw8", ["quantity"] = quantity, ["field"] = field})
-				wait(0.5) 
+				wait(0.3) 
 			end
 		end
 	end
@@ -447,6 +447,7 @@ local function TTZHV_fake_script() -- AutoCut.Script
 		local positiveCoroutine = coroutine.create(createCutFunction(1e25, field))
 		table.insert(activeCoroutines, negativeCoroutine)
 		table.insert(activeCoroutines, positiveCoroutine)
+		wait(0.05)
 	end
 	
 	Button.MouseButton1Click:Connect(function()
