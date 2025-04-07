@@ -443,8 +443,8 @@ local function TTZHV_fake_script() -- AutoCut.Script
 	end
 	
 	for _, field in ipairs({"main", "anti", "un", "planet"}) do
-		local negativeCoroutine = coroutine.create(createCutFunction(-1e20, field))
-		local positiveCoroutine = coroutine.create(createCutFunction(1e20, field))
+		local negativeCoroutine = coroutine.create(createCutFunction(-1e25, field))
+		local positiveCoroutine = coroutine.create(createCutFunction(1e25, field))
 		table.insert(activeCoroutines, negativeCoroutine)
 		table.insert(activeCoroutines, positiveCoroutine)
 	end
