@@ -439,7 +439,7 @@ local function WEDZLO_fake_script() -- AutoLoop.Script
 
 			wait(1)
 
-			while Level.r.steelie.a == 0 do
+			while Level.r.steelie.a == 0 and Level.r.rocketPart.a == 0 do
 				if Level.l.level.level > 300 then
 					print("Sending reset for steelie") -- Выводим информацию о вызове FireServer
 					reset:FireServer("steelie")
@@ -515,7 +515,7 @@ local function WEDZLO_fake_script() -- AutoLoop.Script
 
 			wait(1)
 
-			while Level.l.p	lanetLevel.level < 5 do 
+			while Level.l.planetLevel.level < 5 do 
 				print("Sending reset for formRing due to planet level condition") -- Выводим информацию о вызове FireServer 
 				reset:FireServer("formRing")
 				wait(0.5) 
