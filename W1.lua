@@ -20,7 +20,7 @@ local AutoCentr = Instance.new("TextButton")
 local UICorner_5 = Instance.new("UICorner")
 local AutoCut = Instance.new("TextButton")
 local UICorner_6 = Instance.new("UICorner")
-local AutoSoul3upg_2 = Instance.new("TextButton")
+local AutoLoop = Instance.new("TextButton")
 local UICorner_7 = Instance.new("UICorner")
 
 --Properties:
@@ -141,26 +141,26 @@ AutoCut.TextWrapped = true
 UICorner_6.CornerRadius = UDim.new(0, 70)
 UICorner_6.Parent = AutoCut
 
-AutoSoul3upg_2.Name = "AutoSoul3+upg"
-AutoSoul3upg_2.Parent = Menu
-AutoSoul3upg_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-AutoSoul3upg_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AutoSoul3upg_2.BorderSizePixel = 0
-AutoSoul3upg_2.Position = UDim2.new(0.0500000529, 0, 0.565770984, 0)
-AutoSoul3upg_2.Size = UDim2.new(0.266666681, 0, 0.362167358, 0)
-AutoSoul3upg_2.Font = Enum.Font.SourceSans
-AutoSoul3upg_2.Text = " Soul3 + upg"
-AutoSoul3upg_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-AutoSoul3upg_2.TextScaled = true
-AutoSoul3upg_2.TextSize = 40.000
-AutoSoul3upg_2.TextWrapped = true
+AutoLoop.Name = "AutoLoop"
+AutoLoop.Parent = Menu
+AutoLoop.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AutoLoop.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoLoop.BorderSizePixel = 0
+AutoLoop.Position = UDim2.new(0.0500000529, 0, 0.565770984, 0)
+AutoLoop.Size = UDim2.new(0.266666681, 0, 0.362167358, 0)
+AutoLoop.Font = Enum.Font.Unknown
+AutoLoop.Text = "Loop"
+AutoLoop.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoLoop.TextScaled = true
+AutoLoop.TextSize = 40.000
+AutoLoop.TextWrapped = true
 
 UICorner_7.CornerRadius = UDim.new(0, 70)
-UICorner_7.Parent = AutoSoul3upg_2
+UICorner_7.Parent = AutoLoop
 
 -- Scripts:
 
-local function HFGILNG_fake_script() -- OpenMenu.Script 
+local function QOOFAM_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -176,8 +176,8 @@ local function HFGILNG_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(HFGILNG_fake_script)()
-local function YKWVT_fake_script() -- AutoSoul3upg.Script 
+coroutine.wrap(QOOFAM_fake_script)()
+local function CDTL_fake_script() -- AutoSoul3upg.Script 
 	local script = Instance.new('Script', AutoSoul3upg)
 
 	local Button = script.Parent
@@ -232,8 +232,8 @@ local function YKWVT_fake_script() -- AutoSoul3upg.Script
 		end 
 	end)
 end
-coroutine.wrap(YKWVT_fake_script)()
-local function AKHI_fake_script() -- AutoResetShard.Script 
+coroutine.wrap(CDTL_fake_script)()
+local function YMUJB_fake_script() -- AutoResetShard.Script 
 	local script = Instance.new('Script', AutoResetShard)
 
 	local isRunning = false
@@ -260,12 +260,6 @@ local function AKHI_fake_script() -- AutoResetShard.Script
 			end
 	
 			reset:FireServer("activateSynthesis")
-			wait(1)
-	
-			if not gui.W1.BrokenRing.Locked.Visible and gui.W1.BrokenRing.Enabled then
-				reset:FireServer("breakRing")
-				wait(1)
-			end
 	
 			wait(3)
 		end
@@ -295,8 +289,8 @@ local function AKHI_fake_script() -- AutoResetShard.Script
 		end 
 	end)
 end
-coroutine.wrap(AKHI_fake_script)()
-local function NFRZLYS_fake_script() -- AutoCentr.Script 
+coroutine.wrap(YMUJB_fake_script)()
+local function BRDEL_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -365,8 +359,8 @@ local function NFRZLYS_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(NFRZLYS_fake_script)()
-local function CGSBWT_fake_script() -- AutoCut.Script 
+coroutine.wrap(BRDEL_fake_script)()
+local function TYCHOE_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -374,7 +368,6 @@ local function CGSBWT_fake_script() -- AutoCut.Script
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
 	local GenericFunction = game:GetService("ReplicatedStorage").Remotes.GenericFunction
-	local activeCoroutines = {}
 	
 	local function createCutFunction(quantity, field)
 		return function()
@@ -385,22 +378,18 @@ local function CGSBWT_fake_script() -- AutoCut.Script
 		end
 	end
 	
-	for _, field in ipairs({"main", "anti", "un", "planet"}) do
-		local negativeCoroutine = coroutine.create(createCutFunction(-1e25, field))
-		local positiveCoroutine = coroutine.create(createCutFunction(1e25, field))
-		table.insert(activeCoroutines, negativeCoroutine)
-		table.insert(activeCoroutines, positiveCoroutine)
-		wait(0.05)
-	end
-	
 	Button.MouseButton1Click:Connect(function()
 		isRunning = not isRunning
 	
 		if isRunning then
 			Button.BackgroundColor3 = GreenColor
 	
-			for _, co in ipairs(activeCoroutines) do
-				coroutine.resume(co)
+			-- Создаем новые корутины для каждого поля
+			for _, field in ipairs({"main", "anti", "un", "planet"}) do
+				local negativeCoroutine = coroutine.create(createCutFunction(-1e25, field))
+				local positiveCoroutine = coroutine.create(createCutFunction(1e25, field))
+				coroutine.resume(negativeCoroutine)
+				coroutine.resume(positiveCoroutine)
 			end
 	
 		else
@@ -408,29 +397,139 @@ local function CGSBWT_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(CGSBWT_fake_script)()
-local function BTMYVZE_fake_script() -- AutoSoul3upg_2.Script 
-	local script = Instance.new('Script', AutoSoul3upg_2)
+coroutine.wrap(TYCHOE_fake_script)()
+local function WEDZLO_fake_script() -- AutoLoop.Script 
+	local script = Instance.new('Script', AutoLoop)
 
 	local Button = script.Parent
 	local GreenColor = Color3.new(0, 1, 0)
 	local RedColor = Color3.new(1, 0, 0)
 	local isRunning = false
-	local shops = game:GetService("Players").LocalPlayer.PlayerGui.W1.SingularityChart.ShopContainer.Shops
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local W1 = game:GetService("Players").LocalPlayer.PlayerGui.W1
 	local paths = {}
-	local event = game:GetService("ReplicatedStorage").Remotes.GenericEvent
+	local event = ReplicatedStorage.Remotes.GenericEvent
+	local reset = ReplicatedStorage.Remotes.TriggerReset
+	local UpdateCurrency = ReplicatedStorage.Remotes.UpdateCurrency
+	local UpdateLevel = ReplicatedStorage.Remotes.UpdateLevels
+	local UpdateMulti = ReplicatedStorage.Remotes.UpdateMultipliers
+	local Level = nil
+	local Multi = nil
 	
-	for _, shop in ipairs({shops.MagicShop, shops.SoulShop, shops.UnstableShop}) do
-		for _, child in ipairs(shop:GetChildren()) do
-			if child.Name == "Unlock" then
-				table.insert(paths, child)
-			end
-		end
+	local function onUpdateLevels(List)
+		local Level = List
 	end
+	local function onUpdateMulti(List)
+		local Multi = List
+	end
+	UpdateLevel.OnClientEvent:Connect(onUpdateLevels)
+	UpdateMulti.OnClientEvent:Connect(onUpdateLevels)
 	
 	local function Loop()
 		while isRunning do
-			 -- placeholder
+			while Level.r.grasshop.a < 8 do
+				if Level.l.level.level > 300 then
+					reset:FireServer("grasshop")
+				end
+				wait(0.5)
+			end
+			wait(1)
+			while Level.r.steelie.a == 0 do
+				if Level.l.level.level > 300 then
+					reset:FireServer("steelie")
+				end
+				wait(0.5)
+			end
+			wait(1)
+			while not W1.FactoryUpgrades.ShopContainer.ScrollingFrame:GetChildren()[9].MaxedDisplay.Visible do
+				if Multi.steelToEarn.e > 27 and Level.l.level.level > 300 then
+					reset:FireServer("steelie")
+				end	
+				wait(0.5)
+			end
+			wait(1)
+			while Level.r.rocketPart.a == 0 do
+				reset:FireServer("rocketPart")
+				wait(0.5)
+			end
+			wait(1)
+			while Level.r.Galactic.a == 0 do
+				reset:FireServer("galactic")
+				wait(0.5)
+			end
+			wait(1)
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
+			while Level.r.funify.a == 0 do
+				if Level.l.antiLevel.level > 300 then
+					reset:FireServer("funify")
+				end
+				wait(0.5)
+			end
+			wait(1)
+			while Level.r.grassskip.a < 30 do
+				if Level.l.antiLevel.level > 500 then
+					reset:FireServer("grassskip")
+				end
+				wait(0.5)
+			end
+			wait(1)
+			while Level.r.rocketPart.a == 0 do
+				reset:FireServer("rocketPart")
+				wait(0.5)
+			end
+			wait(1)
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
+			while Level.l.PlanetLevel.level < 5 do
+				reset:FireServer("galactic")
+				wait(0.5)
+			end
+			wait(1)
+			while Level.l.PlanetLevel.level < 5 do
+				reset:FireServer("formRing")
+				wait(0.5)
+			end
+			wait(1)
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
+			while Level.r.rocketPart.a == 0 do
+				reset:FireServer("rocketPart")
+				wait(0.5)
+			end
+			wait(1)
+			while Level.r.zeroghgs.a < 60 do
+				if Level.l.antiLevel.level > 800 then
+					reset:FireServer("galactic")
+					wait(0.5)
+				end
+			end
+			wait(1)
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(210, 4090, 140)
+			while W1.BrokenRing.Enabled do
+				reset:FireServer("breakRing")
+				wait(0.5)
+			end
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
+			wait(1)
+			while Level.r.planetary.a == 0 do
+				if Level.l.PlanetLevel.level > 380 then
+					reset:FireServer("planetary")
+					wait(0.5)
+				end
+			end
+			wait(1)
+			while Level.r.funify.a == 0 do
+				if Level.l.antiLevel.level > 300 then
+					reset:FireServer("funify")
+				end
+				wait(0.5)
+			end
+			wait(1)
+			while Level.r.grassjump.a == 0 do
+				if Level.l.unLevel.level > 550 then
+					reset:FireServer("grassjump")
+					wait(0.5)
+				end
+			end
+			wait(1)
 		end
 	end
 	
@@ -444,4 +543,4 @@ local function BTMYVZE_fake_script() -- AutoSoul3upg_2.Script
 		end 
 	end)
 end
-coroutine.wrap(BTMYVZE_fake_script)()
+coroutine.wrap(WEDZLO_fake_script)()
