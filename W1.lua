@@ -537,6 +537,8 @@ local function WEDZLO_fake_script() -- AutoLoop.Script
 	Button.MouseButton1Click:Connect(function()
 		if not Level or not Multi then 
         		warn("Level или Multi не установлены!")
+			print(Level)
+			print(Multi)
         		return 
     		end
 		isRunning = not isRunning
