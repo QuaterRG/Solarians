@@ -479,7 +479,7 @@ local function WEDZLO_fake_script() -- AutoLoop.Script
 			end
 			wait(1)
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
-			while Level.l.PlanetLevel.level < 5 do
+			while Level.l.planetLevel.level < 5 do
 				reset:FireServer("galactic")
 				wait(0.5)
 			end
