@@ -535,6 +535,7 @@ local function WEDZLO_fake_script() -- AutoLoop.Script
 
 			while Level.r.zeroghgs.a < 60 do 
 				if Level.l.antiLevel.level > 800 then 
+					workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
 					print("Sending reset for galactic due to zeroghgs condition") -- Выводим информацию о вызове FireServer 
 					reset:FireServer("galactic") 
 				end 
