@@ -415,7 +415,7 @@ local function WEDZLO_fake_script() -- AutoLoop.Script
 	local UpdateMulti = ReplicatedStorage.Remotes.UpdateMultipliers
 	local Level = nil
 	local Multi = nil
-	
+
 	local function onUpdateLevels(List)
 		Level = List
 	end
@@ -426,7 +426,7 @@ local function WEDZLO_fake_script() -- AutoLoop.Script
 
 	UpdateLevel.OnClientEvent:Connect(onUpdateLevels)
 	UpdateMulti.OnClientEvent:Connect(onUpdateMulti)
-	
+
 	local function Loop()
 		while isRunning do
 			while Level.r.grasshop.a < 8 do
@@ -515,90 +515,90 @@ local function WEDZLO_fake_script() -- AutoLoop.Script
 
 			wait(1)
 
-            while Level.l.PlanetLevel.level < 5 do 
-                print("Sending reset for formRing due to planet level condition") -- Выводим информацию о вызове FireServer 
-                reset:FireServer("formRing")
-                wait(0.5) 
-            end 
+			while Level.l.PlanetLevel.level < 5 do 
+				print("Sending reset for formRing due to planet level condition") -- Выводим информацию о вызове FireServer 
+				reset:FireServer("formRing")
+				wait(0.5) 
+			end 
 
-            wait(1)
+			wait(1)
 
-            workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
 
-            while Level.r.rocketPart.a == 0 do 
-                print("Sending reset for rocketPart again") -- Выводим информацию о вызове FireServer 
-                reset:FireServer("rocketPart") 
-                wait(0.5) 
-            end 
+			while Level.r.rocketPart.a == 0 do 
+				print("Sending reset for rocketPart again") -- Выводим информацию о вызове FireServer 
+				reset:FireServer("rocketPart") 
+				wait(0.5) 
+			end 
 
-            wait(1) 
+			wait(1) 
 
-            while Level.r.zeroghgs.a < 60 do 
-                if Level.l.antiLevel.level > 800 then 
-                    print("Sending reset for galactic due to zeroghgs condition") -- Выводим информацию о вызове FireServer 
-                    reset:FireServer("galactic") 
-                    wait(0.5) 
-                end 
-            end 
+			while Level.r.zeroghgs.a < 60 do 
+				if Level.l.antiLevel.level > 800 then 
+					print("Sending reset for galactic due to zeroghgs condition") -- Выводим информацию о вызове FireServer 
+					reset:FireServer("galactic") 
+					wait(0.5) 
+				end 
+			end 
 
-            wait(1) 
+			wait(1) 
 
-            workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(210, 4090, 140) 
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(210, 4090, 140) 
 
-            while W1.BrokenRing.Enabled do 
-                print("Sending reset for breakRing due to BrokenRing condition") -- Выводим информацию о вызове FireServer 
-                reset:FireServer("breakRing") 
-                wait(0.5) 
-            end 
+			while W1.BrokenRing.Enabled do 
+				print("Sending reset for breakRing due to BrokenRing condition") -- Выводим информацию о вызове FireServer 
+				reset:FireServer("breakRing") 
+				wait(0.5) 
+			end 
 
-            workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54) 
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54) 
 
-            wait(1) 
+			wait(1) 
 
-            while Level.r.planetary.a == 0 do 
-                if Level.l.PlanetLevel.level > 380 then 
-                    print("Sending reset for planetary due to planet level condition") -- Выводим информацию о вызове FireServer 
-                    reset:FireServer("planetary") 
-                    wait(0.5) 
-                end 
-            end 
+			while Level.r.planetary.a == 0 do 
+				if Level.l.PlanetLevel.level > 380 then 
+					print("Sending reset for planetary due to planet level condition") -- Выводим информацию о вызове FireServer 
+					reset:FireServer("planetary") 
+					wait(0.5) 
+				end 
+			end 
 
-            wait(1) 
+			wait(1) 
 
-            while Level.r.funify.a == 0 do 
-                if Level.l.antiLevel.level > 300 then 
-                    print("Sending reset for funify again due to anti level condition") -- Выводим информацию о вызове FireServer  
-                    reset:FireServer("funify")  
-                end  
-                wait(0.5)  
-            end  
+			while Level.r.funify.a == 0 do 
+				if Level.l.antiLevel.level > 300 then 
+					print("Sending reset for funify again due to anti level condition") -- Выводим информацию о вызове FireServer  
+					reset:FireServer("funify")  
+				end  
+				wait(0.5)  
+			end  
 
-            wait(1)  
+			wait(1)  
 
-            while Level.r.grassjump.a == 0 do  
-                if Level.l.unLevel.level > 550 then  
-                    print("Sending reset for grassjump due to un level condition") -- Выводим информацию о вызове FireServer  
-                    reset:FireServer("grassjump")  
-                    wait(0.5)  
-                end  
-            end  
+			while Level.r.grassjump.a == 0 do  
+				if Level.l.unLevel.level > 550 then  
+					print("Sending reset for grassjump due to un level condition") -- Выводим информацию о вызове FireServer  
+					reset:FireServer("grassjump")  
+					wait(0.5)  
+				end  
+			end  
 
-            wait(1)  
+			wait(1)  
 		end  
 	end
-	
+
 	Button.MouseButton1Click:Connect(function()
 		if not Level or not Multi then 
-        	warn("Level или Multi не установлены!")
-        	print(Level)
-        	print(Multi)
-        	return 
-    	end
-		
+			warn("Level или Multi не установлены!")
+			print(Level)
+			print(Multi)
+			return 
+		end
+
 		isRunning = not isRunning
-		
+
 		Button.BackgroundColor3 = isRunning and GreenColor or RedColor
-		
+
 		if isRunning then 
 			Loop()
 		end 
