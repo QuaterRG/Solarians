@@ -537,8 +537,8 @@ local function WEDZLO_fake_script() -- AutoLoop.Script
 				if Level.l.antiLevel.level > 800 then 
 					print("Sending reset for galactic due to zeroghgs condition") -- Выводим информацию о вызове FireServer 
 					reset:FireServer("galactic") 
-					wait(0.5) 
 				end 
+				wait(0.5)
 			end 
 
 			wait(1) 
@@ -559,8 +559,8 @@ local function WEDZLO_fake_script() -- AutoLoop.Script
 				if Level.l.planetLevel.level > 380 then 
 					print("Sending reset for planetary due to planet level condition") -- Выводим информацию о вызове FireServer 
 					reset:FireServer("planetary") 
-					wait(0.5) 
 				end 
+				wait(0.5) 
 			end 
 
 			wait(1) 
