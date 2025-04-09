@@ -535,9 +535,12 @@ local function WEDZLO_fake_script() -- AutoLoop.Script
 	
 	
 	Button.MouseButton1Click:Connect(function()
+		if not Level or not Multi then 
+        		warn("Level или Multi не установлены!")
+        		return 
+    		end
 		isRunning = not isRunning
 		Button.BackgroundColor3 = isRunning and GreenColor or RedColor
-	
 		if isRunning then 
 			Loop()
 		end 
