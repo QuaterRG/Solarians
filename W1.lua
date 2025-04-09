@@ -417,10 +417,10 @@ local function WEDZLO_fake_script() -- AutoLoop.Script
 	local Multi = nil
 	
 	local function onUpdateLevels(List)
-		local Level = List
+		Level = List
 	end
 	local function onUpdateMulti(List)
-		local Multi = List
+		Multi = List
 	end
 	UpdateLevel.OnClientEvent:Connect(onUpdateLevels)
 	UpdateMulti.OnClientEvent:Connect(onUpdateMulti)
