@@ -453,7 +453,7 @@ local function WEDZLO_fake_script() -- AutoLoop.Script
 				wait(0.5)
 			end
 			wait(1)
-			while Level.r.Galactic.a == 0 do
+			while Level.r.galactic.a == 0 do
 				reset:FireServer("galactic")
 				wait(0.5)
 			end
