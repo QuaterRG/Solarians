@@ -3,7 +3,6 @@
 
 -- Instances:
 
-local Test = Instance.new("ScreenGui")
 local Menu = Instance.new("Frame")
 local UIGradient = Instance.new("UIGradient")
 local UICorner = Instance.new("UICorner")
@@ -12,19 +11,11 @@ local AutoCentr = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 local AutoCut = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
-local OpenMenu = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
-local UIGradient_2 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 
 --Properties:
 
-Test.Name = "Test"
-Test.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-Test.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
 Menu.Name = "Menu"
-Menu.Parent = Test
+Menu.Parent = game.StarterGui.Test
 Menu.BackgroundColor3 = Color3.fromRGB(255, 200, 0)
 Menu.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Menu.BorderSizePixel = 0
@@ -76,34 +67,9 @@ AutoCut.TextWrapped = true
 UICorner_3.CornerRadius = UDim.new(0, 70)
 UICorner_3.Parent = AutoCut
 
-OpenMenu.Name = "OpenMenu"
-OpenMenu.Parent = Test
-OpenMenu.BackgroundColor3 = Color3.fromRGB(207, 255, 231)
-OpenMenu.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OpenMenu.BorderSizePixel = 2
-OpenMenu.Position = UDim2.new(0.868758023, 0, 0.345265597, 0)
-OpenMenu.Size = UDim2.new(0.125174791, 0, 0.115004577, 0)
-OpenMenu.Font = Enum.Font.Michroma
-OpenMenu.LineHeight = 1.010
-OpenMenu.Text = "GCIW1"
-OpenMenu.TextColor3 = Color3.fromRGB(135, 99, 87)
-OpenMenu.TextScaled = true
-OpenMenu.TextSize = 40.000
-OpenMenu.TextWrapped = true
-
-UICorner_4.CornerRadius = UDim.new(0, 40)
-UICorner_4.Parent = OpenMenu
-
-UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 216, 74)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 216, 74))}
-UIGradient_2.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.41), NumberSequenceKeypoint.new(0.20, 0.21), NumberSequenceKeypoint.new(0.50, 0.36), NumberSequenceKeypoint.new(0.78, 0.16), NumberSequenceKeypoint.new(1.00, 0.39)}
-UIGradient_2.Parent = OpenMenu
-
-UIAspectRatioConstraint_2.Parent = OpenMenu
-UIAspectRatioConstraint_2.AspectRatio = 2.160
-
 -- Scripts:
 
-local function YISMBFN_fake_script() -- AutoCentr.Script 
+local function PTJYH_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -172,8 +138,8 @@ local function YISMBFN_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(YISMBFN_fake_script)()
-local function ZLXMQN_fake_script() -- AutoCut.Script 
+coroutine.wrap(PTJYH_fake_script)()
+local function QAKXVAT_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -210,21 +176,4 @@ local function ZLXMQN_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(ZLXMQN_fake_script)()
-local function MMSMAOU_fake_script() -- OpenMenu.Script 
-	local script = Instance.new('Script', OpenMenu)
-
-	local Button = script.Parent
-	local Menu = script.Parent.Parent.Menu
-	local function onClick()
-		if Menu.Visible == false then
-			Menu.Visible = true
-			Button.Text = "Close"
-		elseif Menu.Visible == true then
-			Menu.Visible = false
-			Button.Text = "GCIW1"
-		end
-	end
-	Button.MouseButton1Click:Connect(onClick)
-end
-coroutine.wrap(MMSMAOU_fake_script)()
+coroutine.wrap(QAKXVAT_fake_script)()
