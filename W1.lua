@@ -2,33 +2,31 @@
 -- Version: 3.2
 
 -- Instances:
-
-local GCIW1 = Instance.new("ScreenGui")
+print(1)
+local Test = Instance.new("ScreenGui")
 local Menu = Instance.new("Frame")
-local Solarians = Instance.new("TextButton")
-local UICorner = Instance.new("UICorner")
 local UIGradient = Instance.new("UIGradient")
-local UICorner_2 = Instance.new("UICorner")
+local UICorner = Instance.new("UICorner")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 local AutoCentr = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
 local AutoCut = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
 local AutoLoop = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
 local OpenMenu = Instance.new("TextButton")
-local UICorner_6 = Instance.new("UICorner")
+local UICorner_5 = Instance.new("UICorner")
 local UIGradient_2 = Instance.new("UIGradient")
 local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 
 --Properties:
 
-GCIW1.Name = "GCIW1"
-GCIW1.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-GCIW1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Test.Name = "Test"
+Test.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Test.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Menu.Name = "Menu"
-Menu.Parent = GCIW1
+Menu.Parent = Test
 Menu.BackgroundColor3 = Color3.fromRGB(255, 200, 0)
 Menu.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Menu.BorderSizePixel = 0
@@ -36,29 +34,12 @@ Menu.Position = UDim2.new(0.634230077, 0, 0.182844833, 0)
 Menu.Size = UDim2.new(0.215867281, 0, 0.370094717, 0)
 Menu.Visible = false
 
-Solarians.Name = "Solarians"
-Solarians.Parent = Menu
-Solarians.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-Solarians.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Solarians.BorderSizePixel = 0
-Solarians.Position = UDim2.new(0.0499998555, 0, 0.0938634574, 0)
-Solarians.Size = UDim2.new(0.266666681, 0, 0.362167358, 0)
-Solarians.Font = Enum.Font.SourceSans
-Solarians.Text = "Solarian"
-Solarians.TextColor3 = Color3.fromRGB(0, 0, 0)
-Solarians.TextScaled = true
-Solarians.TextSize = 40.000
-Solarians.TextWrapped = true
-
-UICorner.CornerRadius = UDim.new(0, 70)
-UICorner.Parent = Solarians
-
 UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 238, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 238, 0))}
 UIGradient.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.21), NumberSequenceKeypoint.new(0.10, 0.49), NumberSequenceKeypoint.new(0.49, 0.26), NumberSequenceKeypoint.new(0.83, 0.52), NumberSequenceKeypoint.new(1.00, 0.16)}
 UIGradient.Parent = Menu
 
-UICorner_2.CornerRadius = UDim.new(0, 30)
-UICorner_2.Parent = Menu
+UICorner.CornerRadius = UDim.new(0, 30)
+UICorner.Parent = Menu
 
 UIAspectRatioConstraint.Parent = Menu
 UIAspectRatioConstraint.AspectRatio = 1.360
@@ -77,8 +58,8 @@ AutoCentr.TextScaled = true
 AutoCentr.TextSize = 40.000
 AutoCentr.TextWrapped = true
 
-UICorner_3.CornerRadius = UDim.new(0, 70)
-UICorner_3.Parent = AutoCentr
+UICorner_2.CornerRadius = UDim.new(0, 70)
+UICorner_2.Parent = AutoCentr
 
 AutoCut.Name = "AutoCut"
 AutoCut.Parent = Menu
@@ -94,8 +75,8 @@ AutoCut.TextScaled = true
 AutoCut.TextSize = 40.000
 AutoCut.TextWrapped = true
 
-UICorner_4.CornerRadius = UDim.new(0, 70)
-UICorner_4.Parent = AutoCut
+UICorner_3.CornerRadius = UDim.new(0, 70)
+UICorner_3.Parent = AutoCut
 
 AutoLoop.Name = "AutoLoop"
 AutoLoop.Parent = Menu
@@ -111,11 +92,11 @@ AutoLoop.TextScaled = true
 AutoLoop.TextSize = 40.000
 AutoLoop.TextWrapped = true
 
-UICorner_5.CornerRadius = UDim.new(0, 70)
-UICorner_5.Parent = AutoLoop
+UICorner_4.CornerRadius = UDim.new(0, 70)
+UICorner_4.Parent = AutoLoop
 
 OpenMenu.Name = "OpenMenu"
-OpenMenu.Parent = GCIW1
+OpenMenu.Parent = Test
 OpenMenu.BackgroundColor3 = Color3.fromRGB(207, 255, 231)
 OpenMenu.BorderColor3 = Color3.fromRGB(0, 0, 0)
 OpenMenu.BorderSizePixel = 2
@@ -129,8 +110,8 @@ OpenMenu.TextScaled = true
 OpenMenu.TextSize = 40.000
 OpenMenu.TextWrapped = true
 
-UICorner_6.CornerRadius = UDim.new(0, 40)
-UICorner_6.Parent = OpenMenu
+UICorner_5.CornerRadius = UDim.new(0, 40)
+UICorner_5.Parent = OpenMenu
 
 UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 216, 74)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 216, 74))}
 UIGradient_2.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.41), NumberSequenceKeypoint.new(0.20, 0.21), NumberSequenceKeypoint.new(0.50, 0.36), NumberSequenceKeypoint.new(0.78, 0.16), NumberSequenceKeypoint.new(1.00, 0.39)}
@@ -141,106 +122,7 @@ UIAspectRatioConstraint_2.AspectRatio = 2.160
 
 -- Scripts:
 
-local function VODJ_fake_script() -- Solarians.Script 
-	local script = Instance.new('Script', Solarians)
-
-	local Button = script.Parent
-	local GreenColor = Color3.new(0, 1, 0)
-	local RedColor = Color3.new(1, 0, 0)
-	local isRunning = false
-	
-	local Players = game:GetService("Players")
-	local ReplicatedStorage = game:GetService("ReplicatedStorage")
-	
-	local gui = Players.LocalPlayer.PlayerGui
-	local reset = ReplicatedStorage.Remotes.TriggerReset
-	local event = ReplicatedStorage.Remotes.GenericEvent
-	
-	local shops = gui.W1.SingularityChart.ShopContainer.Shops
-	local paths = {}
-	for _, shop in ipairs({shops.MagicShop, shops.SoulShop, shops.UnstableShop}) do
-		for _, child in ipairs(shop:GetChildren()) do
-			if child.Name == "Unlock" then
-				table.insert(paths, child)
-			end
-		end
-	end
-	
-	local syn = {}
-	local Scroll = gui.W1.SythesisPlots.ShopContainer.ScrollingFrame:GetChildren()
-	for _, child in ipairs(Scroll) do
-		if child.Name == "Plot" and child.Identifier.Value == 1 then
-			table.insert(syn, child)
-		end
-	end
-	
-	local function soulLoop()
-		while isRunning do
-			event:FireServer({["id"] = "changeSoul", ["x"] = 3})
-			wait(0.5)
-			event:FireServer({["id"] = "setSoul", ["x"] = 0.25})
-			wait(0.5)
-			for _, buy in ipairs({"soul2", "offdef2", "syncs", "syngs"}) do
-				event:FireServer({["id"] = "buySoul", ["soulId"] = buy})
-				wait(0.2)
-			end
-			wait(10)
-		end
-	end
-	
-	local function shopLoop()
-		while isRunning do
-			for _, unlock in ipairs(paths) do
-				if unlock.Level.Value == 0 and unlock.Unlocked.Button.Gradient.Cost.Text:find("#00ff00") then
-					event:FireServer({["id"] = "buySC", ["scId"] = unlock.Identifier.Value})
-				end
-				wait(0.05)
-			end
-		end
-	end
-	
-	local function restorationLoop()
-		while isRunning do
-			if gui.Solarians.Restoration.ShopContainer.Menus.StarTier.UpgradeSNT.Visible then
-				reset:FireServer("subparnova")
-				wait(1)
-			end
-			reset:FireServer("activateSynthesis")
-			wait(3)
-		end
-	end
-	
-	local function synthesisLoop()
-		while isRunning do
-			if syn.Normal.PB.Progress.Text ~= "0s" then
-				event:FireServer({["id"] = "synthesis", ["selected"] = "cs", ["syn"] = 1})
-				break 
-			end
-			wait(3)
-		end 
-	end
-	
-	local function allocate()
-		while isRunning do
-			event:FireServer("allocateOne")
-			wait(5)
-		end
-	end
-	
-	Button.MouseButton1Click:Connect(function()
-		isRunning = not isRunning
-		Button.BackgroundColor3 = isRunning and GreenColor or RedColor
-	
-		if isRunning then 
-			coroutine.wrap(soulLoop)()
-			coroutine.wrap(shopLoop)()
-			coroutine.wrap(restorationLoop)()
-			coroutine.wrap(synthesisLoop)() 
-		end 
-	end)
-end
-coroutine.wrap(VODJ_fake_script)()
-local function XOEPW_fake_script() -- AutoCentr.Script 
+local function XTIII_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -309,8 +191,8 @@ local function XOEPW_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(XOEPW_fake_script)()
-local function JUYZHUA_fake_script() -- AutoCut.Script 
+coroutine.wrap(XTIII_fake_script)()
+local function SUNTW_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -347,8 +229,8 @@ local function JUYZHUA_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(JUYZHUA_fake_script)()
-local function VFUW_fake_script() -- AutoLoop.Script 
+coroutine.wrap(SUNTW_fake_script)()
+local function BSRIRF_fake_script() -- AutoLoop.Script 
 	local script = Instance.new('Script', AutoLoop)
 
 	local Button = script.Parent
@@ -493,8 +375,8 @@ local function VFUW_fake_script() -- AutoLoop.Script
 	end)
 	
 end
-coroutine.wrap(VFUW_fake_script)()
-local function JQCVM_fake_script() -- OpenMenu.Script 
+coroutine.wrap(BSRIRF_fake_script)()
+local function PJMB_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -510,4 +392,4 @@ local function JQCVM_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(JQCVM_fake_script)()
+coroutine.wrap(PJMB_fake_script)()
