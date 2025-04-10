@@ -3,19 +3,22 @@
 
 -- Instances:
 
+local Test = Instance.new("ScreenGui")
 local Menu = Instance.new("Frame")
 local UIGradient = Instance.new("UIGradient")
 local UICorner = Instance.new("UICorner")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 local AutoCentr = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
-local AutoCut = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
 
 --Properties:
 
+Test.Name = "Test"
+Test.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Test.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
 Menu.Name = "Menu"
-Menu.Parent = game.StarterGui.Test
+Menu.Parent = Test
 Menu.BackgroundColor3 = Color3.fromRGB(255, 200, 0)
 Menu.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Menu.BorderSizePixel = 0
@@ -50,26 +53,9 @@ AutoCentr.TextWrapped = true
 UICorner_2.CornerRadius = UDim.new(0, 70)
 UICorner_2.Parent = AutoCentr
 
-AutoCut.Name = "AutoCut"
-AutoCut.Parent = Menu
-AutoCut.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-AutoCut.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AutoCut.BorderSizePixel = 0
-AutoCut.Position = UDim2.new(0.366666883, 0, 0.092428796, 0)
-AutoCut.Size = UDim2.new(0.266666681, 0, 0.362167269, 0)
-AutoCut.Font = Enum.Font.SourceSans
-AutoCut.Text = "AutoCut"
-AutoCut.TextColor3 = Color3.fromRGB(0, 0, 0)
-AutoCut.TextScaled = true
-AutoCut.TextSize = 40.000
-AutoCut.TextWrapped = true
-
-UICorner_3.CornerRadius = UDim.new(0, 70)
-UICorner_3.Parent = AutoCut
-
 -- Scripts:
 
-local function PTJYH_fake_script() -- AutoCentr.Script 
+local function RRWC_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -138,42 +124,4 @@ local function PTJYH_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(PTJYH_fake_script)()
-local function QAKXVAT_fake_script() -- AutoCut.Script 
-	local script = Instance.new('Script', AutoCut)
-
-	local isRunning = false
-	local Button = script.Parent
-	local GreenColor = Color3.new(0, 1, 0)
-	local RedColor = Color3.new(1, 0, 0)
-	local GenericFunction = game:GetService("ReplicatedStorage").Remotes.GenericFunction
-	
-	local function createCutFunction(quantity, field)
-		return function()
-			while isRunning do
-				GenericFunction:InvokeServer({["id"] = "cut", ["identifier"] = "pw8", ["quantity"] = quantity, ["field"] = field})
-				wait(0.3) 
-			end
-		end
-	end
-	
-	Button.MouseButton1Click:Connect(function()
-		isRunning = not isRunning
-	
-		if isRunning then
-			Button.BackgroundColor3 = GreenColor
-	
-			-- Создаем новые корутины для каждого поля
-			for _, field in ipairs({"main", "anti", "un", "planet"}) do
-				local negativeCoroutine = coroutine.create(createCutFunction(-1e25, field))
-				local positiveCoroutine = coroutine.create(createCutFunction(1e25, field))
-				coroutine.resume(negativeCoroutine)
-				coroutine.resume(positiveCoroutine)
-			end
-	
-		else
-			Button.BackgroundColor3 = RedColor
-		end
-	end)
-end
-coroutine.wrap(QAKXVAT_fake_script)()
+coroutine.wrap(RRWC_fake_script)()
