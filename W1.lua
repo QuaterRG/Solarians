@@ -2,7 +2,7 @@
 -- Version: 3.2
 
 -- Instances:
-print(1)
+
 local Test = Instance.new("ScreenGui")
 local Menu = Instance.new("Frame")
 local UIGradient = Instance.new("UIGradient")
@@ -12,10 +12,8 @@ local AutoCentr = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 local AutoCut = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
-local AutoLoop = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
 local OpenMenu = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
 local UIGradient_2 = Instance.new("UIGradient")
 local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 
@@ -78,23 +76,6 @@ AutoCut.TextWrapped = true
 UICorner_3.CornerRadius = UDim.new(0, 70)
 UICorner_3.Parent = AutoCut
 
-AutoLoop.Name = "AutoLoop"
-AutoLoop.Parent = Menu
-AutoLoop.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-AutoLoop.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AutoLoop.BorderSizePixel = 0
-AutoLoop.Position = UDim2.new(0.0500000529, 0, 0.565770984, 0)
-AutoLoop.Size = UDim2.new(0.266666681, 0, 0.362167358, 0)
-AutoLoop.Font = Enum.Font.FredokaOne
-AutoLoop.Text = "Loop"
-AutoLoop.TextColor3 = Color3.fromRGB(0, 0, 0)
-AutoLoop.TextScaled = true
-AutoLoop.TextSize = 40.000
-AutoLoop.TextWrapped = true
-
-UICorner_4.CornerRadius = UDim.new(0, 70)
-UICorner_4.Parent = AutoLoop
-
 OpenMenu.Name = "OpenMenu"
 OpenMenu.Parent = Test
 OpenMenu.BackgroundColor3 = Color3.fromRGB(207, 255, 231)
@@ -110,8 +91,8 @@ OpenMenu.TextScaled = true
 OpenMenu.TextSize = 40.000
 OpenMenu.TextWrapped = true
 
-UICorner_5.CornerRadius = UDim.new(0, 40)
-UICorner_5.Parent = OpenMenu
+UICorner_4.CornerRadius = UDim.new(0, 40)
+UICorner_4.Parent = OpenMenu
 
 UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 216, 74)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 216, 74))}
 UIGradient_2.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.41), NumberSequenceKeypoint.new(0.20, 0.21), NumberSequenceKeypoint.new(0.50, 0.36), NumberSequenceKeypoint.new(0.78, 0.16), NumberSequenceKeypoint.new(1.00, 0.39)}
@@ -122,7 +103,7 @@ UIAspectRatioConstraint_2.AspectRatio = 2.160
 
 -- Scripts:
 
-local function XTIII_fake_script() -- AutoCentr.Script 
+local function YISMBFN_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -191,8 +172,8 @@ local function XTIII_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(XTIII_fake_script)()
-local function SUNTW_fake_script() -- AutoCut.Script 
+coroutine.wrap(YISMBFN_fake_script)()
+local function ZLXMQN_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -229,154 +210,8 @@ local function SUNTW_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(SUNTW_fake_script)()
-local function BSRIRF_fake_script() -- AutoLoop.Script 
-	local script = Instance.new('Script', AutoLoop)
-
-	local Button = script.Parent
-	local GreenColor = Color3.new(0, 1, 0)
-	local RedColor = Color3.new(1, 0, 0)
-	local isRunning = false
-	local ReplicatedStorage = game:GetService("ReplicatedStorage")
-	local W1 = game:GetService("Players").LocalPlayer.PlayerGui.W1
-	local paths = {}
-	local event = ReplicatedStorage.Remotes.GenericEvent
-	local reset = ReplicatedStorage.Remotes.TriggerReset
-	local UpdateLevel = ReplicatedStorage.Remotes.UpdateLevels
-	local Level = nil
-	
-	local function onUpdateLevels(List)
-		Level = List
-	end
-	UpdateLevel.OnClientEvent:Connect(onUpdateLevels)
-	
-	local function Loop()
-		while isRunning do
-			while Level.r.grasshop.a < 8 and Level.l.antiLevel.highestLevel < 5 do
-				if Level.l.level.level > 300 then
-					reset:FireServer("grasshop")
-				end
-				wait(0.5)
-			end
-			wait(1)
-			while Level.r.steelie.a == 0 and Level.l.antiLevel.highestLevel < 5 do
-				if Level.l.level.level > 300 then
-					reset:FireServer("steelie")
-				end
-				wait(0.5)
-			end
-			wait(1)
-			while not W1.FactoryUpgrades.ShopContainer.ScrollingFrame:GetChildren()[9].MaxedDisplay.Visible do
-				if Level.l.level.level > 500 then
-					reset:FireServer("steelie")
-				end	
-				wait(0.5)
-			end
-			wait(1)
-			while Level.r.rocketPart.a == 0 do
-				reset:FireServer("rocketPart")
-				wait(0.5)
-			end
-			wait(1)
-			while Level.r.galactic.a == 0 do
-				reset:FireServer("galactic")
-				wait(0.5)
-			end
-			wait(1)
-			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
-			while Level.r.funify.a == 0 and Level.l.planetLevel.level < 5 do
-				if Level.l.antiLevel.level > 300 then
-					reset:FireServer("funify")
-				end
-				wait(0.5)
-			end
-			wait(1)
-			while Level.r.grassskip.a < 30 do
-				if Level.l.antiLevel.level > 500 then
-					reset:FireServer("grassskip")
-				end
-				wait(0.5)
-			end
-			wait(1)
-			while Level.r.rocketPart.a == 0 do
-				reset:FireServer("rocketPart")
-				wait(0.5)
-			end
-			wait(1)
-			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
-			while Level.l.planetLevel.level < 5 do
-				reset:FireServer("galactic")
-				wait(0.5)
-			end
-			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
-			wait(1)
-			while not W1.RingUpgrades.ShopContainer.ScrollingFrame:GetChildren()[31].Visible do
-				reset:FireServer("formRing")
-				wait(0.5)
-			end
-			wait(1)
-			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
-			while Level.r.rocketPart.a == 0 do
-				reset:FireServer("rocketPart")
-				wait(0.5)
-			end
-			wait(1)
-			while Level.r.zeroghgs.a < 60 do
-				if Level.l.antiLevel.level > 800 then
-					workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
-					reset:FireServer("galactic")
-				end
-				wait(0.5)
-			end
-			wait(1)
-			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(210, 4090, 140)
-			while W1.BrokenRing.Enabled do
-				reset:FireServer("breakRing")
-				wait(0.5)
-			end
-			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
-			wait(1)
-			while Level.r.planetary.a == 0 do
-				if Level.l.planetLevel.level > 380 then
-					reset:FireServer("planetary")
-					wait(0.5)
-				end
-			end
-			wait(1)
-			while Level.r.funify.a == 0 do
-				if Level.l.antiLevel.level > 300 then
-					reset:FireServer("funify")
-				end
-				wait(0.5)
-			end
-			wait(1)
-			while Level.r.grassjump.a == 0 do
-				if Level.l.unLevel.level > 550 then
-					reset:FireServer("grassjump")
-					wait(0.5)
-				end
-			end
-			wait(1)
-		end
-	end
-	
-	
-	Button.MouseButton1Click:Connect(function()
-		if not Level then 
-			warn("Level не установлен!")
-			print(Level)
-			return 
-		end
-		isRunning = not isRunning
-		Button.BackgroundColor3 = isRunning and GreenColor or RedColor
-		if isRunning then 
-			Loop()
-		end 
-	end)
-	
-end
-coroutine.wrap(BSRIRF_fake_script)()
-local function PJMB_fake_script() -- OpenMenu.Script 
+coroutine.wrap(ZLXMQN_fake_script)()
+local function MMSMAOU_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -392,4 +227,4 @@ local function PJMB_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(PJMB_fake_script)()
+coroutine.wrap(MMSMAOU_fake_script)()
