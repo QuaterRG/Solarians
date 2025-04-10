@@ -141,7 +141,7 @@ UIAspectRatioConstraint_2.AspectRatio = 2.160
 
 -- Scripts:
 
-local function AMSLGGE_fake_script() -- Solarians.Script 
+local function VODJ_fake_script() -- Solarians.Script 
 	local script = Instance.new('Script', Solarians)
 
 	local Button = script.Parent
@@ -239,8 +239,8 @@ local function AMSLGGE_fake_script() -- Solarians.Script
 		end 
 	end)
 end
-coroutine.wrap(AMSLGGE_fake_script)()
-local function INMRFD_fake_script() -- AutoCentr.Script 
+coroutine.wrap(VODJ_fake_script)()
+local function XOEPW_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -309,8 +309,8 @@ local function INMRFD_fake_script() -- AutoCentr.Script
 		end 
 	end)
 end
-coroutine.wrap(INMRFD_fake_script)()
-local function DIXO_fake_script() -- AutoCut.Script 
+coroutine.wrap(XOEPW_fake_script)()
+local function JUYZHUA_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -347,8 +347,8 @@ local function DIXO_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(DIXO_fake_script)()
-local function ELGG_fake_script() -- AutoLoop.Script 
+coroutine.wrap(JUYZHUA_fake_script)()
+local function VFUW_fake_script() -- AutoLoop.Script 
 	local script = Instance.new('Script', AutoLoop)
 
 	local Button = script.Parent
@@ -360,11 +360,8 @@ local function ELGG_fake_script() -- AutoLoop.Script
 	local paths = {}
 	local event = ReplicatedStorage.Remotes.GenericEvent
 	local reset = ReplicatedStorage.Remotes.TriggerReset
-	local UpdateCurrency = ReplicatedStorage.Remotes.UpdateCurrency
 	local UpdateLevel = ReplicatedStorage.Remotes.UpdateLevels
-	local UpdateMulti = ReplicatedStorage.Remotes.UpdateMultipliers
 	local Level = nil
-	local Multi = nil
 	
 	local function onUpdateLevels(List)
 		Level = List
@@ -373,14 +370,14 @@ local function ELGG_fake_script() -- AutoLoop.Script
 	
 	local function Loop()
 		while isRunning do
-			while Level.r.grasshop.a < 8 and Level.l.antiLevel.level < 5 do
+			while Level.r.grasshop.a < 8 and Level.l.antiLevel.highestLevel < 5 do
 				if Level.l.level.level > 300 then
 					reset:FireServer("grasshop")
 				end
 				wait(0.5)
 			end
 			wait(1)
-			while Level.r.steelie.a == 0 and Level.l.antiLevel.level < 5 do
+			while Level.r.steelie.a == 0 and Level.l.antiLevel.highestLevel < 5 do
 				if Level.l.level.level > 300 then
 					reset:FireServer("steelie")
 				end
@@ -429,8 +426,9 @@ local function ELGG_fake_script() -- AutoLoop.Script
 				reset:FireServer("galactic")
 				wait(0.5)
 			end
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
 			wait(1)
-			while Level.l.planetLevel.level < 5 do
+			while not W1.RingUpgrades.ShopContainer.ScrollingFrame:GetChildren()[31].Visible do
 				reset:FireServer("formRing")
 				wait(0.5)
 			end
@@ -482,10 +480,9 @@ local function ELGG_fake_script() -- AutoLoop.Script
 	
 	
 	Button.MouseButton1Click:Connect(function()
-		if not Level or not Multi then 
-			warn("Level или Multi не установлены!")
+		if not Level then 
+			warn("Level не установлен!")
 			print(Level)
-			print(Multi)
 			return 
 		end
 		isRunning = not isRunning
@@ -496,8 +493,8 @@ local function ELGG_fake_script() -- AutoLoop.Script
 	end)
 	
 end
-coroutine.wrap(ELGG_fake_script)()
-local function MLZBF_fake_script() -- OpenMenu.Script 
+coroutine.wrap(VFUW_fake_script)()
+local function JQCVM_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -513,4 +510,4 @@ local function MLZBF_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(MLZBF_fake_script)()
+coroutine.wrap(JQCVM_fake_script)()
