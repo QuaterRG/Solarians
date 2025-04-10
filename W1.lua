@@ -468,7 +468,7 @@ local function QQHU_fake_script() -- AutoLoop.Script
 				wait(0.5)
 			end
 			wait(1)
-			while Level.r.grassjump.a == 0 do
+			while Level.r.grassJump.a == 0 do
 				if Level.l.unLevel.level > 550 then
 					reset:FireServer("grassjump")
 					wait(0.5)
