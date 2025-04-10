@@ -166,11 +166,11 @@ local function HNJUW_fake_script() -- Solarians.Script
 		end
 	end
 	
-	local syn = {}
+	local syn = nil
 	local Scroll = gui.W1.SythesisPlots.ShopContainer.ScrollingFrame:GetChildren()
 	for _, child in ipairs(Scroll) do
 		if child.Name == "Plot" and child.Identifier.Value == 1 then
-			table.insert(syn, child)
+			syn = Scroll
 		end
 	end
 	
