@@ -542,7 +542,7 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 			end 
 
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700 ,5064 ,3288) 
-			wait (1) 
+			wait (3) 
 
 			while Level.r.starTier.a == 0 do 
 				if W1.TheStar.ShopContainer.Tier.Text:find("2") then 
@@ -690,4 +690,4 @@ local function YLFOCHY_fake_script() -- OpenMenu.Script
 	Button.MouseButton1Click:Connect(onClick)
 end
 coroutine.wrap(YLFOCHY_fake_script)()
-print("1000%")
+print("why%")
