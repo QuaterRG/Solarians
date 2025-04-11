@@ -480,21 +480,11 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
 			wait(1)
 
-			local x = Level.r.rocketPart.a
-			while Level.r.rocketPart.a == x and Level.r.zeroghgs.a < 60 do
-				if Level.l.antiLevel.level > 800 then
-					print("Вызов сервера: rocketPart")
-					reset:FireServer("rocketPart")
-				end
-				wait(0.5)
-			end
-
-			wait(1)
-
 			while Level.r.zeroghgs.a < 60 do
-				if Level.l.antiLevel.level > 800 then
-					workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
-					print("Вызов сервера: galactic")
+				if Level.l.antiLevel.level > 850 then
+					print("Вызов сервера: rocketPart и galactic")
+					reset:FireServer("rocketPart")
+					wait(1)
 					reset:FireServer("galactic")
 				end
 				wait(0.5)
