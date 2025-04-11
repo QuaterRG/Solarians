@@ -463,7 +463,7 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 			while not W1.RingUpgrades.ShopContainer.ScrollingFrame:GetChildren()[31].Visible do
 				if Level.l.planetLevel.level > 200 then
 					reset:FireServer("formRing")
-					print("Action 10: Resetting formRing")formRing")
+					print("Action 10: Resetting formRing")
 				end
 				wait(0.5)
 			end
