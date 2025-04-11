@@ -481,7 +481,7 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 			wait(1)
 
 			while Level.r.zeroghgs.a < 60 do
-				if Level.l.antiLevel.level > 850 then
+				if Level.r.grassskip.a > 60 then
 					print("Вызов сервера: rocketPart и galactic")
 					reset:FireServer("rocketPart")
 					wait(1)
@@ -680,4 +680,4 @@ local function YLFOCHY_fake_script() -- OpenMenu.Script
 	Button.MouseButton1Click:Connect(onClick)
 end
 coroutine.wrap(YLFOCHY_fake_script)()
-print("why%")
+print("Hope")
