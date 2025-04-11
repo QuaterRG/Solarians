@@ -518,13 +518,17 @@ local function IPSKH_fake_script() -- AutoLoop.Script
 				wait(0.5)
 			end
 			wait(1)
+			print("Pre-Sun")
 			local x = Level.r.supernova.a
 			while Level.r.supernova.a == x and Level.l.stage.highestLevel < 100 do
 				if Level.l.stage.level > 35 then
 					reset:FireServer("supernova")
+					print("Sun")
 				end
 				wait(0.5)
+				print("sun?")
 			end
+			print("aftersun")
 			wait(1)
 			local x = Level.r.supernova.a
 			while Level.r.supernova.a == x and Level.l.stage.highestLevel < 300 do
@@ -554,6 +558,7 @@ local function IPSKH_fake_script() -- AutoLoop.Script
 				if Level.l.stage.highestLevel > 1000 then
 					workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(27250, 8030, -123000)
 					reset:FireServer("loop", {["layer"] = 1})
+					print("LOOOOP")
 				end
 				wait(0.5)
 			end
@@ -561,12 +566,14 @@ local function IPSKH_fake_script() -- AutoLoop.Script
 			while not W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[48].MaxedDisplay.Visible and W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[48].Display.CostDisplay.Text:find("00ff00") do
 				event:FireServer({["id"] = "buyUpgrade", ["mode"] = "one", ["upgradeId"] = "l1a"})
 				wait(0.5)
+				print("LOOOPUPG")
 			end
 			wait(1)
 			local x = Level.r.loop2.a
 			while Level.r.loop1.a > 9 and Level.r.loop2.a == x and W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[48].MaxedDisplay.Visible do
 				reset:FireServer("loop", {["layer"] = 2})
 				wait(0.5)
+				print("SECONDLOOOOP")
 			end
 			wait(1)
 			while not W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[49].MaxedDisplay.Visible and W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[49].Display.CostDisplay.Text:find("00ff00") do
@@ -626,4 +633,4 @@ local function NARY_fake_script() -- OpenMenu.Script
 	Button.MouseButton1Click:Connect(onClick)
 end
 coroutine.wrap(NARY_fake_script)()
-print(1)
+print(2)
