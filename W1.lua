@@ -141,7 +141,7 @@ UIAspectRatioConstraint_2.AspectRatio = 2.160
 
 -- Scripts:
 
-local function OLIQTS_fake_script() -- Solarians.Script 
+local function WGXDOT_fake_script() -- Solarians.Script 
 	local script = Instance.new('Script', Solarians)
 
 	local Button = script.Parent
@@ -226,7 +226,7 @@ local function OLIQTS_fake_script() -- Solarians.Script
 	local function allocate()
 		while isRunning do
 			event:FireServer({["id"] = "allocateOne"})
-			wait(5)
+			wait(3)
 		end
 	end
 	
@@ -243,8 +243,8 @@ local function OLIQTS_fake_script() -- Solarians.Script
 		end 
 	end)
 end
-coroutine.wrap(OLIQTS_fake_script)()
-local function YXBOANQ_fake_script() -- AutoCentr.Script 
+coroutine.wrap(WGXDOT_fake_script)()
+local function SLVMIHJ_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -317,8 +317,8 @@ local function YXBOANQ_fake_script() -- AutoCentr.Script
 		StartProcess()
 	end)
 end
-coroutine.wrap(YXBOANQ_fake_script)()
-local function XKLVA_fake_script() -- AutoCut.Script 
+coroutine.wrap(SLVMIHJ_fake_script)()
+local function KFHP_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -355,8 +355,8 @@ local function XKLVA_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(XKLVA_fake_script)()
-local function LRRZX_fake_script() -- AutoLoop.Script 
+coroutine.wrap(KFHP_fake_script)()
+local function AEQENYV_fake_script() -- AutoLoop.Script 
 	local script = Instance.new('Script', AutoLoop)
 
 	local Button = script.Parent
@@ -383,186 +383,125 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 			wait(1)
 			while Level.r.grasshop.a < 8 and Level.l.antiLevel.highestLevel < 5 do
 				if Level.l.level.level > 300 then
-					print("Вызов сервера: grasshop")
 					reset:FireServer("grasshop")
 				end
 				wait(0.5)
 			end
-
 			wait(1)
-
 			while Level.r.steelie.a == 0 and Level.l.antiLevel.highestLevel < 5 do
 				if Level.l.level.level > 300 then
-					print("Вызов сервера: steelie")
 					reset:FireServer("steelie")
 				end
 				wait(0.5)
 			end
-
 			wait(1)
-
 			while not W1.FactoryUpgrades.ShopContainer.ScrollingFrame:GetChildren()[9].MaxedDisplay.Visible and Level.l.astral.highestLevel < 5 do
 				if Level.l.level.level > 500 then
-					print("Вызов сервера: steelie")
 					reset:FireServer("steelie")
-				end    
+				end	
 				wait(0.5)
 			end
-
 			wait(1)
-
 			while Level.r.rocketPart.a == 0 and Level.l.astral.highestLevel < 5 do
-				print("Вызов сервера: rocketPart")
 				reset:FireServer("rocketPart")
 				wait(0.5)
 			end
-
 			wait(1)
-
 			while Level.r.galactic.a == 0 and Level.l.astral.highestLevel < 5 and Level.r.supernova.a == 0 do
-				print("Вызов сервера: galactic")
 				reset:FireServer("galactic")
 				wait(0.5)
 			end
-
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
-			
 			wait(1)
-
-			while Level.r.funify.a == 0 and Level.l.planetLevel.level < 5 do
+			while Level.r.funify.a == 0 and Level.l.planetLevel.highestLevel < 5 do
 				if Level.l.antiLevel.level > 300 then
-					print("Вызов сервера: funify")
 					reset:FireServer("funify")
 				end
 				wait(0.5)
 			end
-
 			wait(1)
-
 			while Level.r.grassskip.a < 30 do
 				if Level.l.antiLevel.level > 500 then
-					print("Вызов сервера: grassskip")
 					reset:FireServer("grassskip")
 				end
 				wait(0.5)
 			end
-
 			wait(1)
-			local x = Level.r.rocketPart.a
-			while Level.r.rocketPart.a == x and Level.l.planetLevel.highestLevel < 5 do
-				print("Вызов сервера: rocketPart")
-				reset:FireServer("rocketPart")
-				wait(0.5)
-			end
-
-			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
-			
-			wait(1)
-
 			while Level.l.planetLevel.highestLevel < 5 do
-				print("Вызов сервера: galactic")
+				reset:FireServer("rocketPart")
+				wait(1)
 				reset:FireServer("galactic")
-				wait(0.5)
+				wait(1)
 			end
-
-			wait(1)
-
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
 			wait(1)
-
 			while not W1.RingUpgrades.ShopContainer.ScrollingFrame:GetChildren()[31].MaxedDisplay.Visible do
 				if Level.l.planetLevel.level > 200 then
-					print("Вызов сервера: formRing")
 					reset:FireServer("formRing")
 				end
 				wait(0.5)
 			end
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
 			wait(1)
-
 			while Level.r.zeroghgs.a < 60 do
 				if Level.r.grassskip.a > 60 then
-					print("Вызов сервера: rocketPart и galactic")
 					reset:FireServer("rocketPart")
 					wait(1)
 					reset:FireServer("galactic")
 				end
 				wait(0.5)
 			end
-
-			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(210,4090,140)
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(210, 4090, 140)
 			wait(1)
-
-			while W1.BrokenRing.Enabled do 
-				print("Вызов сервера: breakRing") 
+			while W1.BrokenRing.Enabled do
 				reset:FireServer("breakRing")
-				wait(0.5) 
-			end 
-
-			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270,-28,-54) 
-			wait(1) 
-
-			while Level.r.planetary.a == 0 and Level.r.supernova.a == 0 do 
-				if Level.l.planetLevel.level >380 then 
-					print("Вызов сервера: planetary") 
-					reset:FireServer("planetary") 
-				end 
-				wait (0.5) 
-			end 
-
-			wait (1) 
-
-			while Level.l.unLevel.highestLevel < 5 do 
-				if Level.l.antiLevel.level > 800 then 
-					print("Вызов сервера: funify") 
-					reset:FireServer("funify") 
-					wait(3)
-				end 
-				wait (0.5) 
-			end 
-
-			wait (1) 
-
-			while Level.r.grassJump.a == 0 do 
-				if Level.l.unLevel.level >540 then 
-					print("Вызов сервера: grassJump") 
-					reset:FireServer("grassJump") 
-				end 
-				wait (0.5 ) 
-			end 
-
-			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700 ,5064 ,3288) 
-			wait (3) 
-
-			while Level.r.starTier.a == 0 do 
-				if W1.TheStar.ShopContainer.Tier.Text:find("2") then 
-					print("Вызов сервера: supernova")  
-					reset:FireServer("supernova")  
-				end  
-				wait (0.5)  
-			end  
-
+				wait(0.5)
+			end
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
-			
-			wait (1) 
-
-			while Level.r.starTier.a ==2 and Level.r.prestige.a==0 do  
-				print("Вызов сервера: prestige")  
-				reset:FireServer("prestige")  
-				wait (0.5)  
-			end  
-
-			workspace.kiribati4199.HumanoidRootPart.CFrame=CFrame.new(-700 ,5064 ,3288)  
-		
-			wait (3)  
-
-			while Level.r.starTier.a==2 do  
-				if W1.TheStar.ShopContainer.Tier.Text:find("5") then  
-					print("Вызов сервера: supernova")  
-					reset:FireServer("supernova")  
-				end  
-				wait (0.5)  
-			end 
+			wait(1)
+			while Level.r.planetary.a == 0 and Level.r.supernova.a == 0 do
+				if Level.l.planetLevel.level > 380 then
+					reset:FireServer("planetary")
+				end
+				wait(0.5)
+			end
+			wait(1)
+			while Level.l.unLevel.highestLevel < 5 do
+				if Level.l.antiLevel.level > 800 then
+					reset:FireServer("funify")
+					wait(3)
+				end
+				wait(0.5)
+			end
+			wait(1)
+			while Level.r.grassJump.a == 0 do
+				if Level.l.unLevel.level > 540 then
+					reset:FireServer("grassJump")
+				end
+				wait(0.5)
+			end
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
+			wait(3)
+			while Level.r.starTier.a == 0 do
+				if W1.TheStar.ShopContainer.Tier.Text:find("2") then
+					reset:FireServer("supernova")
+				end
+				wait(0.5)
+			end
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
+			wait(1)
+			while Level.r.starTier.a == 2 and Level.l.unLevel.level < 5 do
+				reset:FireServer("prestige")
+				wait(1)
+			end
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
+			wait(3)
+			while Level.r.starTier.a == 2 do
+				if W1.TheStar.ShopContainer.Tier.Text:find("5") then
+					reset:FireServer("supernova")
+				end
+				wait(0.5)
+			end
 			wait(1)
 			coroutine.wrap(_G.StartProcess)()
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-1210, 4400, -1600)
@@ -581,7 +520,7 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 			end
 			wait(1)
 			local x = Level.r.sunrise.t
-			while Level.r.sunrise.t >= x and Level.l.stage.highestLevel < 300 do
+			while Level.r.sunrise.t >= x and Level.l.stage.highestLevel < 250 do
 				if Level.l.stage.level > 99 then
 					reset:FireServer("sunrise")
 				end
@@ -590,7 +529,7 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 			wait(1)
 			local x = Level.r.sunrise.t
 			while Level.r.sunrise.t >= x and Level.l.stage.highestLevel < 500 do
-				if Level.l.stage.level > 299 then
+				if Level.l.stage.level > 249 then
 					reset:FireServer("sunrise")
 				end
 				wait(0.5)
@@ -662,8 +601,8 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 	end)
 	
 end
-coroutine.wrap(LRRZX_fake_script)()
-local function YLFOCHY_fake_script() -- OpenMenu.Script 
+coroutine.wrap(AEQENYV_fake_script)()
+local function NGDG_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -679,5 +618,5 @@ local function YLFOCHY_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(YLFOCHY_fake_script)()
-print("Hope")
+coroutine.wrap(NGDG_fake_script)()
+print("Is this really happening?")
