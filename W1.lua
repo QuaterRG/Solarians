@@ -169,8 +169,8 @@ local function NLHUAK_fake_script() -- Solarians.Script
 	local plot = nil
 	local Scroll = gui.W1.SythesisPlots.ShopContainer:GetChildren()
 	for _, frame in ipairs(Scroll) do
-		if frame.Name == "ScrollingFrame" and not frame.Frame then
-			for _, child in ipairs(frame) do
+		if frame.Name == "ScrollingFrame" then
+			for _, child in ipairs(frame:GetChildren()) do
 				if child.Name == "Plot" and child.Identifier.Value == 1 then
 					plot = Scroll
 				end
