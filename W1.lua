@@ -171,7 +171,7 @@ local function NLHUAK_fake_script() -- Solarians.Script
 		if frame.Name == "ScrollingFrame" then
 			for _, child in ipairs(frame:GetChildren()) do
 				if child.Name == "Plot" and child.Identifier.Value == 1 then
-					plot = Scroll
+					plot = child
 				end
 			end
 		end	
@@ -702,4 +702,4 @@ local function ZAWSRY_fake_script() -- OpenMenu.Script
 	Button.MouseButton1Click:Connect(onClick)
 end
 coroutine.wrap(ZAWSRY_fake_script)()
-print(1)
+print(2)
