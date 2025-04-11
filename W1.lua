@@ -411,7 +411,7 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 
 			wait(1)
 
-			while Level.r.rocketPart.a == 0 and Level.l.astral.highestLevel > 5 do
+			while Level.r.rocketPart.a == 0 and Level.l.astral.highestLevel < 5 do
 				print("Вызов сервера: rocketPart")
 				reset:FireServer("rocketPart")
 				wait(0.5)
@@ -419,7 +419,7 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 
 			wait(1)
 
-			while Level.r.galactic.a == 0 and Level.l.astral.highestLevel > 5 and Level.r.supernova.a == 0 do
+			while Level.r.galactic.a == 0 and Level.l.astral.highestLevel < 5 and Level.r.supernova.a == 0 do
 				print("Вызов сервера: galactic")
 				reset:FireServer("galactic")
 				wait(0.5)
@@ -688,4 +688,4 @@ local function YLFOCHY_fake_script() -- OpenMenu.Script
 	Button.MouseButton1Click:Connect(onClick)
 end
 coroutine.wrap(YLFOCHY_fake_script)()
-print("I hate it")
+print("Last for sure")
