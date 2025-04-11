@@ -413,7 +413,7 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 			end
 			wait(1)
 
-			while Level.r.galactic.a == 0 and Level.l.astral.highestLevel > 5 do
+			while Level.r.galactic.a == 0 and Level.l.astral.highestLevel > 5 and Level.r.supernova.a == 0 do
 				print("Action 5: Resetting galactic")
 				reset:FireServer("galactic")
 				wait(0.5)
@@ -506,7 +506,7 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 
 			wait(1) 
 
-			while Level.r.planetary.a == 0 do 
+			while Level.r.planetary.a == 0 and Level.r.supernova.a == 0 do 
 				if Level.l.planetLevel.level >380 then 
 					print ("Action14 :Resetting planetary") 
 					reset : FireServer ("planetary") 
@@ -515,7 +515,7 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 			end 
 			wait (1) 
 
-			while Level.r.funify.a ==0 do 
+			while Level.r.funify.a == 0 and Level.r.supernova.a == 0 do 
 				if Level.l.antiLevel.level>300 then 
 					print ("Action15 :Resetting funify") 
 					reset : FireServer ("funify") 
