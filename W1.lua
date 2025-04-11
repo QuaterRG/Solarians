@@ -492,7 +492,7 @@ local function AEQENYV_fake_script() -- AutoLoop.Script
 			wait(1)
 			while Level.r.starTier.a == 2 and Level.l.unLevel.level < 5 do
 				reset:FireServer("prestige")
-				wait(1)
+				wait(5)
 			end
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
 			wait(3)
