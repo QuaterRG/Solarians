@@ -165,7 +165,6 @@ local function NLHUAK_fake_script() -- Solarians.Script
 			end
 		end
 	end
-	
 	local plot = nil
 	local Scroll = gui.W1.SythesisPlots.ShopContainer:GetChildren()
 	for _, frame in ipairs(Scroll) do
@@ -703,3 +702,4 @@ local function ZAWSRY_fake_script() -- OpenMenu.Script
 	Button.MouseButton1Click:Connect(onClick)
 end
 coroutine.wrap(ZAWSRY_fake_script)()
+print(1)
