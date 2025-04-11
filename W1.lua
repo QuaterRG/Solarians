@@ -491,9 +491,9 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 				wait(0.5)
 			end
 
-			wait(1)
-
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(210, 4090, 140)
+			
+			wait(1)
 
 			while W1.BrokenRing.Enabled do
 				print("Action 13: Resetting breakRing due to BrokenRing enabled")
@@ -571,8 +571,8 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 			_G.StartProcess()  
 
 			wait (1)  
-
-			while game:GetService ("Players").LocalPlayer.PlayerGui.Solarians.Solarian.Interface.Amount.Text~="1000 /10000" do  
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-1210, 4400, -1600)
+			while game:GetService("Players").LocalPlayer.PlayerGui.Solarians.Solarian.Interface.Amount.Text ~= "1,000 / 1,000" do  
 				print ("Action20 :Resetting recallSol")  
 				event : FireServer ("recallSol")  
 				wait (0.5)  
@@ -615,7 +615,7 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 
 			wait (1)   
 
-			while (Level.r.twilight.a==0 and(Level.l.stage.highestLevel<100)) do   
+			while (Level.r.twilight.a==0 and(Level.l.stage.highestLevel<1000)) do   
 				if (Level.l.stage.level>500) then   
 					print ("Action24 :Resetting twilight for stage level >500 ")   
 					reset : FireServer ("twilight")   
@@ -705,4 +705,4 @@ local function ZAWSRY_fake_script() -- OpenMenu.Script
 	Button.MouseButton1Click:Connect(onClick)
 end
 coroutine.wrap(ZAWSRY_fake_script)()
-print(2)
+print(3)
