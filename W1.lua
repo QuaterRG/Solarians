@@ -141,7 +141,7 @@ UIAspectRatioConstraint_2.AspectRatio = 2.160
 
 -- Scripts:
 
-local function HNJUW_fake_script() -- Solarians.Script 
+local function NLHUAK_fake_script() -- Solarians.Script 
 	local script = Instance.new('Script', Solarians)
 
 	local Button = script.Parent
@@ -166,12 +166,16 @@ local function HNJUW_fake_script() -- Solarians.Script
 		end
 	end
 	
-	local syn = nil
-	local Scroll = gui.W1.SythesisPlots.ShopContainer.ScrollingFrame:GetChildren()
-	for _, child in ipairs(Scroll) do
-		if child.Name == "Plot" and child.Identifier.Value == 1 then
-			syn = Scroll
-		end
+	local plot = nil
+	local Scroll = gui.W1.SythesisPlots.ShopContainer:GetChildren()
+	for _, frame in ipairs(Scroll) do
+		if frame.Name == "ScrollingFrame" and not frame.Frame then
+			for _, child in ipairs(frame) do
+				if child.Name == "Plot" and child.Identifier.Value == 1 then
+					plot = Scroll
+				end
+			end
+		end	
 	end
 	
 	local function soulLoop()
@@ -212,7 +216,7 @@ local function HNJUW_fake_script() -- Solarians.Script
 	
 	local function synthesisLoop()
 		while isRunning do
-			if syn.Normal.PB.Progress.Text ~= "0s" then
+			if plot.Normal.PB.Progress.Text ~= "0s" then
 				event:FireServer({["id"] = "synthesis", ["selected"] = "cs", ["syn"] = 1})
 				break 
 			end
@@ -236,11 +240,12 @@ local function HNJUW_fake_script() -- Solarians.Script
 			coroutine.wrap(shopLoop)()
 			coroutine.wrap(restorationLoop)()
 			coroutine.wrap(synthesisLoop)() 
+			coroutine.wrap(allocate)() 
 		end 
 	end)
 end
-coroutine.wrap(HNJUW_fake_script)()
-local function JTFYK_fake_script() -- AutoCentr.Script 
+coroutine.wrap(NLHUAK_fake_script)()
+local function DWAH_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -298,7 +303,7 @@ local function JTFYK_fake_script() -- AutoCentr.Script
 		end 
 	end
 	
-	Button.MouseButton1Click:Connect(function()
+	function StartProcess()
 		isRunning = not isRunning 
 		if isRunning then 
 			Button.BackgroundColor3 = GreenColor 
@@ -307,10 +312,14 @@ local function JTFYK_fake_script() -- AutoCentr.Script
 		else 
 			Button.BackgroundColor3 = RedColor 
 		end 
+	end
+	
+	Button.MouseButton1Click:Connect(function()
+		StartProcess()
 	end)
 end
-coroutine.wrap(JTFYK_fake_script)()
-local function NGOXWKE_fake_script() -- AutoCut.Script 
+coroutine.wrap(DWAH_fake_script)()
+local function YORYR_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -347,8 +356,8 @@ local function NGOXWKE_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(NGOXWKE_fake_script)()
-local function QQHU_fake_script() -- AutoLoop.Script 
+coroutine.wrap(YORYR_fake_script)()
+local function RLOTBEY_fake_script() -- AutoLoop.Script 
 	local script = Instance.new('Script', AutoLoop)
 
 	local Button = script.Parent
@@ -372,107 +381,290 @@ local function QQHU_fake_script() -- AutoLoop.Script
 		while isRunning do
 			while Level.r.grasshop.a < 8 and Level.l.antiLevel.highestLevel < 5 do
 				if Level.l.level.level > 300 then
+					print("Action 1: Resetting grasshop")
 					reset:FireServer("grasshop")
 				end
 				wait(0.5)
 			end
 			wait(1)
+
 			while Level.r.steelie.a == 0 and Level.l.antiLevel.highestLevel < 5 do
 				if Level.l.level.level > 300 then
+					print("Action 2: Resetting steelie")
 					reset:FireServer("steelie")
 				end
 				wait(0.5)
 			end
 			wait(1)
+
 			while not W1.FactoryUpgrades.ShopContainer.ScrollingFrame:GetChildren()[9].MaxedDisplay.Visible do
 				if Level.l.level.level > 500 then
+					print("Action 3: Resetting steelie due to level > 500")
 					reset:FireServer("steelie")
-				end	
+				end    
 				wait(0.5)
 			end
 			wait(1)
+
 			while Level.r.rocketPart.a == 0 do
+				print("Action 4: Resetting rocketPart")
 				reset:FireServer("rocketPart")
 				wait(0.5)
 			end
 			wait(1)
+
 			while Level.r.galactic.a == 0 do
+				print("Action 5: Resetting galactic")
 				reset:FireServer("galactic")
 				wait(0.5)
 			end
 			wait(1)
+
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
+
 			while Level.r.funify.a == 0 and Level.l.planetLevel.level < 5 do
 				if Level.l.antiLevel.level > 300 then
+					print("Action 6: Resetting funify")
 					reset:FireServer("funify")
 				end
 				wait(0.5)
 			end
 			wait(1)
+
 			while Level.r.grassskip.a < 30 do
 				if Level.l.antiLevel.level > 500 then
+					print("Action 7: Resetting grassskip")
 					reset:FireServer("grassskip")
 				end
 				wait(0.5)
 			end
+
 			wait(1)
+
 			while Level.r.rocketPart.a == 0 do
+				print("Action 8: Resetting rocketPart again")
 				reset:FireServer("rocketPart")
 				wait(0.5)
 			end
+
 			wait(1)
+
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
+
 			while Level.l.planetLevel.level < 5 do
+				print("Action 9: Resetting galactic due to planet level < 5")
 				reset:FireServer("galactic")
 				wait(0.5)
 			end
+
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
+
 			wait(1)
+
 			while not W1.RingUpgrades.ShopContainer.ScrollingFrame:GetChildren()[31].Visible do
+				print("Action 10: Resetting formRing")
 				reset:FireServer("formRing")
 				wait(0.5)
 			end
+
 			wait(1)
+
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
+
 			while Level.r.rocketPart.a == 0 do
+				print("Action 11: Resetting rocketPart again (after formRing)")
 				reset:FireServer("rocketPart")
 				wait(0.5)
 			end
+
 			wait(1)
+
 			while Level.r.zeroghgs.a < 60 do
 				if Level.l.antiLevel.level > 800 then
 					workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
+					print("Action 12: Resetting galactic due to zeroghgs <60 and antiLevel >800")
 					reset:FireServer("galactic")
 				end
+
 				wait(0.5)
 			end
+
 			wait(1)
+
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(210, 4090, 140)
+
 			while W1.BrokenRing.Enabled do
+				print("Action 13: Resetting breakRing due to BrokenRing enabled")
 				reset:FireServer("breakRing")
 				wait(0.5)
 			end
+
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
-			wait(1)
-			while Level.r.planetary.a == 0 do
-				if Level.l.planetLevel.level > 380 then
-					reset:FireServer("planetary")
-					wait(0.5)
+
+
+			wait(1) 
+
+			while Level.r.planetary.a == 0 do 
+				if Level.l.planetLevel.level >380 then 
+					print ("Action14 :Resetting planetary") 
+					reset : FireServer ("planetary") 
+				end 
+				wait (0.5) 
+			end 
+			wait (1) 
+
+			while Level.r.funify.a ==0 do 
+				if Level.l.antiLevel.level>300 then 
+					print ("Action15 :Resetting funify") 
+					reset : FireServer ("funify") 
+				end 
+				wait (0.5) 
+			end 
+			wait (1) 
+
+			while Level.r.grassJump.a==0 do 
+				if Level.l.unLevel.level>550 then 
+					print ("Action16 :Resetting grassjump") 
+					reset : FireServer ("grassjump") 
+				end 
+				wait (0.5) 
+			end 
+
+			workspace.kiribati4199.HumanoidRootPart.CFrame=CFrame.new (210 ,4090 ,140 ) 
+
+			wait (1) 
+
+			while Level.r.starTier.a==0 do 
+				if W1.TheStar.ShopContainer.Tier.Text :find ("2") then 
+					print ("Action17 :Resetting supernova") 
+					reset : FireServer ("supernova") 
+				end 
+				wait (0.5) 
+			end 
+
+			wait (1) 
+
+			workspace.kiribati4199.HumanoidRootPart.CFrame=CFrame.new (270 ,-28 ,-54 ) 
+
+			while Level.r.starTier.a==2 and Level.r.prestige.a==0 do 
+				print ("Action18 :Resetting prestige")  
+				reset : FireServer ("prestige")  
+				wait (0.5)  
+			end  
+
+			wait (1)  
+
+			workspace.kiribati4199.HumanoidRootPart.CFrame=CFrame.new (210 ,4090 ,140 ) 
+
+			while Level.r.starTier.a==2 do  
+				if W1.TheStar.ShopContainer.Tier.Text :find ("5") then  
+					print ("Action19 :Resetting supernova again")  
+					reset : FireServer ("supernova")  
+				end  
+				wait (0.5)  
+			end  
+
+			wait (1)  
+
+			script.Parent.Parent.AutoCentr.StartProcess()  
+
+			wait (1)  
+
+			while game:GetService ("Players").LocalPlayer.PlayerGui.Solarians.Solarian.Interface.Amount.Text~="1000 /10000" do  
+				print ("Action20 :Resetting recallSol")  
+				event : FireServer ("recallSol")  
+				wait (0.5)  
+			end  
+
+			wait (1)  
+
+			local x=Level.r.supernova.a  
+
+			while Level.r.supernova.a==x and Level.l.stage.highestLevel<100 do  
+				if Level.l.stage.level>35 then  
+					print ("Action21 :Resetting supernova for stage level >35 ")  
+					reset : FireServer ("supernova")  
+			end  
+			wait (0.5)  
+			end  
+
+			wait (1)  
+
+			local x=Level.r.supernova.a  
+
+			while Level.r.supernova.a==x and Level.l.stage.highestLevel<300 do  
+				if Level.l.stage.level>99 then  
+					print ("Action22 :Resetting supernova for stage level >99 ")  
+					reset:FireServer("supernova")
 				end
-			end
-			wait(1)
-			while Level.r.funify.a == 0 do
-				if Level.l.antiLevel.level > 300 then
-					reset:FireServer("funify")
+				wait (0.5)
+			end 
+
+			wait (1)  
+			local x=Level.r.supernova.a  
+
+			while Level.r.supernova.a==x and Level.l.stage.highestLevel<500 do  
+				if Level.l.stage.level>299 then   
+					print ("Action23 :Resetting supernova for stage level >299 ")   
+					reset : FireServer ("supernova")   
+				end   
+				wait (0.5)   
+			end   
+
+			wait (1)   
+
+			while (Level.r.twilight.a==0 and(Level.l.stage.highestLevel<100)) do   
+				if (Level.l.stage.level>500) then   
+					print ("Action24 :Resetting twilight for stage level >500 ")   
+					reset : FireServer ("twilight")   
+				end   
+				wait (0.5)   
+			end   
+
+			wait (1)   
+			local x = Level.r.loop1.a
+			while Level.r.loop1.a == x do
+				if Level.l.stage.highestLevel > 1000 then
+					workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(27250, 8030, -123000)
+					reset:FireServer("loop", {["layer"] = 1})
+					print("LOOOOP")
 				end
 				wait(0.5)
 			end
 			wait(1)
-			while Level.r.grassJump.a == 0 do
-				if Level.l.unLevel.level > 550 then
-					reset:FireServer("grassjump")
-					wait(0.5)
-				end
+			while not W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[48].MaxedDisplay.Visible and W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[48].Display.CostDisplay.Text:find("00ff00") do
+				event:FireServer({["id"] = "buyUpgrade", ["mode"] = "one", ["upgradeId"] = "l1a"})
+				wait(0.5)
+				print("GrUpg")
+			end
+			wait(1)
+			local x = Level.r.loop2.a
+			while Level.r.loop1.a > 9 and Level.r.loop2.a == x and W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[48].MaxedDisplay.Visible do
+				reset:FireServer("loop", {["layer"] = 2})
+				wait(0.5)
+				print("GrLooooop")
+			end
+			wait(1)
+			while not W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[49].MaxedDisplay.Visible and W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[49].Display.CostDisplay.Text:find("00ff00") do
+				event:FireServer({["id"] = "buyUpgrade", ["mode"] = "one", ["upgradeId"] = "l1b"})
+				wait(0.5)
+			end
+			wait(1)
+			local x = Level.r.loop3.a
+			while Level.r.loop2.a > 9 and Level.r.loop3.a == x and W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[49].MaxedDisplay.Visible do
+				reset:FireServer("loop", {["layer"] = 3})
+				wait(0.5)
+			end
+			wait(1)
+			while not W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[47].MaxedDisplay.Visible and W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[47].Display.CostDisplay.Text:find("00ff00") do
+				event:FireServer({["id"] = "buyUpgrade", ["mode"] = "one", ["upgradeId"] = "l1с"})
+				wait(0.5)
+			end
+			wait(1)
+			local x = Level.r.loop4.a
+			while Level.r.loop3.a > 9 and Level.r.loop4.a == x and W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[47].MaxedDisplay.Visible do
+				reset:FireServer("loop", {["layer"] = 3})
+				wait(0.5)
 			end
 			wait(1)
 		end
@@ -493,8 +685,8 @@ local function QQHU_fake_script() -- AutoLoop.Script
 	end)
 	
 end
-coroutine.wrap(QQHU_fake_script)()
-local function PELD_fake_script() -- OpenMenu.Script 
+coroutine.wrap(RLOTBEY_fake_script)()
+local function ZAWSRY_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -510,4 +702,4 @@ local function PELD_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(PELD_fake_script)()
+coroutine.wrap(ZAWSRY_fake_script)()
