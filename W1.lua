@@ -448,8 +448,8 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 			end
 
 			wait(1)
-
-			while Level.r.rocketPart.a == 0 and Level.l.planetLevel.highestLevel < 5 do
+			local x = Level.r.rocketPart.a
+			while Level.r.rocketPart.a == x and Level.l.planetLevel.highestLevel < 5 do
 				print("Вызов сервера: rocketPart")
 				reset:FireServer("rocketPart")
 				wait(0.5)
@@ -481,8 +481,8 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 			wait(1)
 
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
-
-			while Level.r.rocketPart.a == 0 and Level.r.zeroghgs.a < 60 do
+			local x = Level.r.rocketPart.a
+			while Level.r.rocketPart.a == x and Level.r.zeroghgs.a < 60 do
 				print("Вызов сервера: rocketPart")
 				reset:FireServer("rocketPart")
 				wait(0.5)
@@ -551,9 +551,9 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 				wait (0.5)  
 			end  
 
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
+			
 			wait (1) 
-
-			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new (270,-28,-54) 
 
 			while Level.r.starTier.a ==2 and Level.r.prestige.a==0 do  
 				print("Вызов сервера: prestige")  
@@ -689,4 +689,4 @@ local function YLFOCHY_fake_script() -- OpenMenu.Script
 	Button.MouseButton1Click:Connect(onClick)
 end
 coroutine.wrap(YLFOCHY_fake_script)()
-print("Last for sure")
+print("100%")
