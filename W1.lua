@@ -395,7 +395,7 @@ local function IPSKH_fake_script() -- AutoLoop.Script
 				wait(0.5)
 			end
 			wait(1)
-			while not W1.FactoryUpgrades.ShopContainer.ScrollingFrame:GetChildren()[9].MaxedDisplay.Visible and Level.l.astral.highestLevel > 5 do
+			while not W1.FactoryUpgrades.ShopContainer.ScrollingFrame:GetChildren()[9].MaxedDisplay.Visible and Level.l.astral.highestLevel < 5 do
 				if Level.l.level.level > 500 then
 					reset:FireServer("steelie")
 				end	
@@ -633,4 +633,4 @@ local function NARY_fake_script() -- OpenMenu.Script
 	Button.MouseButton1Click:Connect(onClick)
 end
 coroutine.wrap(NARY_fake_script)()
-print(6)
+print(7)
