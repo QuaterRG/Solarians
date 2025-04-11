@@ -519,29 +519,26 @@ local function IPSKH_fake_script() -- AutoLoop.Script
 			end
 			wait(1)
 			print("Pre-Sun")
-			local x = Level.r.supernova.a
-			while Level.r.supernova.a == x and Level.l.stage.highestLevel < 100 do
+			local x = Level.r.sunrise.t
+			while Level.r.sunrise.t >= x and Level.l.stage.highestLevel < 100 do
 				if Level.l.stage.level > 35 then
-					reset:FireServer("supernova")
-					print("Sun")
+					reset:FireServer("sunrise")
 				end
 				wait(0.5)
-				print("sun?")
-			end
-			print("aftersun")
+			end	
 			wait(1)
-			local x = Level.r.supernova.a
-			while Level.r.supernova.a == x and Level.l.stage.highestLevel < 300 do
+			local x = Level.r.sunrise.t
+			while Level.r.sunrise.t >= x and Level.l.stage.highestLevel < 300 do
 				if Level.l.stage.level > 99 then
-					reset:FireServer("supernova")
+					reset:FireServer("sunrise")
 				end
 				wait(0.5)
 			end
 			wait(1)
-			local x = Level.r.supernova.a
-			while Level.r.supernova.a == x and Level.l.stage.highestLevel < 500 do
+			local x = Level.r.sunrise.t
+			while Level.r.sunrise.t >= x and Level.l.stage.highestLevel < 500 do
 				if Level.l.stage.level > 299 then
-					reset:FireServer("supernova")
+					reset:FireServer("sunrise")
 				end
 				wait(0.5)
 			end
@@ -594,7 +591,7 @@ local function IPSKH_fake_script() -- AutoLoop.Script
 			wait(1)
 			local x = Level.r.loop4.a
 			while Level.r.loop3.a > 9 and Level.r.loop4.a == x and W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[47].MaxedDisplay.Visible do
-				reset:FireServer("loop", {["layer"] = 3})
+				reset:FireServer("loop", {["layer"] = 4})
 				wait(0.5)
 			end
 			wait(1)
@@ -633,4 +630,4 @@ local function NARY_fake_script() -- OpenMenu.Script
 	Button.MouseButton1Click:Connect(onClick)
 end
 coroutine.wrap(NARY_fake_script)()
-print(7)
+print(8)
