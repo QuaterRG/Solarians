@@ -331,7 +331,7 @@ local function KFHP_fake_script() -- AutoCut.Script
 		return function()
 			while isRunning do
 				GenericFunction:InvokeServer({["id"] = "cut", ["identifier"] = "pw8", ["quantity"] = quantity, ["field"] = field})
-				wait(0.3) 
+				wait(0.1) 
 			end
 		end
 	end
