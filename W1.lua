@@ -141,7 +141,7 @@ UIAspectRatioConstraint_2.AspectRatio = 2.160
 
 -- Scripts:
 
-local function EASRO_fake_script() -- Solarians.Script 
+local function OLIQTS_fake_script() -- Solarians.Script 
 	local script = Instance.new('Script', Solarians)
 
 	local Button = script.Parent
@@ -218,7 +218,6 @@ local function EASRO_fake_script() -- Solarians.Script
 		while isRunning do
 			if plot.Normal.PB.Progress.Text ~= "0s" then
 				event:FireServer({["id"] = "synthesis", ["selected"] = "cs", ["syn"] = 1})
-				break 
 			end
 			wait(3)
 		end 
@@ -244,8 +243,8 @@ local function EASRO_fake_script() -- Solarians.Script
 		end 
 	end)
 end
-coroutine.wrap(EASRO_fake_script)()
-local function VSTYCAC_fake_script() -- AutoCentr.Script 
+coroutine.wrap(OLIQTS_fake_script)()
+local function YXBOANQ_fake_script() -- AutoCentr.Script 
 	local script = Instance.new('Script', AutoCentr)
 
 	local Button = script.Parent
@@ -318,8 +317,8 @@ local function VSTYCAC_fake_script() -- AutoCentr.Script
 		StartProcess()
 	end)
 end
-coroutine.wrap(VSTYCAC_fake_script)()
-local function AWVOR_fake_script() -- AutoCut.Script 
+coroutine.wrap(YXBOANQ_fake_script)()
+local function XKLVA_fake_script() -- AutoCut.Script 
 	local script = Instance.new('Script', AutoCut)
 
 	local isRunning = false
@@ -356,8 +355,8 @@ local function AWVOR_fake_script() -- AutoCut.Script
 		end
 	end)
 end
-coroutine.wrap(AWVOR_fake_script)()
-local function IPSKH_fake_script() -- AutoLoop.Script 
+coroutine.wrap(XKLVA_fake_script)()
+local function LRRZX_fake_script() -- AutoLoop.Script 
 	local script = Instance.new('Script', AutoLoop)
 
 	local Button = script.Parent
@@ -381,6 +380,7 @@ local function IPSKH_fake_script() -- AutoLoop.Script
 	local function Loop()
 		while isRunning do
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
+			wait(1)
 			while Level.r.grasshop.a < 8 and Level.l.antiLevel.highestLevel < 5 do
 				if Level.l.level.level > 300 then
 					reset:FireServer("grasshop")
@@ -510,7 +510,7 @@ local function IPSKH_fake_script() -- AutoLoop.Script
 				wait(0.5)
 			end
 			wait(1)
-			_G.StartProcess()
+			coroutine.wrap(_G.StartProcess)()
 			wait(1)
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-1210, 4400, -1600)
 			while player.Solarians.Solarian.Interface.Amount.Text ~= "1,000 / 1,000" do
@@ -518,14 +518,13 @@ local function IPSKH_fake_script() -- AutoLoop.Script
 				wait(0.5)
 			end
 			wait(1)
-			print("Pre-Sun")
 			local x = Level.r.sunrise.t
 			while Level.r.sunrise.t >= x and Level.l.stage.highestLevel < 100 do
 				if Level.l.stage.level > 35 then
 					reset:FireServer("sunrise")
 				end
 				wait(0.5)
-			end	
+			end
 			wait(1)
 			local x = Level.r.sunrise.t
 			while Level.r.sunrise.t >= x and Level.l.stage.highestLevel < 300 do
@@ -555,7 +554,6 @@ local function IPSKH_fake_script() -- AutoLoop.Script
 				if Level.l.stage.highestLevel > 1000 then
 					workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(27250, 8030, -123000)
 					reset:FireServer("loop", {["layer"] = 1})
-					print("LOOOOP")
 				end
 				wait(0.5)
 			end
@@ -563,14 +561,12 @@ local function IPSKH_fake_script() -- AutoLoop.Script
 			while not W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[48].MaxedDisplay.Visible and W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[48].Display.CostDisplay.Text:find("00ff00") do
 				event:FireServer({["id"] = "buyUpgrade", ["mode"] = "one", ["upgradeId"] = "l1a"})
 				wait(0.5)
-				print("LOOOPUPG")
 			end
 			wait(1)
 			local x = Level.r.loop2.a
 			while Level.r.loop1.a > 9 and Level.r.loop2.a == x and W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[48].MaxedDisplay.Visible do
 				reset:FireServer("loop", {["layer"] = 2})
 				wait(0.5)
-				print("SECONDLOOOOP")
 			end
 			wait(1)
 			while not W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[49].MaxedDisplay.Visible and W1.LoopUpgrades.ShopContainer.Shops.Loop.Loop:GetChildren()[49].Display.CostDisplay.Text:find("00ff00") do
@@ -612,8 +608,8 @@ local function IPSKH_fake_script() -- AutoLoop.Script
 	end)
 	
 end
-coroutine.wrap(IPSKH_fake_script)()
-local function NARY_fake_script() -- OpenMenu.Script 
+coroutine.wrap(LRRZX_fake_script)()
+local function YLFOCHY_fake_script() -- OpenMenu.Script 
 	local script = Instance.new('Script', OpenMenu)
 
 	local Button = script.Parent
@@ -629,5 +625,5 @@ local function NARY_fake_script() -- OpenMenu.Script
 	end
 	Button.MouseButton1Click:Connect(onClick)
 end
-coroutine.wrap(NARY_fake_script)()
-print(8)
+coroutine.wrap(YLFOCHY_fake_script)()
+print("FINAL...ihope")
