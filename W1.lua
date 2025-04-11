@@ -525,9 +525,9 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 			wait (1) 
 
 			while Level.r.grassJump.a==0 do 
-				if Level.l.unLevel.level>550 then 
+				if Level.l.unLevel.level>540 then 
 					print ("Action16 :Resetting grassjump") 
-					reset : FireServer ("grassjump") 
+					reset : FireServer ("grassJump") 
 				end 
 				wait (0.5) 
 			end 
