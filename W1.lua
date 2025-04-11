@@ -406,7 +406,7 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 			end
 			wait(1)
 
-			while Level.r.rocketPart.a == 0 and and Level.l.astral.highestLevel > 5 do
+			while Level.r.rocketPart.a == 0 and Level.l.astral.highestLevel > 5 do
 				print("Action 4: Resetting rocketPart")
 				reset:FireServer("rocketPart")
 				wait(0.5)
