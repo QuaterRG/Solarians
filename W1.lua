@@ -425,9 +425,9 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 				wait(0.5)
 			end
 
-			wait(1)
-
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
+			
+			wait(1)
 
 			while Level.r.funify.a == 0 and Level.l.planetLevel.level < 5 do
 				if Level.l.antiLevel.level > 300 then
@@ -455,9 +455,9 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 				wait(0.5)
 			end
 
-			wait(1)
-
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
+			
+			wait(1)
 
 			while Level.l.planetLevel.highestLevel < 5 do
 				print("Вызов сервера: galactic")
@@ -477,14 +477,15 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 				end
 				wait(0.5)
 			end
-
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
 			wait(1)
 
-			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
 			local x = Level.r.rocketPart.a
 			while Level.r.rocketPart.a == x and Level.r.zeroghgs.a < 60 do
-				print("Вызов сервера: rocketPart")
-				reset:FireServer("rocketPart")
+				if Level.l.antiLevel.level > 800 then
+					print("Вызов сервера: rocketPart")
+					reset:FireServer("rocketPart")
+				end
 				wait(0.5)
 			end
 
@@ -574,8 +575,8 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 			end 
 			wait(1)
 			coroutine.wrap(_G.StartProcess)()
-			wait(1)
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-1210, 4400, -1600)
+			wait(1)
 			while player.Solarians.Solarian.Interface.Amount.Text ~= "1,000 / 1,000" do
 				event:FireServer({["id"] = "recallSol"})
 				wait(0.5)
@@ -689,4 +690,4 @@ local function YLFOCHY_fake_script() -- OpenMenu.Script
 	Button.MouseButton1Click:Connect(onClick)
 end
 coroutine.wrap(YLFOCHY_fake_script)()
-print("100%")
+print("1000%")
