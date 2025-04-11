@@ -562,9 +562,9 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 				wait (0.5)  
 			end  
 
-			wait (1)  
-
 			workspace.kiribati4199.HumanoidRootPart.CFrame=CFrame.new(-700 ,5064 ,3288)  
+		
+			wait (3)  
 
 			while Level.r.starTier.a==2 do  
 				if W1.TheStar.ShopContainer.Tier.Text:find("5") then  
