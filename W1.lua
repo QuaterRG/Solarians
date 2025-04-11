@@ -312,7 +312,7 @@ local function DWAH_fake_script() -- AutoCentr.Script
 			Button.BackgroundColor3 = RedColor 
 		end 
 	end
-	
+	_G.StartProcess = StartProcess
 	Button.MouseButton1Click:Connect(function()
 		StartProcess()
 	end)
@@ -568,7 +568,7 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 
 			wait (1)  
 
-			script.Parent.Parent.AutoCentr.StartProcess()  
+			_G.StartProcess()  
 
 			wait (1)  
 
