@@ -378,6 +378,7 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 	
 	local function Loop()
 		while isRunning do
+			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
 			while Level.r.grasshop.a < 8 and Level.l.antiLevel.highestLevel < 5 do
 				if Level.l.level.level > 300 then
 					print("Action 1: Resetting grasshop")
@@ -405,14 +406,14 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 			end
 			wait(1)
 
-			while Level.r.rocketPart.a == 0 do
+			while Level.r.rocketPart.a == 0 and and Level.l.astral.highestLevel > 5 do
 				print("Action 4: Resetting rocketPart")
 				reset:FireServer("rocketPart")
 				wait(0.5)
 			end
 			wait(1)
 
-			while Level.r.galactic.a == 0 do
+			while Level.r.galactic.a == 0 and and Level.l.astral.highestLevel > 5 do
 				print("Action 5: Resetting galactic")
 				reset:FireServer("galactic")
 				wait(0.5)
@@ -440,7 +441,7 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 
 			wait(1)
 
-			while Level.r.rocketPart.a == 0 do
+			while Level.r.rocketPart.a == 0 and Level.l.planetLevel.highestLevel < 5 do
 				print("Action 8: Resetting rocketPart again")
 				reset:FireServer("rocketPart")
 				wait(0.5)
@@ -450,7 +451,7 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-700, 5064, 3288)
 
-			while Level.l.planetLevel.level < 5 do
+			while Level.l.planetLevel.highestLevel < 5 do
 				print("Action 9: Resetting galactic due to planet level < 5")
 				reset:FireServer("galactic")
 				wait(0.5)
@@ -472,7 +473,7 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(270, -28, -54)
 
-			while Level.r.rocketPart.a == 0 do
+			while Level.r.rocketPart.a == 0 and Level.r.zeroghgs.a < 60 do
 				print("Action 11: Resetting rocketPart again (after formRing)")
 				reset:FireServer("rocketPart")
 				wait(0.5)
