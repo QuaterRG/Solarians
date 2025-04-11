@@ -413,7 +413,7 @@ local function RLOTBEY_fake_script() -- AutoLoop.Script
 			end
 			wait(1)
 
-			while Level.r.galactic.a == 0 and and Level.l.astral.highestLevel > 5 do
+			while Level.r.galactic.a == 0 and Level.l.astral.highestLevel > 5 do
 				print("Action 5: Resetting galactic")
 				reset:FireServer("galactic")
 				wait(0.5)
