@@ -504,7 +504,7 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 
 			while W1.BrokenRing.Enabled do 
 				print("Вызов сервера: breakRing") 
-				event:FireServer({["id"]="recallSol"})  
+				reset:FireServer("breakRing")
 				wait(0.5) 
 			end 
 
@@ -516,17 +516,18 @@ local function LRRZX_fake_script() -- AutoLoop.Script
 					print("Вызов сервера: planetary") 
 					reset:FireServer("planetary") 
 				end 
-				wait (0.5 ) 
+				wait (0.5) 
 			end 
 
 			wait (1) 
 
-			while Level.r.funify.a == 0 do 
-				if Level.l.antiLevel.level >300 then 
+			while Level.l.unLevel.highestLevel < 5 do 
+				if Level.l.antiLevel.level > 800 then 
 					print("Вызов сервера: funify") 
 					reset:FireServer("funify") 
+					wait(3)
 				end 
-				wait (0.5 ) 
+				wait (0.5) 
 			end 
 
 			wait (1) 
