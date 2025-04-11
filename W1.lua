@@ -512,10 +512,9 @@ local function IPSKH_fake_script() -- AutoLoop.Script
 			wait(1)
 			_G.StartProcess()
 			wait(1)
-			print("Are u sure?")
 			workspace.kiribati4199.HumanoidRootPart.CFrame = CFrame.new(-1210, 4400, -1600)
 			while player.Solarians.Solarian.Interface.Amount.Text ~= "1,000 / 1,000" do
-				event:FireServer("recallSol")
+				FireServer({["id"] = "recallSol"})
 				wait(0.5)
 			end
 			wait(1)
@@ -634,4 +633,4 @@ local function NARY_fake_script() -- OpenMenu.Script
 	Button.MouseButton1Click:Connect(onClick)
 end
 coroutine.wrap(NARY_fake_script)()
-print(4)
+print(5)
